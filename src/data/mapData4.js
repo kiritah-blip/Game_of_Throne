@@ -17,7 +17,7 @@ export const REGIONS4 = [
   {
     id: 'westeros', nom: 'Westeros', maison: 'Sept Royaumes',
     siege: 'Port-Réal', seigneur: 'Roi des Sept Royaumes',
-    maskFile: 'Westeros.png', accent: '#8fafc4',
+    maskFile: 'Westeros.webp', accent: '#8fafc4',
     houseColor: 'rgba(143,175,196,0.45)',
     description: "Le continent occidental, berceau des Sept Royaumes. Du Mur glacial au nord aux sables de Dorne, Westeros est le théâtre principal de la guerre pour le Trône de Fer.",
     faits: ["Sept Royaumes unifiés par Aegon le Conquérant", "Protégé par le Mur de 300 pieds contre les menaces du Nord", "Port-Réal : près d'un million d'habitants"],
@@ -28,7 +28,7 @@ export const REGIONS4 = [
   {
     id: 'braavos', nom: 'Braavos', maison: 'La Sérénissime',
     siege: 'La Citadelle', seigneur: 'Seigneur de la Mer',
-    maskFile: 'Braavos.png', accent: '#4a7ab8',
+    maskFile: 'Braavos.webp', accent: '#4a7ab8',
     houseColor: 'rgba(74,122,184,0.45)',
     description: "La plus puissante des Cités Libres, fondée par des esclaves fugitifs de Valyria. Siège de la Banque de Fer et de la Maison du Noir et du Blanc.",
     faits: ["Fondée par des esclaves fugitifs de Valyria", "La Banque de Fer recouvre toujours ses dettes", "Le Titan de Braavos garde l'entrée de la lagune"],
@@ -37,7 +37,7 @@ export const REGIONS4 = [
   {
     id: 'lorath', nom: 'Lorath', maison: 'Princes Maazei',
     siege: 'Lorath', seigneur: 'Trois Princes',
-    maskFile: 'Lorath.png', accent: '#6090a8',
+    maskFile: 'Lorath.webp', accent: '#6090a8',
     houseColor: 'rgba(96,144,168,0.42)',
     description: "La plus petite et isolée des Cités Libres, gouvernée par trois princes maazei. Jadis centre d'un culte mystérieux voué au dieu des ténèbres.",
     faits: ["La plus isolée des Cités Libres", "Gouvernée par trois princes conjoints", "Île volcanique aux eaux poissonneuses"],
@@ -46,7 +46,7 @@ export const REGIONS4 = [
   {
     id: 'morosh', nom: 'Morosh', maison: 'Cité indépendante',
     siege: 'Morosh', seigneur: 'Magisters',
-    maskFile: 'Morosh.png', accent: '#7ab0a0',
+    maskFile: 'Morosh.webp', accent: '#7ab0a0',
     houseColor: 'rgba(122,176,160,0.4)',
     description: "Petite cité de pêcheurs et de marchands au nord de Lorath, connue pour ses eaux agitées et ses habitants robustes.",
     faits: ["Port de pêche réputé", "Commerce avec les Ib", "Dépendante des vents du détroit"],
@@ -55,7 +55,7 @@ export const REGIONS4 = [
   {
     id: 'pentos', nom: 'Pentos', maison: 'Magisters',
     siege: 'Pentos', seigneur: 'Prince de Pentos',
-    maskFile: 'Pentos.png', accent: '#8060a0',
+    maskFile: 'Pentos.webp', accent: '#8060a0',
     houseColor: 'rgba(128,96,160,0.42)',
     description: "Cité commerçante opulente aux lois singulières : son prince est tenu responsable des mauvaises récoltes. Autrefois liée aux Dothrakis par traité.",
     faits: ["Prince sacrifié en cas de mauvaise récolte", "Ancienne alliée du Khal Drogo", "Illyrio Mopatis y hébergea Daenerys"],
@@ -64,7 +64,7 @@ export const REGIONS4 = [
   {
     id: 'norvos', nom: 'Norvos', maison: 'Hauts Prêtres',
     siege: 'Norvos', seigneur: 'Conseil des Hauts Prêtres',
-    maskFile: 'Norvos.png', accent: '#8ab090',
+    maskFile: 'Norvos.webp', accent: '#8ab090',
     houseColor: 'rgba(138,176,144,0.42)',
     description: "Double cité bâtie sur deux collines séparées par une rivière. La haute ville theocratique règne sur la basse ville marchande.",
     faits: ["Gouvernée par des hauts prêtres barbés", "Deux cités distinctes sur la même colline", "Armée d'élite : les Hauts Prêtres en personne"],
@@ -73,7 +73,7 @@ export const REGIONS4 = [
   {
     id: 'qohor', nom: 'Qohor', maison: 'La Cité Noire',
     siege: 'Qohor', seigneur: 'Conseil des Marchands',
-    maskFile: 'Qohor.png', accent: '#908060',
+    maskFile: 'Qohor.webp', accent: '#908060',
     houseColor: 'rgba(144,128,96,0.42)',
     description: "Cité sombre au cœur des forêts d'Essos. Ses artisans maîtrisent l'art de reforger l'acier valyrien — le seul savoir-faire qui ait survécu à la Doom.",
     faits: ["Seuls artisans capables de retravailler l'acier valyrien", "Culte du Dieu Sombre pratiquant les sacrifices humains", "Arrêtée par les Dothraki en 267 AA (défaite de 18 Unsullied)"],
@@ -82,7 +82,7 @@ export const REGIONS4 = [
   {
     id: 'myr', nom: 'Myr', maison: 'Magisters',
     siege: 'Myr', seigneur: 'Magisters',
-    maskFile: 'Myr.png', accent: '#70a085',
+    maskFile: 'Myr.webp', accent: '#70a085',
     houseColor: 'rgba(112,160,133,0.42)',
     description: "Cité des artisans et des verriers. La dentelle de Myr et ses lentilles de verre sont célèbres dans tout le monde connu. Jorah Mormont y servit comme mercenaire.",
     faits: ["Célèbre pour ses verres et lentilles optiques", "Dentelle de Myr : la plus fine au monde", "Commerce maritime intense avec Westeros"],
@@ -91,7 +91,7 @@ export const REGIONS4 = [
   {
     id: 'tyrosh', nom: 'Tyrosh', maison: 'Archon',
     siege: 'Tyrosh', seigneur: "L'Archon",
-    maskFile: 'Tyrosh.png', accent: '#a07878',
+    maskFile: 'Tyrosh.webp', accent: '#a07878',
     houseColor: 'rgba(160,120,120,0.42)',
     description: "Cité marchande aux teintures cramoisies légendaires. L'Archon de Tyrosh possède l'une des flottes marchandes les plus puissantes d'Essos.",
     faits: ["Teintures de Tyrosh : couleur rouge unique au monde", "L'Archon : dirigeant élu par les grandes maisons", "Rivale commerciale de Myr et Lys"],
@@ -100,7 +100,7 @@ export const REGIONS4 = [
   {
     id: 'lys', nom: 'Lys', maison: 'Magisters',
     siege: 'Lys', seigneur: 'Magisters',
-    maskFile: 'Lys.png', accent: '#c098b0',
+    maskFile: 'Lys.webp', accent: '#c098b0',
     houseColor: 'rgba(192,152,176,0.42)',
     description: "Île-cité aux mœurs libérées et aux poisons raffinés. Ses esclaves du plaisir et son Eau de Lys — un poison inodore — sont connus de tous les cours royales.",
     faits: ["Spécialisée dans les esclaves du plaisir", "L'Eau de Lys : poison indétectable", "Habitants aux cheveux clairs, héritage valyrien"],
@@ -109,7 +109,7 @@ export const REGIONS4 = [
   {
     id: 'volantis', nom: 'Volantis', maison: 'Triparchat',
     siege: 'Volantis', seigneur: 'Triparques',
-    maskFile: 'Volantis.png', accent: '#c09060',
+    maskFile: 'Volantis.webp', accent: '#c09060',
     houseColor: 'rgba(192,144,96,0.45)',
     description: "La plus ancienne et la plus peuplée des Cités Libres. Première colonie de l'Empire Valyrien, Volantis s'estime héritière légitime de Valyria.",
     faits: ["La plus ancienne des Cités Libres", "5 esclaves pour 1 homme libre", "Le Long Pont : seul accès terrestre à la Vieille Ville"],
@@ -120,7 +120,7 @@ export const REGIONS4 = [
   {
     id: 'meereen', nom: 'Meereen', maison: 'Ancienne Cité de Ghis',
     siege: 'Grande Pyramide', seigneur: 'Daenerys Targaryen',
-    maskFile: 'meereen.png', accent: '#d4a84b',
+    maskFile: 'meereen.webp', accent: '#d4a84b',
     houseColor: 'rgba(212,168,75,0.45)',
     description: "La plus grande des cités esclavagistes de la Baie des Esclaves. Ses pyramides à degrés dominent la Baie. Daenerys y régna en tant que Reine, tentant d'abolir l'esclavage.",
     faits: ["Cité esclavagiste la plus peuplée d'Essos", "Grande Pyramide : 800 pieds de haut", "Libérée par Daenerys Targaryen et ses dragons"],
@@ -129,7 +129,7 @@ export const REGIONS4 = [
   {
     id: 'yunkai', nom: 'Yunkai', maison: 'La Cité Jaune',
     siege: 'Yunkai', seigneur: 'Sages Maîtres',
-    maskFile: 'yukai.png', accent: '#c8a040',
+    maskFile: 'yukai.webp', accent: '#c8a040',
     houseColor: 'rgba(200,160,64,0.42)',
     description: "Cité esclavagiste connue pour ses esclaves du plaisir. Les Sages Maîtres de Yunkai préfèrent la politique aux combats.",
     faits: ["Spécialisée dans la formation des esclaves du plaisir", "Rendue sans combat à Daenerys", "Peu de soldats, beaucoup de mercenaires"],
@@ -138,7 +138,7 @@ export const REGIONS4 = [
   {
     id: 'ghiscar', nom: 'Ghiscar', maison: 'Vieux Empire de Ghis',
     siege: 'Astapor', seigneur: 'Bons Maîtres',
-    maskFile: 'ghiscar.png', accent: '#b89040',
+    maskFile: 'ghiscar.webp', accent: '#b89040',
     houseColor: 'rgba(184,144,64,0.42)',
     description: "Terres du défunt Empire de Ghis, jadis grand rival de Valyria. Aujourd'hui, ces cités font commerce d'Immaculés, les soldats esclaves les plus redoutés du monde.",
     faits: ["Ancienne rivale de l'Empire Valyrien", "Astapor : capitale de la formation des Immaculés", "Nouvelle Ghis : principale héritière de l'empire"],
@@ -147,7 +147,7 @@ export const REGIONS4 = [
   {
     id: 'elyria', nom: 'Élyria', maison: 'Colonie Valyrien',
     siege: 'Élyria', seigneur: 'Magisters',
-    maskFile: 'Elyria.png', accent: '#a08030',
+    maskFile: 'Elyria.webp', accent: '#a08030',
     houseColor: 'rgba(160,128,48,0.4)',
     description: "Cité portuaire ancienne colonie de l'Empire Valyrien, survivante de la Doom grâce à sa distance.",
     faits: ["Ancienne colonie de Valyria", "Commerce maritime avec l'est", "Artisans de renom"],
@@ -156,7 +156,7 @@ export const REGIONS4 = [
   {
     id: 'mantarys', nom: 'Mantarys', maison: 'Cité Maudite',
     siege: 'Mantarys', seigneur: 'Inconnu',
-    maskFile: 'mantarys.png', accent: '#886030',
+    maskFile: 'mantarys.webp', accent: '#886030',
     houseColor: 'rgba(136,96,48,0.42)',
     description: "Cité sombre sur la Route Royale, réputée maudite depuis la Doom. Ses habitants naissent déformés et ses rues sont hantées de mauvais présages.",
     faits: ["Réputation de cité maudite après la Doom", "Naissance d'enfants difformes très fréquente", "Étape sur la Route Royale vers Valyria"],
@@ -165,7 +165,7 @@ export const REGIONS4 = [
   {
     id: 'tolos', nom: 'Tolos', maison: 'Cité des Guerriers',
     siege: 'Tolos', seigneur: 'Conseil',
-    maskFile: 'tolos.png', accent: '#906840',
+    maskFile: 'tolos.webp', accent: '#906840',
     houseColor: 'rgba(144,104,64,0.4)',
     description: "Cité guerrière sur la côte de la Mer des Épices. Ses habitants sont réputés pour leur vaillance et leur résistance à l'esclavagisme.",
     faits: ["Résistance à l'esclavage de Meereen", "Traditions militaires anciennes", "Port commercial ouvert à l'est"],
@@ -176,7 +176,7 @@ export const REGIONS4 = [
   {
     id: 'lazhai', nom: 'Lhazar', maison: 'Lhazaréens',
     siege: 'Hesh', seigneur: 'Anciens du village',
-    maskFile: 'lazhar.png', accent: '#a07040',
+    maskFile: 'lazhar.webp', accent: '#a07040',
     houseColor: 'rgba(160,112,64,0.42)',
     description: "Peuple pacifique de bergers vivant à l'est de la Baie des Esclaves. Les Lhazaréens se nomment eux-mêmes 'peuple de l'agneau' et évitent la guerre.",
     faits: ["Peuple pastoral non guerrier", "Régulièrement pillé par les Dothrakis", "Mirri Maz Duur, guérisseuse lhazaréenne, tua Khal Drogo"],
@@ -187,7 +187,7 @@ export const REGIONS4 = [
   {
     id: 'dothraki', nom: 'Mer Dothrak', maison: 'Khals Dothrakis',
     siege: 'Vaes Dothrak', seigneur: 'Dothraki Khals',
-    maskFile: 'dokahriss khalasar.png', accent: '#c08850',
+    maskFile: 'dokahriss khalasar.webp', accent: '#c08850',
     houseColor: 'rgba(192,136,80,0.45)',
     description: "Immense mer d'herbes parcourue par les khalasar dothrakis. Vaes Dothrak, la seule ville fixe, est le cœur spirituel du peuple du cheval.",
     faits: ["Cavaliers les plus redoutés du monde connu", "Vaes Dothrak : seule cité permanente", "Les Dothrakis ne franchissent jamais la mer salée"],
@@ -196,7 +196,7 @@ export const REGIONS4 = [
   {
     id: 'red-waste', nom: 'Désert Rouge', maison: 'Terres Inconnues',
     siege: 'Vaes Tolorro (ruines)', seigneur: 'Aucun',
-    maskFile: 'the red waste.png', accent: '#c85030',
+    maskFile: 'the red waste.webp', accent: '#c85030',
     houseColor: 'rgba(200,80,48,0.42)',
     description: "Désert de sable et de roche rouge hostile à toute vie. Daenerys traversa ces terres à la mort de son fils Rhaego, y perdant presque tout son khalasar.",
     faits: ["Presque impassable sans réserves d'eau", "Daenerys y traversa avec ses Dothrakis survivants", "Vaes Tolorro : seule ruine habitable"],
@@ -205,7 +205,7 @@ export const REGIONS4 = [
   {
     id: 'grey-waste', nom: 'Désert Gris et Sables Cannibales', maison: 'Terres Désolées',
     siege: 'Aucun', seigneur: 'Aucun',
-    maskFile: 'the grey waste and cannibale sand.png', accent: '#909090',
+    maskFile: 'the grey waste and cannibale sand.webp', accent: '#909090',
     houseColor: 'rgba(144,144,144,0.4)',
     description: "Vastes étendues de cendres et de sable au-delà de l'empire de Yi Ti. Terres hostiles peuplées de tribus nomades cannibales selon les récits des marchands.",
     faits: ["Territoire presque inexploré", "Légendes de tribus cannibales", "Frontière orientale du monde connu cartographié"],
@@ -214,7 +214,7 @@ export const REGIONS4 = [
   {
     id: 'great-sand-sea', nom: 'Grande Mer de Sable', maison: 'Terres Inconnues',
     siege: 'Aucun', seigneur: 'Aucun',
-    maskFile: 'great sand sea.png', accent: '#d4a860',
+    maskFile: 'great sand sea.webp', accent: '#d4a860',
     houseColor: 'rgba(212,168,96,0.42)',
     description: "Immense désert de dunes entre le territoire des Jogos Nhai et les terres lointaines de l'est. Peu d'explorateurs en sont revenus.",
     faits: ["Désert plus vaste que la Mer Dothrak", "Source du vent brûlant du sud-est", "Quelques oasis dispersées connues des nomades"],
@@ -225,7 +225,7 @@ export const REGIONS4 = [
   {
     id: 'ib', nom: 'Ib', maison: 'Hommes d\'Ib',
     siege: 'Ib Sar', seigneur: 'Seigneurs des Harengues',
-    maskFile: 'Ib.png', accent: '#8090a0',
+    maskFile: 'Ib.webp', accent: '#8090a0',
     houseColor: 'rgba(128,144,160,0.45)',
     description: "Grande île sauvage au nord-est d'Essos. Ses habitants robustes sont réputés pour leur force physique, leurs bateaux de pêche et leur commerce de fourrures.",
     faits: ["Deuxième plus grande île du monde connu", "Walrus : animal symbole des Ib", "Commerce intensif de fourrures et poissons"],
@@ -234,7 +234,7 @@ export const REGIONS4 = [
   {
     id: 'nefer', nom: "N'fer", maison: 'Empire Lointain',
     siege: "N'fer", seigneur: "Seigneur N'fer",
-    maskFile: 'nefer.png', accent: '#9090a0',
+    maskFile: 'nefer.webp', accent: '#9090a0',
     houseColor: 'rgba(144,144,160,0.4)',
     description: "Cité mystérieuse au nord-est d'Essos, aux confins des territoires cartographiés. Peu de marchands occidentaux s'y aventurent.",
     faits: ["Frontière nord de l'Empire de Yi Ti", "Commerce rare avec l'ouest", "Architecture inconnue des explorateurs westérosi"],
@@ -243,7 +243,7 @@ export const REGIONS4 = [
   {
     id: 'kayakayanaya', nom: 'Kayakayanaya', maison: 'Cité de Femmes',
     siege: 'Kayakayanaya', seigneur: 'Matriarche',
-    maskFile: 'kayakayanaya.png', accent: '#b0a070',
+    maskFile: 'kayakayanaya.webp', accent: '#b0a070',
     houseColor: 'rgba(176,160,112,0.42)',
     description: "Mystérieuse cité orientale gouvernée par des femmes. Sa matriarche serait, selon la légende, une lionne à tête de femme.",
     faits: ["Gouvernée par une matriarche", "Guerrières redoutées à l'arc et à l'épée", "Alliance commerciale avec Samyriana"],
@@ -252,7 +252,7 @@ export const REGIONS4 = [
   {
     id: 'samyriana', nom: 'Samyriana', maison: 'Cité des Mille Dieux',
     siege: 'Samyriana', seigneur: 'Grand Prêtre',
-    maskFile: 'samiryana.png', accent: '#a09060',
+    maskFile: 'samiryana.webp', accent: '#a09060',
     houseColor: 'rgba(160,144,96,0.4)',
     description: "Cité de pèlerinage aux mille temples. Chaque religion connue y possède un sanctuaire, faisant de Samyriana le carrefour spirituel de l'est.",
     faits: ["Plus de mille temples différents", "Destination de pèlerinage majeure", "Tolérance religieuse absolue"],
@@ -261,7 +261,7 @@ export const REGIONS4 = [
   {
     id: 'jogos-nai', nom: 'Terres des Jogos Nhai', maison: 'Jogos Nhai',
     siege: 'Trader Town', seigneur: 'Jhattar (Khal des Khals)',
-    maskFile: 'jogos nai.png', accent: '#90a060',
+    maskFile: 'jogos nai.webp', accent: '#90a060',
     houseColor: 'rgba(144,160,96,0.42)',
     description: "Vastes steppes des nomades Jogos Nhai, montés sur des zorse rayés. Ennemis séculaires des Dothraki, ils montent différemment et combattent à distance.",
     faits: ["Nomades montés sur des zorses (zèbres)", "Ennemis jurés des Dothrakis", "Jhattar : chef suprême des clans"],
@@ -270,7 +270,7 @@ export const REGIONS4 = [
   {
     id: 'mossovy', nom: 'Mossovy', maison: 'Peuple du Masque',
     siege: 'Aucune', seigneur: 'Inconnu',
-    maskFile: 'mossovy.png', accent: '#708060',
+    maskFile: 'mossovy.webp', accent: '#708060',
     houseColor: 'rgba(112,128,96,0.4)',
     description: "Territoire mystérieux au nord-est d'Essos. Ses habitants portent des masques d'os selon les rares marchands qui les ont rencontrés.",
     faits: ["Peuple portant des masques d'os", "Territoire presque inexploré", "Rituels funèbres inconnus de l'ouest"],
@@ -279,7 +279,7 @@ export const REGIONS4 = [
   {
     id: 'ancient-valyria', nom: 'Péninsule Valyrien', maison: 'Ruines de Valyria',
     siege: 'Valyria (ruines)', seigneur: 'Aucun — terres maudites',
-    maskFile: 'ancienne valerya.png', accent: '#c04040',
+    maskFile: 'ancienne valerya.webp', accent: '#c04040',
     houseColor: 'rgba(192,64,64,0.45)',
     description: "Berceau de l'Empire Valyrien, rasé il y a 400 ans par la Doom de Valyria. La péninsule est aujourd'hui une terre morte de volcans et de démons. Nul n'y retourne et n'en revient.",
     faits: ["Détruite il y a ~400 ans par la Doom", "Source de l'acier valyrien et des dragons", "Ser Jorah et Tyrion faillirent y périr"],
@@ -288,7 +288,7 @@ export const REGIONS4 = [
   {
     id: 'the-axe', nom: 'La Hache', maison: 'Île Isolée',
     siege: 'Ax Isle', seigneur: 'Pirate local',
-    maskFile: 'The axe.png', accent: '#a06050',
+    maskFile: 'The axe.webp', accent: '#a06050',
     houseColor: 'rgba(160,96,80,0.4)',
     description: "Grande île en forme de hache au large de Sothoryos. Repaire de pirates et de contrebandiers qui rançonnent les navires commerçant avec le continent noir.",
     faits: ["Repaire de pirates", "Hors de portée des lois des Cités Libres", "Commerce d'esclaves non officiellement"],
@@ -297,7 +297,7 @@ export const REGIONS4 = [
   {
     id: 'great-moraq', nom: 'Grand Moraq', maison: 'Île Marchande',
     siege: 'Port Moraq', seigneur: 'Maisons Marchandes',
-    maskFile: 'great moraq.png', accent: '#806040',
+    maskFile: 'great moraq.webp', accent: '#806040',
     houseColor: 'rgba(128,96,64,0.42)',
     description: "Grande île à l'est de la Mer des Épices. Port Moraq et Faros sont des escales majeures sur la route commerciale entre Westeros et l'extrême est.",
     faits: ["Carrefour commercial est-ouest", "Port Moraq : port en eau profonde", "Faros : marché aux épices réputé"],
@@ -308,7 +308,7 @@ export const REGIONS4 = [
   {
     id: 'yiti', nom: 'Empire Doré de Yi Ti', maison: 'Fils Célestes',
     siege: 'Jinqi', seigneur: 'Fils Céleste',
-    maskFile: 'The Golden empire of YITI.png', accent: '#d0a060',
+    maskFile: 'The Golden empire of YITI.webp', accent: '#d0a060',
     houseColor: 'rgba(208,160,96,0.45)',
     description: "Vaste empire oriental aux richesses fabuleuses. Ses Fils Célestes règnent depuis des dynasties millénaires sur une civilisation plus ancienne que Valyria.",
     faits: ["Civilisation plus ancienne que l'Empire Valyrien", "L'or de Yi Ti est légendaire en Occident", "Les Cinq Forts protègent sa frontière nord"],
@@ -317,7 +317,7 @@ export const REGIONS4 = [
   {
     id: 'carcosa', nom: 'Carcosa', maison: 'Cité Mythique',
     siege: 'Carcosa', seigneur: 'Inconnu',
-    maskFile: 'carcosa.png', accent: '#804070',
+    maskFile: 'carcosa.webp', accent: '#804070',
     houseColor: 'rgba(128,64,112,0.42)',
     description: "Cité légendaire à l'extrême est du monde connu. Les marchands de Yi Ti évoquent ses tours de verre et ses habitants aux visages masqués dans des récits incertains.",
     faits: ["Existence disputée par les explorateurs", "Tours de verre selon les marchands de Yi Ti", "Habitants portant des masques selon la légende"],
@@ -335,7 +335,7 @@ export const REGIONS4 = [
   {
     id: 'ifequevron', nom: 'Royaume d\'Ifequevron', maison: 'Boiseux',
     siege: 'Ifequevron', seigneur: 'Boiseux',
-    maskFile: 'Kingdom of ifequevron.png', accent: '#70a080',
+    maskFile: 'Kingdom of ifequevron.webp', accent: '#70a080',
     houseColor: 'rgba(112,160,128,0.4)',
     description: "Royaume forestier habité par les Boiseux, sorte d'hommes-arbres de l'est. Leurs forêts sont dites impénétrables et habitées de créatures inconnues.",
     faits: ["Peuplé de Boiseux (Wood Walkers)", "Forêts infranchissables selon les explorateurs", "Possible lien avec les Enfants de la Forêt"],
@@ -344,7 +344,7 @@ export const REGIONS4 = [
   {
     id: 'land-of-shrykes', nom: 'Terre des Shrykes', maison: 'Inconnue',
     siege: 'Inconnue', seigneur: 'Inconnu',
-    maskFile: 'land of the shrykes.png', accent: '#609870',
+    maskFile: 'land of the shrykes.webp', accent: '#609870',
     houseColor: 'rgba(96,152,112,0.4)',
     description: "Territoire mystérieux dont le nom seul parvient jusqu'aux oreilles des cartographes de l'ouest. Aucun explorateur fiable n'en est revenu.",
     faits: ["Territoire complètement inexploré", "Mentionné dans les cartes de la Citadelle", "Nature des habitants inconnue"],
@@ -353,7 +353,7 @@ export const REGIONS4 = [
   {
     id: 'shadow-land', nom: 'Terres de l\'Ombre', maison: 'Asshai-par-l\'Ombre',
     siege: 'Asshai', seigneur: 'Sorciers des Ombres',
-    maskFile: 'the shadow land.png', accent: '#504060',
+    maskFile: 'the shadow land.webp', accent: '#504060',
     houseColor: 'rgba(80,64,96,0.45)',
     description: "Terres ténébreuses au sud-est du monde connu. Asshai-par-l'Ombre est la cité la plus sombre et la plus mystérieuse du monde connu, siège des arts de l'ombre.",
     faits: ["Asshai : cité de sorciers et de magie noire", "Stygai : cité des morts dans les terres de l'ombre", "Source des pratiques de magie du sang"],
@@ -362,7 +362,7 @@ export const REGIONS4 = [
   {
     id: 'dry-deep', nom: 'Fond Sec', maison: 'Terres Désertiques',
     siege: 'Aucun', seigneur: 'Aucun',
-    maskFile: 'the dry deep.png', accent: '#6080a0',
+    maskFile: 'the dry deep.webp', accent: '#6080a0',
     houseColor: 'rgba(96,128,160,0.4)',
     description: "Dépression géographique profonde et aride à l'est d'Essos. Certains géographes supposent qu'il s'agissait d'un ancien bras de mer asséché.",
     faits: ["Possible ancien lit de mer asséché", "Vents violents et température extrême", "Aucune installation permanente connue"],
@@ -371,7 +371,7 @@ export const REGIONS4 = [
   {
     id: 'bleeding-sea', nom: 'Mer Sanglante', maison: 'Eaux Inconnues',
     siege: 'Aucun', seigneur: 'Aucun',
-    maskFile: 'bleeding sea.png', accent: '#802030',
+    maskFile: 'bleeding sea.webp', accent: '#802030',
     houseColor: 'rgba(128,32,48,0.45)',
     description: "Mer aux eaux rougeâtres à l'extrême est. Sa couleur est attribuée à des algues microscopiques ou, selon certains, à la magie des terres de l'ombre toutes proches.",
     faits: ["Eau de couleur rouge sang permanente", "Navigation périlleuse selon les marins", "Frontière est des eaux charriées"],
@@ -380,7 +380,7 @@ export const REGIONS4 = [
   {
     id: 'sea-of-sighs', nom: 'Mer des Soupirs', maison: 'Eaux Orientales',
     siege: 'Aucun', seigneur: 'Aucun',
-    maskFile: 'sea of sighs.png', accent: '#4070a0',
+    maskFile: 'sea of sighs.webp', accent: '#4070a0',
     houseColor: 'rgba(64,112,160,0.42)',
     description: "Mer intérieure de l'est d'Essos, carrefour des routes commerciales vers Qarth et au-delà. Ses vents capricieux font soupirer les marins depuis des siècles.",
     faits: ["Route commerciale majeure vers Qarth", "Vents imprévisibles et dangereux", "Nombreux naufrages recensés"],
@@ -391,7 +391,7 @@ export const REGIONS4 = [
   {
     id: 'sothoryos', nom: 'Sothoryos', maison: 'Continent Sauvage',
     siege: 'Aucune — jungle impénétrable', seigneur: 'Aucun',
-    maskFile: 'sothoryos.png', accent: '#408050',
+    maskFile: 'sothoryos.webp', accent: '#408050',
     houseColor: 'rgba(64,128,80,0.45)',
     description: "Continent mystérieux au sud de la Mer Estivale. Ses jungles impénétrables tuent les explorateurs par maladies, fauves et indigènes hostiles. Aucune colonie durable n'y a survécu.",
     faits: ["Jungle mortelle pleine de maladies incurables", "Yeen et Zamettar : anciennes colonies abandonnées", "Gigantisme des animaux : lions, hyènes géantes"],
@@ -400,7 +400,7 @@ export const REGIONS4 = [
   {
     id: 'naath', nom: 'Naath', maison: 'Île du Papillon',
     siege: 'Naath', seigneur: 'Conseil des Anciens',
-    maskFile: 'naaths.png', accent: '#60a880',
+    maskFile: 'naaths.webp', accent: '#60a880',
     houseColor: 'rgba(96,168,128,0.42)',
     description: "Île pacifique aux papillons mortels. Les Naathi sont un peuple doux refusant tout violence. Missandei, traductrice de Daenerys, en est originaire.",
     faits: ["Papillons Naathi mortels pour les étrangers", "Peuple profondément pacifiste", "Missandei : traductrice de Daenerys"],
@@ -409,7 +409,7 @@ export const REGIONS4 = [
   {
     id: 'summer-isle', nom: 'Îles Estivales', maison: 'Princes des Îles Estivales',
     siege: 'Lotus Port', seigneur: 'Princes des Îles Estivales',
-    maskFile: 'the summer isle.png', accent: '#40a870',
+    maskFile: 'the summer isle.webp', accent: '#40a870',
     houseColor: 'rgba(64,168,112,0.45)',
     description: "Archipel tropical au sud-ouest de Westeros. Ses habitants sont maîtres archers réputés dans tout le monde connu. Leurs arcs en corne de buffle sont incomparables.",
     faits: ["Archers les plus précis du monde connu", "Arcs en corne de buffle inégalés", "Commerce de soie et d'épices tropicales"],
@@ -420,7 +420,7 @@ export const REGIONS4 = [
   {
     id: 'thousand-isles', nom: 'Mille Îles', maison: 'Peuple des Mille Îles',
     siege: 'Aucune capitale', seigneur: 'Rois Tribaux',
-    maskFile: 'thousand isle.png', accent: '#308060',
+    maskFile: 'thousand isle.webp', accent: '#308060',
     houseColor: 'rgba(48,128,96,0.42)',
     description: "Archipel de mille îles entre Sothoryos et l'est d'Essos. Ses habitants sont des guerriers redoutés tatouant les crânes de leurs ennemis vaincus.",
     faits: ["Guerriers réduisant les crânes ennemis", "Archipel quasi-inaccessible", "Commerce inconnu de l'ouest"],
@@ -429,7 +429,7 @@ export const REGIONS4 = [
   {
     id: 'leng', nom: 'Leng', maison: 'Île Mystérieuse',
     siege: 'Leng Ma', seigneur: 'Dieu-Roi',
-    maskFile: 'leng.png', accent: '#507080',
+    maskFile: 'leng.webp', accent: '#507080',
     houseColor: 'rgba(80,112,128,0.45)',
     description: "Grande île au nord de la Mer de Jade. Ses habitants anciens seraient selon la légende les descendants d'êtres encore plus anciens que les premiers hommes.",
     faits: ["L'une des îles les plus anciennes habitées", "Leng Yi et Leng Ma : deux villes principales", "Dieu-Roi régnant depuis des millénaires"],
@@ -438,7 +438,7 @@ export const REGIONS4 = [
   {
     id: 'ulthos', nom: 'Ulthos', maison: 'Continent Inconnu',
     siege: 'Ulos', seigneur: 'Inconnu',
-    maskFile: 'ulthos.png', accent: '#304060',
+    maskFile: 'ulthos.webp', accent: '#304060',
     houseColor: 'rgba(48,64,96,0.42)',
     description: "Continent mystérieux à l'extrême est du monde connu. Son existence même est débattue par les maester de la Citadelle. Nul Westérosi fiable n'en est revenu.",
     faits: ["Existence disputée par la Citadelle", "Peut-être le quatrième continent du monde", "Ulos : seul point connu mentionné"],
@@ -447,7 +447,7 @@ export const REGIONS4 = [
   {
     id: 'manticore-isles', nom: 'Îles Manticore', maison: 'Terres Sauvages',
     siege: 'Aucune', seigneur: 'Aucun',
-    maskFile: 'manticore isle.png', accent: '#705080',
+    maskFile: 'manticore isle.webp', accent: '#705080',
     houseColor: 'rgba(112,80,128,0.42)',
     description: "Îles infestées de manticores, créatures venimeuses mortelles. Leur venin est l'un des plus recherchés par les empoisonneurs du monde connu.",
     faits: ["Manticores : créatures mortelles endémiques", "Venin utilisé par les assassins", "Île inhabitable pour l'homme"],
@@ -456,7 +456,7 @@ export const REGIONS4 = [
   {
     id: 'basilisk-isles', nom: 'Îles Basilic', maison: 'Pirates et Esclavagistes',
     siege: 'Gogossos (ruines)', seigneur: 'Seigneurs Pirates',
-    maskFile: 'basilik isles.png', accent: '#604070',
+    maskFile: 'basilik isles.webp', accent: '#604070',
     houseColor: 'rgba(96,64,112,0.42)',
     description: "Archipel infesté de pirates entre Sothoryos et les Cités Libres. Gogossos, ancien bagne de Valyria, y fut le théâtre des pires atrocités de l'histoire.",
     faits: ["Gogossos : bagne le plus horrible de Valyria", "Repaire de pirates esclavagistes", "Basilics : serpents géants endémiques"],
@@ -465,7 +465,7 @@ export const REGIONS4 = [
   {
     id: 'isle-tears', nom: 'Îles des Larmes', maison: 'Île Isolée',
     siege: 'Aucune', seigneur: 'Aucun',
-    maskFile: 'isle of tears.png', accent: '#508080',
+    maskFile: 'isle of tears.webp', accent: '#508080',
     houseColor: 'rgba(80,128,128,0.4)',
     description: "Petites îles au large de Sothoryos, nommées pour les navigateurs qui pleurent en les voyant, sachant qu'ils entrent en eaux dangereuses.",
     faits: ["Signal d'entrée en eaux périlleuses", "Peu d'informations disponibles", "Utilisées comme repère par les marins"],
@@ -474,7 +474,7 @@ export const REGIONS4 = [
   {
     id: 'isle-elephants', nom: 'Île des Éléphants', maison: 'Île Commerciale',
     siege: 'Aucune ville connue', seigneur: 'Marchands',
-    maskFile: 'ile des elephant.png', accent: '#409060',
+    maskFile: 'ile des elephant.webp', accent: '#409060',
     houseColor: 'rgba(64,144,96,0.42)',
     description: "Grande île réputée pour ses troupeaux d'éléphants sauvages. Les marchands d'ivoire y font escale, faisant de l'île un point commercial discret.",
     faits: ["Éléphants sauvages en grand nombre", "Commerce d'ivoire lucratif", "Escale sur la route de la Mer des Épices"],
@@ -483,7 +483,7 @@ export const REGIONS4 = [
   {
     id: 'isle-cedars', nom: 'Île des Cèdres', maison: 'Île Forestière',
     siege: 'Aucune', seigneur: 'Aucun',
-    maskFile: 'ile de cedars.png', accent: '#508060',
+    maskFile: 'ile de cedars.webp', accent: '#508060',
     houseColor: 'rgba(80,128,96,0.4)',
     description: "Île boisée de cèdres géants au large de la péninsule valyrien. Son bois est apprécié pour la construction navale.",
     faits: ["Cèdres centenaires de grande qualité", "Chantier naval artisanal", "Préservée de la Doom par sa distance"],
@@ -492,7 +492,7 @@ export const REGIONS4 = [
   {
     id: 'kingdom-omber', nom: 'Royaume d\'Omber', maison: 'Omberis',
     siege: 'Omboru', seigneur: 'Roi d\'Omber',
-    maskFile: 'Kingdom of Omber.png', accent: '#806040',
+    maskFile: 'Kingdom of Omber.webp', accent: '#806040',
     houseColor: 'rgba(128,96,64,0.42)',
     description: "Royaume insulaire au large des Îles Estivales. Peu connu en Occident, il maintient des relations commerciales discrètes avec les marchands de passage.",
     faits: ["Royaume insulaire indépendant", "Culture distincte des Îles Estivales", "Commerce maritime limité"],
@@ -501,7 +501,7 @@ export const REGIONS4 = [
   {
     id: 'qai', nom: 'Qal / Îles Jade', maison: 'Marchands de l\'Est',
     siege: 'Qal', seigneur: 'Conseil des Marchands',
-    maskFile: 'Qai.png', accent: '#80a0c0',
+    maskFile: 'Qai.webp', accent: '#80a0c0',
     houseColor: 'rgba(128,160,192,0.42)',
     description: "Île et archipel entre la Mer de Jade et la route de Qarth. Carrefour commercial entre l'est et l'ouest, ses marchands font des profits considérables.",
     faits: ["Carrefour entre la Mer de Jade et Qarth", "Commerce de jade et épices rares", "Neutralité commerciale entre tous les empires"],
@@ -510,7 +510,7 @@ export const REGIONS4 = [
   {
     id: 'raysabhad', nom: 'Raysabhad', maison: 'Cité de l\'Est',
     siege: 'Raysabhad', seigneur: 'Magisters',
-    maskFile: 'Raysabhad.png', accent: '#9080a0',
+    maskFile: 'Raysabhad.webp', accent: '#9080a0',
     houseColor: 'rgba(144,128,160,0.4)',
     description: "Cité commerciale à l'est de la Mer des Épices. Étape cruciale sur la route reliant Qarth aux Mille Îles.",
     faits: ["Étape commerciale majeure", "Langue et culture hybride est-ouest", "Marché d'épices et de soieries"],
@@ -519,7 +519,7 @@ export const REGIONS4 = [
   {
     id: 'maihai', nom: 'Marahai', maison: 'Île Lointaine',
     siege: 'Marahai', seigneur: 'Chef Tribal',
-    maskFile: 'maihai.png', accent: '#a08080',
+    maskFile: 'maihai.webp', accent: '#a08080',
     houseColor: 'rgba(160,128,128,0.4)',
     description: "Grande île au large des côtes orientales. Ses habitants talentueux en navigation maintiennent des échanges avec les marchands de Yi Ti.",
     faits: ["Marins habiles sur des pirogues à balancier", "Commerce avec Yi Ti", "Rituels ancestraux inconnus de l'ouest"],
@@ -528,7 +528,7 @@ export const REGIONS4 = [
   {
     id: 'astaport', nom: 'Astaport', maison: 'Port Oriental',
     siege: 'Astaport', seigneur: 'Magisters Portuaires',
-    maskFile: 'astaport.png', accent: '#80a060',
+    maskFile: 'astaport.webp', accent: '#80a060',
     houseColor: 'rgba(128,160,96,0.42)',
     description: "Port animé sur la côte orientale d'Essos. Escale incontournable pour les navires faisant le tour de la péninsule valyrien.",
     faits: ["Port en eau profonde", "Commerce de transit", "Forteresse côtière ancienne"],
@@ -537,7 +537,7 @@ export const REGIONS4 = [
   {
     id: 'black-cliffs', nom: 'Les Falaises Noires', maison: 'Côtes Escarpées',
     siege: 'Aucune', seigneur: 'Aucun',
-    maskFile: 'Black Cliff.png', accent: '#604050',
+    maskFile: 'Black Cliff.webp', accent: '#604050',
     houseColor: 'rgba(96,64,80,0.42)',
     description: "Côtes de falaises noires et escarpées entre la péninsule valyrien et l'est d'Essos. Infranchissables par voie terrestre, elles constituent un obstacle naturel majeur.",
     faits: ["Falaises infranchissables par voie terrestre", "Passage maritime dangereux", "Tolos, Mantarys et Elyria s'y trouvent en retrait"],
@@ -546,7 +546,7 @@ export const REGIONS4 = [
   {
     id: 'cities-bloodless-man', nom: 'Cités des Hommes sans Sang', maison: 'Mystère',
     siege: 'Inconnue', seigneur: 'Inconnu',
-    maskFile: 'cities of the bloodless man.png', accent: '#708080',
+    maskFile: 'cities of the bloodless man.webp', accent: '#708080',
     houseColor: 'rgba(112,128,128,0.42)',
     description: "Cités légendaires des hommes sans sang, à l'extrême est. Certains explorateurs de Yi Ti mentionnent des villes où les habitants semblent ne plus saigner.",
     faits: ["Existence disputée", "Habitants prétendument incapables de saigner", "Localisation incertaine à l'extrême est"],
@@ -555,7 +555,7 @@ export const REGIONS4 = [
   {
     id: 'iles-pierre-marche', nom: 'Îles du Marché aux Pierres', maison: 'Commerce Insulaire',
     siege: 'Aucune capitale', seigneur: 'Marchands',
-    maskFile: 'Iles des Pierre marché.png', accent: '#806070',
+    maskFile: 'Iles des Pierre marché.webp', accent: '#806070',
     houseColor: 'rgba(128,96,112,0.4)',
     description: "Petit archipel connu pour son marché de pierres précieuses et de minéraux rares. Les joailliers du monde entier y envoient leurs agents.",
     faits: ["Marché de pierres précieuses et minéraux", "Joailliers de renom établis sur place", "Commerce sans taxe entre marchands"],

@@ -16,47 +16,7 @@ const toPercent = (x, y) => ({
   top:  `${(y / MAP_H) * 100}%`,
 })
 
-// ─── Hook pixel-testing à basse résolution ───────────────────────────────────
-function useRegionPixelData() {
-  const pixelData = useRef({})
 
-  useEffect(() => {
-    REGIONS.forEach(region => {
-      const img = new window.Image()
-      img.src = `${MASK_DIR}/${encodeURIComponent(region.maskFile)}?v=pixel3`
-      img.onload = () => {
-        const canvas = document.createElement('canvas')
-        canvas.width  = PT_W
-        canvas.height = PT_H
-        const ctx = canvas.getContext('2d')
-        ctx.drawImage(img, 0, 0, PT_W, PT_H)
-        try { pixelData.current[region.id] = ctx.getImageData(0, 0, PT_W, PT_H).data } catch(_) {}
-      }
-    })
-  }, [])
-
-  const findRegion = (clientX, clientY, containerEl) => {
-    if (!containerEl) return null
-    const rect = containerEl.getBoundingClientRect()
-    const px = Math.round((clientX - rect.left) / rect.width  * PT_W)
-    const py = Math.round((clientY - rect.top)  / rect.height * PT_H)
-    if (px < 0 || px >= PT_W || py < 0 || py >= PT_H) return null
-
-    for (const region of REGIONS) {
-      const data = pixelData.current[region.id]
-      if (!data) continue
-      const idx  = (py * PT_W + px) * 4
-      const a    = data[idx + 3]
-      if (a < 40) continue
-      const brightness = (data[idx] + data[idx+1] + data[idx+2]) / 3
-      if (brightness > 140) continue
-      return region
-    }
-    return null
-  }
-
-  return findRegion
-}
 
 // ─── Panneaux ────────────────────────────────────────────────────────────────
 const PanneauDefault = () => (
@@ -211,7 +171,8 @@ const WorldMap3 = ({ onNavigate, instant }) => {
   // RAF throttle pour le mousemove
   const rafRef          = useRef(null)
 
-  const findRegion = useRegionPixelData()
+  const { findRegion, loadedCount, totalCount } = useRegionPixelData(REGIONS, MASK_DIR, MAP_W, MAP_H)
+  const masksReady = loadedCount === totalCount && totalCount > 0
   const getRegion  = (lieu) => REGIONS.find(r => r.id === lieu.regionId)
 
   // Aucune région active → tout visible ; sinon → seulement les régions actives

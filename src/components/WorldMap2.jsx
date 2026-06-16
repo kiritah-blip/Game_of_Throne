@@ -11,53 +11,7 @@ const toPercent = (x, y) => ({
   top:  `${(y / MAP_H) * 100}%`,
 })
 
-// ─── Hook : charge les PNG masques pour le pixel-testing ─────────────────────
-function useRegionPixelData() {
-  const pixelData = useRef({})
-  const ready     = useRef(false)
 
-  useEffect(() => {
-    let loaded = 0
-    const total = REGIONS.length
-
-    REGIONS.forEach(region => {
-      const img = new window.Image()
-      img.src = `${MASK_DIR}/${encodeURIComponent(region.maskFile)}?v=pixel2`
-      img.onload = () => {
-        const canvas = document.createElement('canvas')
-        canvas.width = MAP_W; canvas.height = MAP_H
-        const ctx = canvas.getContext('2d')
-        ctx.drawImage(img, 0, 0, MAP_W, MAP_H)
-        try { pixelData.current[region.id] = ctx.getImageData(0, 0, MAP_W, MAP_H).data } catch(_) {}
-        loaded++
-        if (loaded === total) ready.current = true
-      }
-      img.onerror = () => { loaded++; if (loaded === total) ready.current = true }
-    })
-  }, [])
-
-  const findRegion = (clientX, clientY, containerEl) => {
-    if (!containerEl) return null
-    const rect = containerEl.getBoundingClientRect()
-    const px = Math.round((clientX - rect.left) / rect.width  * MAP_W)
-    const py = Math.round((clientY - rect.top)  / rect.height * MAP_H)
-    if (px < 0 || px >= MAP_W || py < 0 || py >= MAP_H) return null
-
-    for (const region of REGIONS) {
-      const data = pixelData.current[region.id]
-      if (!data) continue
-      const idx = (py * MAP_W + px) * 4
-      const r = data[idx], g = data[idx+1], b = data[idx+2], a = data[idx+3]
-      if (a < 40) continue
-      const brightness = (r + g + b) / 3
-      if (brightness > 140) continue
-      return region
-    }
-    return null
-  }
-
-  return findRegion
-}
 
 // ─── Panneaux ────────────────────────────────────────────────────────────────
 const PanneauDefault = () => (
@@ -161,7 +115,8 @@ const WorldMap2 = ({ onNavigate, instant }) => {
   const titleRef        = useRef(null)
   const mapContainerRef = useRef(null)
 
-  const findRegion = useRegionPixelData()
+  const { findRegion, loadedCount, totalCount } = useRegionPixelData(REGIONS, MASK_DIR, MAP_W, MAP_H)
+  const masksReady = loadedCount === totalCount && totalCount > 0
 
   const getRegion = (lieu) => REGIONS.find(r => r.id === lieu.regionId)
 

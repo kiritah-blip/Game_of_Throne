@@ -14,22 +14,41 @@ const toPercent = (x, y) => ({
   top:  `${(y / MAP_H) * 100}%`,
 })
 
+// Pixel-testing à résolution réduite (PT_SCALE) pour économiser la mémoire
 function useRegionPixelData() {
   const pixelData = useRef({})
+  const [loadedCount, setLoadedCount] = useState(0)
+  const total = REGIONS.length
 
   useEffect(() => {
-    REGIONS.forEach(region => {
+    let count = 0; let cancelled = false
+    const idle = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 16))
+
+    const loadOne = (region) => new Promise(resolve => {
       const img = new window.Image()
       img.src = `${MASK_DIR}/${encodeURIComponent(region.maskFile)}?v=pixel4`
       img.onload = () => {
+        if (cancelled) return resolve()
         const canvas = document.createElement('canvas')
-        canvas.width  = PT_W
-        canvas.height = PT_H
+        canvas.width = PT_W; canvas.height = PT_H
         const ctx = canvas.getContext('2d')
         ctx.drawImage(img, 0, 0, PT_W, PT_H)
         try { pixelData.current[region.id] = ctx.getImageData(0, 0, PT_W, PT_H).data } catch(_) {}
+        count++; setLoadedCount(count); resolve()
       }
+      img.onerror = () => { count++; resolve() }
     })
+
+    const loadAll = async () => {
+      const BATCH = 4
+      for (let i = 0; i < REGIONS.length; i += BATCH) {
+        if (cancelled) break
+        await new Promise(res => idle(res, { timeout: 600 }))
+        await Promise.all(REGIONS.slice(i, i + BATCH).map(loadOne))
+      }
+    }
+    loadAll()
+    return () => { cancelled = true }
   }, [])
 
   const findRegion = (clientX, clientY, containerEl) => {
@@ -38,21 +57,18 @@ function useRegionPixelData() {
     const px = Math.round((clientX - rect.left) / rect.width  * PT_W)
     const py = Math.round((clientY - rect.top)  / rect.height * PT_H)
     if (px < 0 || px >= PT_W || py < 0 || py >= PT_H) return null
-
     for (const region of REGIONS) {
       const data = pixelData.current[region.id]
       if (!data) continue
       const idx  = (py * PT_W + px) * 4
-      const a    = data[idx + 3]
-      if (a < 40) continue
-      const brightness = (data[idx] + data[idx+1] + data[idx+2]) / 3
-      if (brightness > 140) continue
+      if (data[idx + 3] < 40) continue
+      if ((data[idx] + data[idx+1] + data[idx+2]) / 3 > 140) continue
       return region
     }
     return null
   }
 
-  return findRegion
+  return { findRegion, loadedCount, totalCount: total }
 }
 
 // ─── Panneaux ──────────────────────────────────────────────────────────────────
@@ -556,7 +572,8 @@ const WorldMap4 = ({ onNavigate, instant }) => {
   const mapContainerRef = useRef(null)
   const rafRef          = useRef(null)
 
-  const findRegion = useRegionPixelData()
+  const { findRegion, loadedCount, totalCount } = useRegionPixelData()
+  const masksReady = loadedCount === totalCount && totalCount > 0
   const getRegion  = (lieu) => REGIONS.find(r => r.id === lieu.regionId)
 
   const isLieuVisible = (lieu) =>

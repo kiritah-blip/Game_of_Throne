@@ -16,7 +16,7 @@ export const REGIONS3 = [
   {
     id: 'au-dela', nom: 'Au-delà du Mur', maison: 'Territoire Sauvage',
     siege: 'Le Poing des Premiers Hommes', seigneur: 'Le Roi-de-la-Nuit',
-    maskFile: 'Au-dela-du-murs.png', accent: '#a8c8d8',
+    maskFile: 'Au-dela-du-murs.webp', accent: '#a8c8d8',
     houseColor: 'rgba(168,200,216,0.45)', border: 'rgba(168,200,216,0.4)',
     description: "Terres indomptées et glaciales au nord du Mur. Domaine des Sauvageons, des géants et des Marcheurs Blancs. Aucune loi, aucun roi ne règne ici — seulement le froid et les morts.",
     faits: ["Territoire des Sauvageons — les 'Hommes Libres'", "Derniers Géants de Westeros", "Origine des Marcheurs Blancs"],
@@ -25,7 +25,7 @@ export const REGIONS3 = [
   {
     id: 'nord', nom: 'Le Nord', maison: 'Maison Stark',
     siege: 'Winterfell', seigneur: 'Eddard Stark',
-    maskFile: 'Nord.png', accent: '#8fafc4',
+    maskFile: 'Nord.webp', accent: '#8fafc4',
     houseColor: 'rgba(143,175,196,0.45)', border: 'rgba(143,175,196,0.4)',
     description: "La plus vaste région de Westeros, territoire glacial gouverné par les Stark depuis des millénaires. Le Nord est séparé du reste du continent par le Mur colossal.",
     faits: ["Plus grande région de Westeros", "Gouvernée par les Stark depuis l'Ère des Héros", "Le Mur de 300 pieds à sa frontière nord"],
@@ -34,7 +34,7 @@ export const REGIONS3 = [
   {
     id: 'iles-de-fer', nom: 'Les Îles de Fer', maison: 'Maison Greyjoy',
     siege: 'Pyk', seigneur: 'Balon Greyjoy',
-    maskFile: 'ile de Fer.png', accent: '#b8a040',
+    maskFile: 'ile de Fer.webp', accent: '#b8a040',
     houseColor: 'rgba(184,160,64,0.45)', border: 'rgba(184,160,64,0.4)',
     description: "Archipel rocheux battu par les vents. Les Hommes de Fer vénèrent le Dieu Noyé et leurs navires sont les plus redoutés de toutes les côtes de Westeros.",
     faits: ["Meilleurs marins et pillards de Westeros", "Culte du Dieu Noyé", "Pyk : forteresse sur des rochers déchiquetés"],
@@ -43,7 +43,7 @@ export const REGIONS3 = [
   {
     id: 'conflans', nom: 'Les Terres des Rivières', maison: 'Maison Tully',
     siege: 'Vivesaigues', seigneur: 'Hoster Tully',
-    maskFile: 'Conflants.png', accent: '#4a90c8',
+    maskFile: 'Conflants.webp', accent: '#4a90c8',
     houseColor: 'rgba(74,144,200,0.42)', border: 'rgba(74,144,200,0.4)',
     description: "Cœur géographique de Westeros, traversé par d'innombrables fleuves. Premier champ de bataille lors de chaque guerre.",
     faits: ["Plaque tournante des routes commerciales", "Premier théâtre de la Guerre des Cinq Rois", "Vivesaigues : à la confluence de deux rivières"],
@@ -70,7 +70,7 @@ export const REGIONS3 = [
   {
     id: 'terres-couronne', nom: 'Les Terres de la Couronne', maison: 'Famille Royale',
     siege: 'Port-Réal', seigneur: 'Le Roi des Sept Royaumes',
-    maskFile: 'Terre de la couronne.png', accent: '#c9a84c',
+    maskFile: 'Terre de la couronne.webp', accent: '#c9a84c',
     houseColor: 'rgba(201,168,76,0.42)', border: 'rgba(201,168,76,0.4)',
     description: "Cœur politique de Westeros. Port-Réal abrite le Trône de Fer forgé par Aegon le Conquérant.",
     faits: ["Port-Réal : près d'un million d'habitants", "Siège du Trône de Fer", "Le Donjon Rouge : palais et forteresse royale"],
@@ -79,7 +79,7 @@ export const REGIONS3 = [
   {
     id: 'bief', nom: 'Le Bief', maison: 'Maison Tyrell',
     siege: 'Hautjardin', seigneur: 'Mace Tyrell',
-    maskFile: 'Bief.png', accent: '#5a9e48',
+    maskFile: 'Bief.webp', accent: '#5a9e48',
     houseColor: 'rgba(90,158,72,0.42)', border: 'rgba(90,158,72,0.4)',
     description: "Grenier de Westeros. Derrière la façade fleurie des Tyrell se cachent des ambitions aussi tranchantes que les épines de leur rose.",
     faits: ["Plus grande production agricole de Westeros", "Hautjardin : jardins légendaires", "Chevalerie la plus développée des Sept Royaumes"],
@@ -97,7 +97,7 @@ export const REGIONS3 = [
   {
     id: 'dorne', nom: 'Dorne', maison: 'Maison Martell',
     siege: 'Lancesoleil', seigneur: 'Doran Martell',
-    maskFile: 'Dorne.png', accent: '#e8a020',
+    maskFile: 'Dorne.webp', accent: '#e8a020',
     houseColor: 'rgba(232,160,32,0.45)', border: 'rgba(232,160,32,0.4)',
     description: "La seule région à avoir résisté à la Conquête d'Aegon. Dorne est une terre de sable brûlant, de secrets jalousement gardés et de vengeance impitoyable.",
     faits: ["Seule région non conquise par Aegon le Conquérant", "Succession agnatique : hommes et femmes héritent également", "Rancœur séculaire contre les Lannister"],
@@ -106,7 +106,7 @@ export const REGIONS3 = [
   {
     id: 'marches-pierre', nom: 'Les Marches de Pierre', maison: 'Îles disputées',
     siege: 'Pierresang', seigneur: 'Contesté',
-    maskFile: 'Degree de Pierre.png', accent: '#708090',
+    maskFile: 'Degree de Pierre.webp', accent: '#708090',
     houseColor: 'rgba(112,128,144,0.4)', border: 'rgba(112,128,144,0.4)',
     description: "Chaîne d'îles rocheuses entre Dorne et les Cités Libres. Zone stratégique âprement disputée depuis des siècles.",
     faits: ["Point de passage obligé entre Westeros et Essos", "Pierresang : principale forteresse des Marches", "Daemon Targaryen y fut couronné Prince des Marches"],
@@ -117,7 +117,7 @@ export const REGIONS3 = [
   {
     id: 'braavos', nom: 'Braavos', maison: 'La Sérénissime',
     siege: 'La Citadelle', seigneur: 'Seigneur de la Mer',
-    maskFile: 'Braavos.png', accent: '#4a7ab8',
+    maskFile: 'Braavos.webp', accent: '#4a7ab8',
     houseColor: 'rgba(74,122,184,0.42)', border: 'rgba(74,122,184,0.4)',
     description: "La plus puissante des Cités Libres, fondée par des esclaves fugitifs de Valyria. Siège de la Banque de Fer et de la Maison du Noir et du Blanc.",
     faits: ["Fondée par des esclaves fugitifs de Valyria", "La Banque de Fer recouvre toujours ses dettes", "Le Titan de Braavos garde l'entrée de la lagune"],
@@ -126,7 +126,7 @@ export const REGIONS3 = [
   {
     id: 'lorath', nom: 'Lorath', maison: 'Princes Maazei',
     siege: 'Lorath', seigneur: 'Trois Princes',
-    maskFile: 'Lorath.png', accent: '#6090a8',
+    maskFile: 'Lorath.webp', accent: '#6090a8',
     houseColor: 'rgba(96,144,168,0.4)', border: 'rgba(96,144,168,0.4)',
     description: "La plus petite et isolée des Cités Libres, gouvernée par trois princes maazei. Jaqen H'ghar prétend en être originaire.",
     faits: ["La plus isolée des Cités Libres", "Trois princes maazei gouvernent conjointement", "Passé lié aux Hommes sans Visage"],
@@ -135,7 +135,7 @@ export const REGIONS3 = [
   {
     id: 'pentos', nom: 'Pentos', maison: 'Magisters',
     siege: 'Pentos', seigneur: 'Prince de Pentos',
-    maskFile: 'Pentos.png', accent: '#8060a0',
+    maskFile: 'Pentos.webp', accent: '#8060a0',
     houseColor: 'rgba(128,96,160,0.4)', border: 'rgba(128,96,160,0.4)',
     description: "Cité-état à l'entrée de la Mer Intérieure. C'est ici que Daenerys et Viserys grandirent en exil sous la protection d'Illyrio Mopatis.",
     faits: ["Refuge de la famille Targaryen en exil", "Illyrio Mopatis — magister aux connexions obscures", "Point de départ du voyage de Daenerys"],
@@ -144,7 +144,7 @@ export const REGIONS3 = [
   {
     id: 'norvos', nom: 'Norvos', maison: 'Confrérie Sacrée',
     siege: 'Norvos', seigneur: 'Grand Prêtre',
-    maskFile: 'Norvos.png', accent: '#a87850',
+    maskFile: 'Norvos.webp', accent: '#a87850',
     houseColor: 'rgba(168,120,80,0.4)', border: 'rgba(168,120,80,0.4)',
     description: "Cité double — haute ville des prêtres et basse ville des artisans — gouvernée par une confrérie religieuse secrète.",
     faits: ["Haute ville religieuse / basse ville commerciale", "Guerriers barbus réputés pour leur férocité", "Cité sur la Petite Rhoyne"],
@@ -153,7 +153,7 @@ export const REGIONS3 = [
   {
     id: 'myr', nom: 'Myr', maison: 'Magisters de Myr',
     siege: 'Myr', seigneur: 'Conseil des Magisters',
-    maskFile: 'Myr.png', accent: '#c05070',
+    maskFile: 'Myr.webp', accent: '#c05070',
     houseColor: 'rgba(192,80,112,0.42)', border: 'rgba(192,80,112,0.4)',
     description: "Cité-état réputée pour ses lentilles de verre, sa dentelle et ses mercenaires. Rivale acharnée de Tyrosh et Lys.",
     faits: ["Artisans du verre parmi les meilleurs du monde connu", "Compagnies de mercenaires myrriens redoutées", "En conflit permanent avec Tyrosh et Lys"],
@@ -162,7 +162,7 @@ export const REGIONS3 = [
   {
     id: 'tyrosh', nom: 'Tyrosh', maison: 'Archimagistrat',
     siege: 'Tyrosh', seigneur: 'Archimagistrat',
-    maskFile: 'Tyrosh.png', accent: '#d04030',
+    maskFile: 'Tyrosh.webp', accent: '#d04030',
     houseColor: 'rgba(208,64,48,0.42)', border: 'rgba(208,64,48,0.4)',
     description: "Cité-état connue pour ses teintures de cheveux multicolores. En rivalité permanente avec Myr et Lys.",
     faits: ["Teintures de coquillages prisées sur les deux continents", "Position insulaire stratégique dans les Marches de Pierre", "Alliances et trahisons cycliques avec Myr et Lys"],
@@ -171,7 +171,7 @@ export const REGIONS3 = [
   {
     id: 'lys', nom: 'Lys', maison: 'Magisters de Lys',
     siege: 'Lys', seigneur: 'Conseil des Magisters',
-    maskFile: 'Lys.png', accent: '#e87080',
+    maskFile: 'Lys.webp', accent: '#e87080',
     houseColor: 'rgba(232,112,128,0.4)', border: 'rgba(232,112,128,0.4)',
     description: "Cité-état insulaire célèbre pour ses poisons raffinés, ses maisons de plaisirs et ses esclaves de beauté à sang valyrien pur.",
     faits: ["Sang valyrien le plus pur des Cités Libres", "Poisons de Lys réputés indétectables", "Dialecte le plus proche du haut valyrien"],
@@ -180,7 +180,7 @@ export const REGIONS3 = [
   {
     id: 'qohor', nom: 'Qohor', maison: 'Conseil Noir',
     siege: 'Qohor', seigneur: 'Le Conseil Noir',
-    maskFile: 'Qohor.png', accent: '#607038',
+    maskFile: 'Qohor.webp', accent: '#607038',
     houseColor: 'rgba(96,112,56,0.42)', border: 'rgba(96,112,56,0.4)',
     description: "Cité-état dans les forêts orientales. Qohor possède le secret de la refonte de l'acier valyrien. Ses Unsullied repoussèrent seuls vingt mille cavaliers Dothraki.",
     faits: ["Secret de la refonte de l'acier valyrien", "Les Unsullied repoussèrent 20 000 Dothraki — 3 000 contre 20 000", "Culte du Dieu Sombre pratiqué ouvertement"],
@@ -189,7 +189,7 @@ export const REGIONS3 = [
   {
     id: 'volantis', nom: 'Volantis', maison: 'Anciens Sang',
     siege: 'Volantis', seigneur: 'Trois Triarchs',
-    maskFile: 'Volantis.png', accent: '#a05030',
+    maskFile: 'Volantis.webp', accent: '#a05030',
     houseColor: 'rgba(160,80,48,0.45)', border: 'rgba(160,80,48,0.4)',
     description: "La plus ancienne des Cités Libres, héritière de Valyria. La cité la plus peuplée d'Essos. Trois esclaves pour chaque homme libre.",
     faits: ["Plus grande cité d'Essos", "Trois triarchs élus — deux éléphanteaux, un tigreau", "Long Bridge : plus long pont du monde connu"],
@@ -200,7 +200,7 @@ export const REGIONS3 = [
   {
     id: 'dothraki', nom: 'Mer Dothrak', maison: 'Khalasars Dothraki',
     siege: 'Vaes Dothrak', seigneur: 'Les Khals',
-    maskFile: 'Dothraki khalasars.png', accent: '#c8a060',
+    maskFile: 'Dothraki khalasars.webp', accent: '#c8a060',
     houseColor: 'rgba(200,160,96,0.38)', border: 'rgba(200,160,96,0.4)',
     description: "Immense mer d'herbe à travers le centre d'Essos. Les Dothraki nomades — les plus redoutables cavaliers du monde connu — y font paître leurs hordes.",
     faits: ["Vaes Dothrak : seule ville Dothraki, ville sainte sans fers", "Les Khalasars comptent parfois des dizaines de milliers de guerriers", "Jamais vaincus sur leurs terres"],
@@ -209,7 +209,7 @@ export const REGIONS3 = [
   {
     id: 'valyria', nom: 'Péninsule de Valyria', maison: 'Ruines Maudites',
     siege: 'Ancienne Valyria', seigneur: 'Aucun — terres dévastées',
-    maskFile: 'Ancienne Valerya.png', accent: '#8050a0',
+    maskFile: 'Ancienne Valerya.webp', accent: '#8050a0',
     houseColor: 'rgba(128,80,160,0.4)', border: 'rgba(128,80,160,0.4)',
     description: "Ruines de l'Empire Valyrien, détruit lors de la Calamité il y a quatre siècles. La péninsule est empoisonnée, infestée de stone men et de dragons sauvages.",
     faits: ["L'Empire Valyrien domina le monde pendant cinq siècles", "La Calamité : cataclysme de feu en 114 avant l'Ère", "Seuls les Targaryen survécurent grâce à une prophétie"],
@@ -218,7 +218,7 @@ export const REGIONS3 = [
   {
     id: 'baie-esclaves', nom: 'Baie des Serfs', maison: 'Anciens Maîtres',
     siege: 'Astapor', seigneur: 'Conseil des Maîtres',
-    maskFile: 'Astaport.png', accent: '#c0904a',
+    maskFile: 'Astaport.webp', accent: '#c0904a',
     houseColor: 'rgba(192,144,74,0.42)', border: 'rgba(192,144,74,0.4)',
     description: "Côte dominée par trois grandes cités esclavagistes. Astapor — la Ville Rouge — est le berceau des Immaculés. Daenerys y brisa les chaînes.",
     faits: ["Astapor : berceau des Immaculés", "Esclavage institutionnalisé depuis des siècles", "Daenerys libéra les esclaves des trois cités"],
@@ -227,7 +227,7 @@ export const REGIONS3 = [
   {
     id: 'yunkai', nom: 'Côte de Yunkaï', maison: 'Sages Maîtres',
     siege: 'Yunkaï', seigneur: 'Les Sages Maîtres',
-    maskFile: 'Yunkai.png', accent: '#d0a850',
+    maskFile: 'Yunkai.webp', accent: '#d0a850',
     houseColor: 'rgba(208,168,80,0.42)', border: 'rgba(208,168,80,0.4)',
     description: "Cité de plaisirs et de complots entre Astapor et Meereen. Meereen devint le trône de Daenerys.",
     faits: ["Yunkaï : la 'Ville Jaune' aux bâtiments de brique dorée", "Meereen : plus grande cité de la Baie des Serfs", "Les Sages Maîtres pratiquent la diplomatie par le poison"],
@@ -236,7 +236,7 @@ export const REGIONS3 = [
   {
     id: 'ghiscar', nom: 'Ghiscar', maison: 'Empire de Ghis',
     siege: 'New Ghis', seigneur: 'Légions de New Ghis',
-    maskFile: 'Ghaen.png', accent: '#a07850',
+    maskFile: 'Ghaen.webp', accent: '#a07850',
     houseColor: 'rgba(160,120,80,0.4)', border: 'rgba(160,120,80,0.4)',
     description: "Territoire de l'ancien Empire de Ghis, détruit cinq fois par les dragons de Valyria. New Ghis maintient les traditions esclavagistes.",
     faits: ["Ghis : cinq fois rebâtie, cinq fois détruite par Valyria", "Les légions ghiscaris imitent la discipline impériale ancienne", "New Ghis : héritière commerciale et militaire"],
@@ -245,7 +245,7 @@ export const REGIONS3 = [
   {
     id: 'ib', nom: "Îles d'Ibben", maison: 'Ibbenois',
     siege: "Port d'Ibben", seigneur: 'Ghal — le Roi Fantôme',
-    maskFile: 'Ib.png', accent: '#708898',
+    maskFile: 'Ib.webp', accent: '#708898',
     houseColor: 'rgba(112,136,152,0.42)', border: 'rgba(112,136,152,0.4)',
     description: "Archipel isolé dans la mer de Jade, peuplé d'Ibbenois — peuple hirsute à la peau grisâtre. Grands chasseurs de baleines.",
     faits: ["Peuple génétiquement distinct du reste du monde connu", "Baleiniers ibbenois présents dans toutes les mers", "Port d'Ibben : principale cité commerciale"],
@@ -254,7 +254,7 @@ export const REGIONS3 = [
   {
     id: 'quarkash', nom: 'Qarth', maison: 'Les Quatorzièmes Familles',
     siege: 'Qarth', seigneur: 'Xaro Xhoan Daxos',
-    maskFile: 'Quarkash.png', accent: '#7850a8',
+    maskFile: 'Quarkash.webp', accent: '#7850a8',
     houseColor: 'rgba(120,80,168,0.42)', border: 'rgba(120,80,168,0.4)',
     description: "La 'plus grande cité du monde'. Contrôle le détroit — passage obligé entre la Mer des Épices et la Mer de Jade.",
     faits: ["Contrôle du détroit de Qarth — clé du commerce mondial", "Les Trece — treize marchands gouvernant la cité", "Pyyks : gardiens mystiques des trois portes"],
@@ -263,7 +263,7 @@ export const REGIONS3 = [
   {
     id: 'black-cliffs', nom: 'Falaises Noires', maison: 'Peuples des Falaises',
     siege: 'Inconnu', seigneur: 'Inconnu',
-    maskFile: 'Black Cliffs.png', accent: '#506070',
+    maskFile: 'Black Cliffs.webp', accent: '#506070',
     houseColor: 'rgba(80,96,112,0.4)', border: 'rgba(80,96,112,0.4)',
     description: "Terres inhospitalières bordées de falaises noires au nord-est d'Essos. Région peu cartographiée, peuplée de tribus mystérieuses.",
     faits: ["Côtes inaccessibles aux navires standards", "Tribus locales peu connues des cartographes", "Zone tampon entre Ibben et les terres intérieures"],
@@ -272,7 +272,7 @@ export const REGIONS3 = [
   {
     id: 'great-moraq', nom: 'Grande Moraq', maison: 'Marchands de Moraq',
     siege: 'Inconnue', seigneur: 'Inconnu',
-    maskFile: 'Great Moraq.png', accent: '#5080a0',
+    maskFile: 'Great Moraq.webp', accent: '#5080a0',
     houseColor: 'rgba(80,128,160,0.4)', border: 'rgba(80,128,160,0.4)',
     description: "Grande île au sud-est d'Essos, sur la route commerciale entre Qarth et les terres encore plus lointaines.",
     faits: ["Île stratégique sur les routes commerciales orientales", "Point de transit entre Qarth et les terres inconnues", "Terres intérieures encore inexplorées"],
@@ -281,7 +281,7 @@ export const REGIONS3 = [
   {
     id: 'khyzai', nom: 'Passe de Khyzaï', maison: 'Seigneurs du Passe',
     siege: 'Inconnu', seigneur: 'Inconnu',
-    maskFile: 'Khyzai Pass.png', accent: '#905068',
+    maskFile: 'Khyzai Pass.webp', accent: '#905068',
     houseColor: 'rgba(144,80,104,0.4)', border: 'rgba(144,80,104,0.4)',
     description: "Passage montagneux stratégique à l'est d'Essos. Route commerciale ancienne empruntée par les caravanes depuis des siècles.",
     faits: ["Passage obligé pour les caravanes commerciales orientales", "Zone de conflits entre tribus nomades", "Montagnes quasi-infranchissables hors du passe"],
@@ -290,7 +290,7 @@ export const REGIONS3 = [
   {
     id: 'kingdom-omber', nom: "Royaume d'Omber", maison: "Rois d'Omber",
     siege: 'Omber', seigneur: "Roi d'Omber",
-    maskFile: 'Kingdom of Omber.png', accent: '#788060',
+    maskFile: 'Kingdom of Omber.webp', accent: '#788060',
     houseColor: 'rgba(120,128,96,0.4)', border: 'rgba(120,128,96,0.4)',
     description: "Royaume lointain à l'est d'Essos, dont on sait peu de choses dans les Sept Royaumes.",
     faits: ["L'un des rares royaumes organisés de l'est d'Essos", "Peu de contact commercial avec l'Ouest", "Traditions culturelles distinctes"],
@@ -299,7 +299,7 @@ export const REGIONS3 = [
   {
     id: 'lazhai', nom: 'Lazhaï', maison: 'Peuple de Lazhaï',
     siege: 'Lazhaï', seigneur: 'Inconnu',
-    maskFile: 'Lazhai.png', accent: '#a06848',
+    maskFile: 'Lazhai.webp', accent: '#a06848',
     houseColor: 'rgba(160,104,72,0.4)', border: 'rgba(160,104,72,0.4)',
     description: "Territoire peu connu à l'est de la Mer Dothrak. Les peuples de Lazhaï entretiennent des rapports commerciaux avec Qarth.",
     faits: ["Territoire oriental peu documenté", "Commerce de denrées exotiques avec Qarth", "Culture distincte des peuples Dothraki voisins"],
@@ -308,7 +308,7 @@ export const REGIONS3 = [
   {
     id: 'the-axe', nom: 'La Hache', maison: 'Peuples de la Hache',
     siege: 'Inconnu', seigneur: 'Inconnu',
-    maskFile: 'The Axe.png', accent: '#607090',
+    maskFile: 'The Axe.webp', accent: '#607090',
     houseColor: 'rgba(96,112,144,0.4)', border: 'rgba(96,112,144,0.4)',
     description: "Péninsule en forme de hache au nord-est d'Essos, entre Lorath et les Îles d'Ibben. Repère de pirates et de pêcheurs nordiques.",
     faits: ["Péninsule caractéristique en forme de hache", "Zone de pêche nordique importante", "Passage maritime entre Lorath et Ibben"],

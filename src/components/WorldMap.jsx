@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { REGIONS, LIEUX, MAP_W, MAP_H } from '../data/mapData'
+import { useRegionPixelData } from '../hooks/useRegionPixelData'
 import './WorldMap.css'
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -12,64 +13,6 @@ const toPercent = (x, y) => ({
   left: `${(x / MAP_W) * 100}%`,
   top:  `${(y / MAP_H) * 100}%`,
 })
-
-// ─── Hook : charge les PNG en ImageData pour le pixel-testing ────────────────
-function useRegionPixelData() {
-  const pixelData = useRef({})  // { regionId: Uint8ClampedArray }
-  const ready     = useRef(false)
-
-  useEffect(() => {
-    let loaded = 0
-    const total = REGIONS.length
-
-    REGIONS.forEach(region => {
-      const img = new window.Image()
-      // suffixe ?v=pixel évite le conflit de cache CORS avec les <image> SVG
-      img.src = `${MASK_DIR}/${encodeURIComponent(region.maskFile)}?v=pixel`
-      img.onload = () => {
-        const canvas = document.createElement('canvas')
-        canvas.width = MAP_W; canvas.height = MAP_H
-        const ctx = canvas.getContext('2d')
-        ctx.drawImage(img, 0, 0, MAP_W, MAP_H)
-        try { pixelData.current[region.id] = ctx.getImageData(0, 0, MAP_W, MAP_H).data } catch(_) {}
-        loaded++
-        if (loaded === total) ready.current = true
-      }
-      img.onerror = () => { loaded++; if (loaded === total) ready.current = true }
-    })
-  }, [])
-
-  // Retourne la région cliquée à partir des coordonnées client
-  const findRegion = (clientX, clientY, containerEl) => {
-    if (!containerEl) return null
-    const rect = containerEl.getBoundingClientRect()
-    const px = Math.round((clientX - rect.left) / rect.width  * MAP_W)
-    const py = Math.round((clientY - rect.top)  / rect.height * MAP_H)
-    if (px < 0 || px >= MAP_W || py < 0 || py >= MAP_H) return null
-
-    for (const region of REGIONS) {
-      const data = pixelData.current[region.id]
-      if (!data) continue
-      const idx = (py * MAP_W + px) * 4
-      const r = data[idx], g = data[idx+1], b = data[idx+2], a = data[idx+3]
-
-      // Cas 1 — PNG avec transparence : pixel transparent = hors région
-      if (a < 40) continue
-
-      // Cas 2 — PNG avec fond blanc (export GIMP sans cacher le calque du bas) :
-      //   fond blanc  → brightness ≈ 255 → à ignorer
-      //   remplissage noir (GIMP) → brightness ≈ 0 → c'est la région
-      const brightness = (r + g + b) / 3
-      if (brightness > 140) continue  // trop clair = fond blanc ou carte sous-jacente
-
-      // Pixel sombre & opaque = remplissage de l'utilisateur = cette région
-      return region
-    }
-    return null
-  }
-
-  return findRegion
-}
 
 // ─── Panneau par défaut ───────────────────────────────────────────────────────
 const PanneauDefault = () => (
@@ -179,8 +122,9 @@ const WorldMap = ({ onNavigate, instant }) => {
   const titleRef        = useRef(null)
   const mapContainerRef = useRef(null)
 
-  // Pixel-testing : trouve la région exacte sous le curseur
-  const findRegion = useRegionPixelData()
+  // Pixel-testing : chargement lazy des masques en arrière-plan
+  const { findRegion, loadedCount, totalCount } = useRegionPixelData(REGIONS, MASK_DIR, MAP_W, MAP_H)
+  const masksReady = loadedCount === totalCount && totalCount > 0
 
   // ── Trouver la région d'un lieu ────────────────────────────────────────────
   const getRegion = (lieu) => REGIONS.find(r => r.id === lieu.regionId)

@@ -1,10 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-project</title>
+    <title>Game of Thrones — The Chronicles of Westeros</title>
+
+    <!-- Préchargement prioritaire des vidéos de transition -->
+    <link rel="preload" as="video" href="/Transition/Video%20Histoire.mp4"   type="video/mp4" fetchpriority="high">
+    <link rel="preload" as="video" href="/Transition/Video%20Dragon.mp4"     type="video/mp4">
+    <link rel="preload" as="video" href="/Transition/Video%20Maison.mp4"     type="video/mp4">
+    <link rel="preload" as="video" href="/Transition/Video%20Monde.mp4"      type="video/mp4">
+    <link rel="preload" as="video" href="/Transition/Video%20Personnage.mp4" type="video/mp4">
+    <link rel="preload" as="video" href="/video/one.mp4"                     type="video/mp4">
+
+    <!-- Polices GOT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body>
     <div id="root"></div>

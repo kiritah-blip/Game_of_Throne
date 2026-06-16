@@ -79,29 +79,42 @@ const FRAG = `
 export default function MaisonTransition({ onComplete }) {
   // Phase : 'waiting' = vidéo en pause + texte prompt
   //         'playing' = animation chroma key en cours
-  const [phase, setPhase] = useState('waiting')
+  const [phase,      setPhase]      = useState('waiting')
+  const [videoReady, setVideoReady] = useState(false)
 
   const videoRef       = useRef(null)
   const canvasRef      = useRef(null)
   const backdropRef    = useRef(null)
   const rafRef         = useRef(null)
   const doneRef        = useRef(false)
-  // Stocke le handle du setTimeout de finish() → annulé dans le cleanup
-  // pour éviter le bug "onComplete orphelin qui tue la nouvelle instance".
   const finishTimerRef = useRef(null)
+  const pageMainRef    = useRef(null)
 
-  // ── S'assure que la 1ère frame s'affiche dès le chargement ───────────────
-  // Certains navigateurs n'affichent rien sur un <video> paused tant que
-  // currentTime n'a pas été positionné explicitement.
+  // ── Cache .page-main pendant toute la durée de la transition ─────────────
+  useEffect(() => {
+    const el = document.querySelector('.page-main')
+    if (!el) return
+    pageMainRef.current = el
+    el.style.visibility = 'hidden'
+    return () => { if (pageMainRef.current) pageMainRef.current.style.visibility = '' }
+  }, [])
+
+  // ── S'assure que la 1ère frame s'affiche et détecte quand prêt ───────────
   useEffect(() => {
     if (phase !== 'waiting') return
     const video = videoRef.current
     if (!video) return
     const showFirstFrame = () => { video.currentTime = 0.001 }
-    if (video.readyState >= 1) {
-      showFirstFrame()
+    const onReady = () => setVideoReady(true)
+    if (video.readyState >= 3) {
+      showFirstFrame(); setVideoReady(true)
     } else {
-      video.addEventListener('loadedmetadata', showFirstFrame, { once: true })
+      video.addEventListener('loadedmetadata',  showFirstFrame, { once: true })
+      video.addEventListener('canplay',         onReady,        { once: true })
+    }
+    return () => {
+      video.removeEventListener('loadedmetadata', showFirstFrame)
+      video.removeEventListener('canplay',        onReady)
     }
   }, [phase])
 
@@ -315,7 +328,19 @@ export default function MaisonTransition({ onComplete }) {
         sur toute la zone SOUS la navbar (z-index 100 > overlay 99).
         Le clic sur la navbar va toujours à la navbar (z-index supérieur).
       */}
-      {phase === 'waiting' && (
+      {phase === 'waiting' && !videoReady && (
+        <div className="mst-loading-layer">
+          <div className="mst-loading-inner">
+            <div className="mst-loading-sigil">🔑</div>
+            <div className="mst-loading-bar-wrap">
+              <div className="mst-loading-bar-fill" />
+            </div>
+            <p className="mst-loading-text">Chargement…</p>
+          </div>
+        </div>
+      )}
+
+      {phase === 'waiting' && videoReady && (
         <div className="mst-waiting-layer" onClick={startAnimation}>
           <div className="mst-prompt">
             <div className="mst-prompt-ornament">✦</div>

@@ -1,5 +1,6 @@
 import { useState, useCallback }   from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import LoadingScreen from './components/LoadingScreen'
 import AccueilPage        from './pages/AccueilPage'
 import MaisonsPage        from './pages/MaisonsPage'
 import PersonnagesPage    from './pages/PersonnagesPage'
@@ -81,6 +82,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <LoadingScreen />
       <DragonTransitionContext.Provider value={{
         triggerDragon,    cancelDragon,    dragonActive,
         triggerMonde,     cancelMonde,     mondeActive,
