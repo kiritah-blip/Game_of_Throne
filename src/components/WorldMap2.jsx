@@ -5,7 +5,7 @@ import './WorldMap.css'
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const MASK_DIR = MASK_DIR2
-const MAP_IMG  = `${MASK_DIR2}/Carte%20Westeros%20+%20citee%20libre.webp`
+const MAP_IMG  = `${MASK_DIR2}/Carte%20Westeros%20%2B%20citee%20libre.webp`
 
 const toPercent = (x, y) => ({
   left: `${(x / MAP_W) * 100}%`,

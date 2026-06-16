@@ -257,7 +257,7 @@ const WorldMap = ({ onNavigate, instant }) => {
             {/* Image fond */}
             <img
               className="worldmap-img"
-              src={`${MASK_DIR}/HBO_Map_of_Westeros.jpg`}
+              src={`${MASK_DIR}/HBO_Map_of_Westeros.webp`}
               alt="Carte de Westeros"
               draggable="false"
             />

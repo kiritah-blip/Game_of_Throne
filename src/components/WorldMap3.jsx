@@ -6,7 +6,7 @@ import './WorldMap4.css'
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 const MASK_DIR   = MASK_DIR3
-const MAP_IMG    = `${MASK_DIR3}/Carte%20Westeros%20+%20Essos.webp`
+const MAP_IMG    = `${MASK_DIR3}/Carte%20Westeros%20%2B%20Essos.webp`
 // Résolution réduite pour le pixel-testing : 5× plus légère → 25× moins de données
 const PT_SCALE   = 0.2
 const PT_W       = Math.round(MAP_W * PT_SCALE)

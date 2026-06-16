@@ -2,7 +2,7 @@
 export const MAP2_W = 1200
 export const MAP2_H = 1418
 
-export const MASK_DIR2 = '/map/r%C3%A9gion%20westeros%20+%20r%C3%A9gion%20libre'
+export const MASK_DIR2 = '/map/r%C3%A9gion%20westeros%20%2B%20r%C3%A9gion%20libre'
 
 // ─── Régions ──────────────────────────────────────────────────────────────────
 export const REGIONS2 = [
