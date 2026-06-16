@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import './DragonTransition.css'
 
@@ -17,8 +17,8 @@ export default function DragonTransition({ onComplete }) {
   const location    = useLocation()
   const switchedRef = useRef(false)
   const doneRef     = useRef(false)
-  // Chemin au moment du montage — sert à détecter une navigation externe
   const mountPath   = useRef(location.pathname)
+  const [videoReady, setVideoReady] = useState(false)
 
   // ── Annulation si l'utilisateur navigue ailleurs pendant la transition ─────
   // Cas 1 : avant notre navigate('/dragons') → toute sortie de la page d'origine
@@ -64,15 +64,26 @@ export default function DragonTransition({ onComplete }) {
       }
     }
 
+    // Attend que la vidéo soit prête avant de jouer
+    const onCanPlay = () => {
+      setVideoReady(true)
+      video.play().catch(() => {})
+    }
+    if (video.readyState >= 3) {
+      onCanPlay()
+    } else {
+      video.addEventListener('canplay', onCanPlay, { once: true })
+    }
+
     video.addEventListener('timeupdate', handleTimeUpdate)
     video.addEventListener('ended',      finish)
     video.addEventListener('error',      finish)
 
-    // Sécurité : si la vidéo ne se termine jamais (bug réseau, etc.)
     const safetyTimer = setTimeout(finish, 20_000)
 
     return () => {
       clearTimeout(safetyTimer)
+      video.removeEventListener('canplay',     onCanPlay)
       video.removeEventListener('timeupdate', handleTimeUpdate)
       video.removeEventListener('ended',      finish)
       video.removeEventListener('error',      finish)
@@ -84,12 +95,18 @@ export default function DragonTransition({ onComplete }) {
       <video
         ref={videoRef}
         src="/Transition/Video%20Dragon.mp4"
-        autoPlay
         muted
         playsInline
         preload="auto"
         className="dgt-video"
       />
+      {!videoReady && (
+        <div className="dgt-loading">
+          <div className="dgt-loading-bar-wrap">
+            <div className="dgt-loading-bar-fill" />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -359,32 +359,24 @@ export default function HistoireTransition({ onComplete }) {
       const cy = corners.reduce((s, p) => s + p[1], 0) / 4
       const origin = `${cx}px ${cy}px`
 
-      // Le canvas (vidéo) et la carte-titre plongent dans le zoom en flouant
-      // de plus en plus (effet "hyperespace") puis disparaissent en fondu —
-      // pendant ce temps les deux washes (crème puis sombre, ci-dessous)
-      // font glisser progressivement la couleur de l'écran du beige du
-      // livre vers le noir #050403 de HistoirePage, sans coupure brutale.
-      const ZOOM_TRANSITION = `transform ${ZOOM_DURATION_MS}ms linear, opacity ${ZOOM_DURATION_MS}ms ease, filter ${ZOOM_DURATION_MS}ms ease-in`
-
-      // La "caméra" recule en ligne droite vers la carte-titre : perspective
-      // partagée par le canvas et la carte, centrée sur la cible du zoom.
+      // La caméra avance vers la page de droite : le canvas (livre entier)
+      // se rapproche via perspective + translateZ et s'estompe en flou/fondu.
+      // La carte-titre reste FIXE à sa position (homographie figée à END_AT_PCT)
+      // — seule la caméra avance, pas la page elle-même.
       if (overlayRef.current) {
-        overlayRef.current.style.perspective      = `${PERSPECTIVE_PX}px`
+        overlayRef.current.style.perspective       = `${PERSPECTIVE_PX}px`
         overlayRef.current.style.perspectiveOrigin = origin
       }
 
-      canvas.style.transition = ZOOM_TRANSITION
+      canvas.style.transition = `transform ${ZOOM_DURATION_MS}ms linear, opacity ${ZOOM_DURATION_MS}ms ease-in, filter ${ZOOM_DURATION_MS}ms ease-in`
       canvas.style.transform  = `translateZ(${ZOOM_TRANSLATE_Z}px)`
       canvas.style.opacity    = '0'
       canvas.style.filter     = `blur(${ZOOM_BLUR_PX}px)`
 
+      // Carte : aucune transform supplémentaire — elle reste à sa position exacte
       if (card) {
-        const currentTransform = card.style.transform
-        card.style.transformOrigin = '0 0'
-        card.style.transition      = ZOOM_TRANSITION
-        card.style.transform       = `${currentTransform} translateZ(${ZOOM_TRANSLATE_Z}px)`
-        card.style.opacity         = '1'
-        card.style.filter          = `blur(${ZOOM_BLUR_PX}px)`
+        card.style.transition = `opacity ${ZOOM_DURATION_MS}ms ease`
+        card.style.opacity    = '1'
       }
 
       if (cardGlow) {

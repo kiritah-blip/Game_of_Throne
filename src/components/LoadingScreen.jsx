@@ -2,13 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import './LoadingScreen.css'
 
 // Poids relatifs en MB après compression (pour pondérer la barre)
+// one.mp4 est géré par <link rel="preload"> dans index.html + Hero_v2 a son propre
+// indicateur de chargement. On ne le précharge pas ici pour éviter d'avorter
+// le transfert en cours lors du démontage (el.src='') et d'interférer avec Hero_v2.
 const VIDEOS = [
-  { src: '/Transition/Video%20Histoire.mp4', weight: 3.0 },
-  { src: '/Transition/Video%20Dragon.mp4',   weight: 4.1 },
-  { src: '/Transition/Video%20Maison.mp4',   weight: 1.5 },
-  { src: '/Transition/Video%20Monde.mp4',    weight: 1.7 },
+  { src: '/Transition/Video%20Histoire.mp4',   weight: 3.0 },
+  { src: '/Transition/Video%20Dragon.mp4',     weight: 4.1 },
+  { src: '/Transition/Video%20Maison.mp4',     weight: 1.5 },
+  { src: '/Transition/Video%20Monde.mp4',      weight: 1.7 },
   { src: '/Transition/Video%20Personnage.mp4', weight: 0.3 },
-  { src: '/video/one.mp4',                   weight: 4.0 },
 ]
 const TOTAL_WEIGHT = VIDEOS.reduce((s, v) => s + v.weight, 0)
 const THRESHOLD    = 0.85   // disparaît à 85 %

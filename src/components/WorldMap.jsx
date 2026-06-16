@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { REGIONS, LIEUX, MAP_W, MAP_H } from '../data/mapData'
 import { useRegionPixelData } from '../hooks/useRegionPixelData'
 import './WorldMap.css'
