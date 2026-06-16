@@ -1,5 +1,6 @@
 ﻿import React, { useEffect, useRef, useState } from 'react'
 import { REGIONS3 as REGIONS, LIEUX3 as LIEUX, LEGEND_GROUPS3, MAP3_W as MAP_W, MAP3_H as MAP_H, MASK_DIR3 } from '../data/mapData3'
+import { useRegionPixelData } from '../hooks/useRegionPixelData'
 import './WorldMap.css'
 import './WorldMap4.css'
 
