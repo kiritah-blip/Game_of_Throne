@@ -79,7 +79,9 @@ export default function LoadingScreen({ onDone }) {
       clearInterval(tickId)
       videoRefs.current.forEach(el => {
         el.pause()
-        el.src = ''
+        // Ne pas vider el.src : ça avorterait le transfert réseau en cours et
+        // viderait le buffer HTTP. Les composants de transition qui chargent les
+        // mêmes URLs bénéficient ainsi du cache navigateur pré-rempli.
         el.remove()
       })
     }

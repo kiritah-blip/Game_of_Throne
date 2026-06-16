@@ -1,5 +1,11 @@
-import { useState, useCallback }   from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState, useCallback, useEffect }   from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [pathname])
+  return null
+}
 import LoadingScreen from './components/LoadingScreen'
 import AccueilPage        from './pages/AccueilPage'
 import MaisonsPage        from './pages/MaisonsPage'
@@ -82,6 +88,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <LoadingScreen />
       <DragonTransitionContext.Provider value={{
         triggerDragon,    cancelDragon,    dragonActive,

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import './PersonnagesTransition.css'
 
@@ -91,6 +91,7 @@ export default function PersonnagesTransition({ onComplete }) {
   const exitStartedRef = useRef(false)
   const finishTimerRef = useRef(null)
   const exitTweensRef  = useRef([])
+  const [videoReady, setVideoReady] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -183,7 +184,18 @@ export default function PersonnagesTransition({ onComplete }) {
       backdropRef.current.style.transition = 'opacity 0.2s ease'
       backdropRef.current.style.opacity    = '0'
     }
-    video.addEventListener('canplay', fadeBackdrop)
+
+    // Attend canplay avant de jouer (évite le gel de 5s sur Vercel)
+    const onCanPlay = () => {
+      setVideoReady(true)
+      fadeBackdrop()
+      video.play().catch(() => {})
+    }
+    if (video.readyState >= 3) {
+      onCanPlay()
+    } else {
+      video.addEventListener('canplay', onCanPlay, { once: true })
+    }
 
     const finish = () => {
       if (doneRef.current) return
@@ -297,7 +309,7 @@ export default function PersonnagesTransition({ onComplete }) {
 
     rafRef.current = requestAnimationFrame(draw)
     video.playbackRate = PLAYBACK_RATE
-    video.play().catch(() => {})
+    // play() est appelé dans onCanPlay, pas ici
 
     return () => {
       clearTimeout(safetyTimer)
@@ -305,7 +317,7 @@ export default function PersonnagesTransition({ onComplete }) {
       exitTweensRef.current.forEach(t => t.kill())
       cancelAnimationFrame(rafRef.current)
       window.removeEventListener('resize', resize)
-      video.removeEventListener('canplay', fadeBackdrop)
+      video.removeEventListener('canplay', onCanPlay)
       video.removeEventListener('ended', finish)
       video.removeEventListener('error', finish)
       video.pause()
@@ -353,7 +365,15 @@ export default function PersonnagesTransition({ onComplete }) {
       </svg>
 
       {/* Backdrop opaque : couvre la page pendant le buffering vidéo. */}
-      <div ref={backdropRef} className="pct-backdrop" />
+      <div ref={backdropRef} className="pct-backdrop">
+        {!videoReady && (
+          <div className="pct-loading">
+            <div className="pct-loading-bar-wrap">
+              <div className="pct-loading-bar-fill" />
+            </div>
+          </div>
+        )}
+      </div>
 
       {/*
         "Toile" unie derrière le corbeau : le fait ressortir, puis s'envole

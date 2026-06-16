@@ -23,6 +23,33 @@
   pointer-events: none;
 }
 
+/* ── Barre de chargement (avant canplay) ────────────────────────────────── */
+.pct-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pct-loading-bar-wrap {
+  width: 220px;
+  height: 2px;
+  background: rgba(201,168,76,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.pct-loading-bar-fill {
+  height: 100%;
+  width: 35%;
+  background: linear-gradient(to right, #8a6a20, #c9a84c);
+  border-radius: 2px;
+  animation: pct-slide 1.4s ease-in-out infinite;
+}
+@keyframes pct-slide {
+  0%   { transform: translateX(-140%); }
+  100% { transform: translateX(400%); }
+}
+
 /* ── "Toile" derrière le corbeau ─────────────────────────────────────────── */
 /* Fond parchemin qui fait ressortir le corbeau, à la place du flou de fond.
    Le dégradé + le grain (textures ci-dessous) donnent à la toile un relief
