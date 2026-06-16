@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './HistoireTransition.css'
 
 // ── Paramètres chroma key (normalisés 0..1) ──────────────────────────────────
@@ -208,6 +208,7 @@ const FRAG = `
 `
 
 export default function HistoireTransition({ onComplete }) {
+  const [videoReady, setVideoReady] = useState(false)
   const canvasRef    = useRef(null)
   const videoRef     = useRef(null)
   const overlayRef   = useRef(null)
@@ -467,7 +468,16 @@ export default function HistoireTransition({ onComplete }) {
 
     rafRef.current = requestAnimationFrame(draw)
     video.playbackRate = PLAYBACK_RATE
-    video.play().catch(() => {})
+
+    const onCanPlay = () => {
+      setVideoReady(true)
+      video.play().catch(() => {})
+    }
+    if (video.readyState >= 3) {
+      onCanPlay()
+    } else {
+      video.addEventListener('canplay', onCanPlay, { once: true })
+    }
 
     // ── Nettoyage ───────────────────────────────────────────────────────────
     return () => {
@@ -478,6 +488,7 @@ export default function HistoireTransition({ onComplete }) {
       window.removeEventListener('resize', resize)
       video.removeEventListener('ended',  finish)
       video.removeEventListener('error',  finish)
+      video.removeEventListener('canplay', onCanPlay)
       video.pause()
       gl.deleteTexture(tex)
       gl.deleteBuffer(buf)
@@ -490,6 +501,13 @@ export default function HistoireTransition({ onComplete }) {
   return (
     <div ref={overlayRef} className="hst-overlay">
       <div ref={backdropRef} className="hst-backdrop" />
+      {!videoReady && (
+        <div className="hst-loading">
+          <div className="hst-loading-bar-wrap">
+            <div className="hst-loading-bar-fill" />
+          </div>
+        </div>
+      )}
       <video
         ref={videoRef}
         src="/Transition/Video%20Histoire.mp4"

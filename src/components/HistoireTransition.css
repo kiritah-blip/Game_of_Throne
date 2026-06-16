@@ -197,3 +197,31 @@
   opacity: 0;
   background: #050403;
 }
+
+/* ── Barre de chargement (avant canplay) ────────────────────────────────── */
+.hst-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.hst-loading-bar-wrap {
+  width: 220px;
+  height: 2px;
+  background: rgba(201,168,76,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.hst-loading-bar-fill {
+  height: 100%;
+  width: 35%;
+  background: linear-gradient(to right, #8a6a20, #c9a84c);
+  border-radius: 2px;
+  animation: hst-slide 1.4s ease-in-out infinite;
+}
+@keyframes hst-slide {
+  0%   { transform: translateX(-140%); }
+  100% { transform: translateX(400%); }
+}
