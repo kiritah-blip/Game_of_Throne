@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+﻿import React, { useEffect, useRef, useState } from 'react'
 import './Dragons.css'
 
 // ─── Onglets par époque (même principe que CONTINENTS pour les Maisons) ──────
@@ -30,8 +30,8 @@ const DRAGONS = [
     accent: '#c0392b',
     border: '#7a1a1a',
     photos: [
-      { src: '/gif dragon/drogon.gif', pos: '75% center' },
-      { src: '/gif dragon/Drogon 2.gif', pos: '20% center' },
+      { src: '/gif dragon/drogon.webp', pos: '75% center' },
+      { src: '/gif dragon/Drogon 2.webp', pos: '20% center' },
       { src: '/Dragons/3 dragon Daenerys/Drogon/drogon 1.jpg', pos: 'center 30%' },
       { src: '/Dragons/3 dragon Daenerys/Drogon/drogon 2.jpg', pos: 'center 30%' },
       { src: '/Dragons/3 dragon Daenerys/Drogon/drogon 3.jpg', pos: 'center 30%' },
@@ -49,8 +49,8 @@ const DRAGONS = [
     accent: '#d4af6a',
     border: '#6a5a30',
     photos: [
-      { src: '/gif dragon/Viserion 2.gif', pos: 'center center' },
-      { src: '/gif dragon/Viserion.gif', pos: 'center center' },
+      { src: '/gif dragon/Viserion 2.webp', pos: 'center center' },
+      { src: '/gif dragon/Viserion.webp', pos: 'center center' },
       { src: '/Dragons/3 dragon Daenerys/Viserion/viserion1.jpg', pos: 'center 28%' },
       { src: '/Dragons/3 dragon Daenerys/Viserion/viserion2.jpg', pos: 'center 28%' },
       { src: '/Dragons/3 dragon Daenerys/Viserion/viserion3.jpg', pos: 'center 28%' },
@@ -68,7 +68,7 @@ const DRAGONS = [
     accent: '#4a7c3f',
     border: '#2a4a20',
     photos: [
-      { src: '/gif dragon/Rhaegal.gif', pos: '100% 35%' },
+      { src: '/gif dragon/Rhaegal.webp', pos: '100% 35%' },
       { src: '/Dragons/3 dragon Daenerys/Rhaegal/rhaegal.jpg', pos: 'center 28%' },
       { src: '/Dragons/3 dragon Daenerys/Rhaegal/rhaegal1.jpg', pos: 'center 28%' },
       { src: '/Dragons/3 dragon Daenerys/Rhaegal/rhaegal2.jpg', pos: 'center 28%' },
@@ -103,7 +103,7 @@ const DRAGONS = [
     accent: '#5a6b3a',
     border: '#2a3318',
     photos: [
-      { src: '/gif dragon/Vhagar.gif', pos: 'center center' },
+      { src: '/gif dragon/Vhagar.webp', pos: 'center center' },
       { src: '/Dragons/Conquête Aegon/Vhagar/Vhagar 1.jpg', pos: 'left center' },
       { src: '/Dragons/Conquête Aegon/Vhagar/Vhagar 2.webp', pos: 'center top' },
       { src: '/Dragons/Conquête Aegon/Vhagar/Vhagar 3.jpg', pos: 'left center' },
@@ -122,7 +122,7 @@ const DRAGONS = [
     accent: '#a31f1f',
     border: '#4a0d0d',
     photos: [
-      { src: '/gif dragon/Caraxes.gif', pos: '62% center' },
+      { src: '/gif dragon/Caraxes.webp', pos: '62% center' },
       { src: '/Dragons/Danse des dragons/Caraxes/Caraxes1.webp', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/Caraxes/Caraxes2.webp', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/Caraxes/Caraxes3.webp', pos: 'center 30%' },
@@ -140,7 +140,7 @@ const DRAGONS = [
     accent: '#d4af37',
     border: '#6a5318',
     photos: [
-      { src: '/gif dragon/Syrax.gif', pos: 'center center' },
+      { src: '/gif dragon/Syrax.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/syrax/Syrax1.jpeg', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/syrax/Syrax2.webp', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/syrax/Syrax3.webp', pos: 'center 30%' },
@@ -158,7 +158,7 @@ const DRAGONS = [
     accent: '#c0392b',
     border: '#6a1818',
     photos: [
-      { src: '/gif dragon/Meleys.gif', pos: 'center center' },
+      { src: '/gif dragon/Meleys.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/meleys/Meleys.webp', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/meleys/Meleys2.jpg', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/meleys/Meleys3.webp', pos: 'right center' },
@@ -177,7 +177,7 @@ const DRAGONS = [
     accent: '#e8b923',
     border: '#7a5e10',
     photos: [
-      { src: '/gif dragon/Sunfyre.gif', pos: 'center center' },
+      { src: '/gif dragon/Sunfyre.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/sunfyre/Sunfyre1.webp', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/sunfyre/Sunfyre2.webp', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/sunfyre/Sunfyre3.jpg', pos: 'right center' },
@@ -195,7 +195,7 @@ const DRAGONS = [
     accent: '#b8732e',
     border: '#5e3914',
     photos: [
-      { src: '/gif dragon/Vermithor.gif', pos: 'center center' },
+      { src: '/gif dragon/Vermithor.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/vermithor/Vermithor.webp', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/vermithor/Vermithor 2.webp', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/vermithor/Vermithor 3.jpg', pos: 'center 30%' },
@@ -214,7 +214,7 @@ const DRAGONS = [
     accent: '#9ca3af',
     border: '#454c56',
     photos: [
-      { src: '/gif dragon/Meraxes.gif', pos: 'center center' },
+      { src: '/gif dragon/Meraxes.webp', pos: 'center center' },
       { src: '/Dragons/Conquête Aegon/Meraxes/Meraxes.webp', pos: 'center 28%' },
       { src: '/Dragons/Conquête Aegon/Meraxes/Meraxes 1.jpg', pos: 'center 28%' },
       { src: '/Dragons/Conquête Aegon/Meraxes/Meraxes2.jpg', pos: 'center 28%' },
@@ -232,8 +232,8 @@ const DRAGONS = [
     accent: '#cdb87a',
     border: '#665c3a',
     photos: [
-      { src: '/gif dragon/Arrax 1.gif', pos: 'center center' },
-      { src: '/gif dragon/Arrax.gif', pos: 'center center' },
+      { src: '/gif dragon/Arrax 1.webp', pos: 'center center' },
+      { src: '/gif dragon/Arrax.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/arrax/arax.jpg', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/arrax/arax1.webp', pos: 'right center' },
       { src: '/Dragons/Danse des dragons/arrax/arax2.webp', pos: 'left center' },
@@ -251,8 +251,8 @@ const DRAGONS = [
     accent: '#4a6b3a',
     border: '#243318',
     photos: [
-      { src: '/gif dragon/Vermax.gif', pos: 'center center' },
-      { src: '/gif dragon/Vermax 1.gif', pos: 'center center' },
+      { src: '/gif dragon/Vermax.webp', pos: 'center center' },
+      { src: '/gif dragon/Vermax 1.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/vermax/vermax.jpg', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/vermax/Vermax 2.webp', pos: 'center 30%' },
       { src: '/Dragons/Danse des dragons/vermax/vermax 3.jpg', pos: 'center 30%' },
@@ -271,8 +271,8 @@ const DRAGONS = [
     accent: '#8fafc4',
     border: '#3a5070',
     photos: [
-      { src: '/gif dragon/Dreamfyre.gif', pos: 'center center' },
-      { src: '/gif dragon/Dreamfyre 1.gif', pos: '20% center' },
+      { src: '/gif dragon/Dreamfyre.webp', pos: 'center center' },
+      { src: '/gif dragon/Dreamfyre 1.webp', pos: '20% center' },
       { src: '/Dragons/Danse des dragons/dreamfyre/TPATQ_Dreamfyre.webp', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/dreamfyre/S2_Dreamfyre2.webp', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/dreamfyre/dreamfyre.webp', pos: 'center 28%' },
@@ -291,7 +291,7 @@ const DRAGONS = [
     accent: '#c8d0d8',
     border: '#5e6670',
     photos: [
-      { src: '/gif dragon/Silverwing.gif', pos: 'center center' },
+      { src: '/gif dragon/Silverwing.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/silverwing/silverwing.webp', pos: 'right center' },
       { src: '/Dragons/Danse des dragons/silverwing/silverwing 2.webp', pos: 'center top' },
       { src: '/Dragons/Danse des dragons/silverwing/silverwing 3.jpg', pos: 'center top' },
@@ -310,7 +310,7 @@ const DRAGONS = [
     accent: '#8fbf8a',
     border: '#3f5e3a',
     photos: [
-      { src: '/gif dragon/Moondancer.gif', pos: 'center center' },
+      { src: '/gif dragon/Moondancer.webp', pos: 'center center' },
       { src: '/Dragons/Danse des dragons/moondancer/Moondancer-TBM.webp', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/moondancer/OT2_Baela_%26_Moondancer_3.webp', pos: 'center 28%' },
       { src: '/Dragons/Danse des dragons/moondancer/GQzeel8b0AAY73H_22.webp', pos: 'center 28%' },
@@ -329,7 +329,7 @@ const DRAGONS = [
     accent: '#6a8c4a',
     border: '#34431f',
     photos: [
-      { src: '/gif dragon/Tyraxes.gif', pos: '35% center' },
+      { src: '/gif dragon/Tyraxes.webp', pos: '35% center' },
       { src: '/Dragons/Danse des dragons/tyraxes/350px-Tyraxes_by_Rudolf_Hima.webp', pos: 'center top' },
       { src: '/Dragons/Danse des dragons/tyraxes/Tyraxes_Wotc.webp', pos: 'left top' },
       { src: '/Dragons/Danse des dragons/tyraxes/tyraxes.webp', pos: 'right top' },
@@ -365,7 +365,7 @@ const DRAGONS = [
     accent: '#8a9a4a',
     border: '#454e22',
     photos: [
-      { src: '/gif dragon/Sheepstealer.gif', pos: 'center center' },
+      { src: '/gif dragon/Sheepstealer.webp', pos: 'center center' },
       { src: '/Dragons/dragon sauvage/sheepstealer/2x8_Sheepstealer.webp', pos: 'center 30%' },
       { src: '/Dragons/dragon sauvage/sheepstealer/sheepstealer 3.jpg', pos: 'center 30%' },
     ],

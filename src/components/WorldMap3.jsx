@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+﻿import React, { useEffect, useRef, useState } from 'react'
 import { REGIONS3 as REGIONS, LIEUX3 as LIEUX, LEGEND_GROUPS3, MAP3_W as MAP_W, MAP3_H as MAP_H, MASK_DIR3 } from '../data/mapData3'
 import './WorldMap.css'
 import './WorldMap4.css'
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 const MASK_DIR   = MASK_DIR3
-const MAP_IMG    = `${MASK_DIR3}/Carte%20Westeros%20+%20Essos.png`
+const MAP_IMG    = `${MASK_DIR3}/Carte%20Westeros%20+%20Essos.webp`
 // Résolution réduite pour le pixel-testing : 5× plus légère → 25× moins de données
 const PT_SCALE   = 0.2
 const PT_W       = Math.round(MAP_W * PT_SCALE)

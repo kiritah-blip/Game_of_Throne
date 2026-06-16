@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+﻿import React, { useEffect, useRef, useState } from 'react'
 import { REGIONS2 as REGIONS, LIEUX2 as LIEUX, MAP2_W as MAP_W, MAP2_H as MAP_H, MASK_DIR2 } from '../data/mapData2'
 import './WorldMap.css'
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const MASK_DIR = MASK_DIR2
-const MAP_IMG  = `${MASK_DIR2}/Carte%20Westeros%20+%20citee%20libre.png`
+const MAP_IMG  = `${MASK_DIR2}/Carte%20Westeros%20+%20citee%20libre.webp`
 
 const toPercent = (x, y) => ({
   left: `${(x / MAP_W) * 100}%`,

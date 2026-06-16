@@ -176,7 +176,7 @@ const MAISONS = [
     sigil: 'Soleil Blanc Éclatant',
     accent: '#cfcfcf',
     description: 'Branche éloignée des Stark, fière et intransigeante, dont le soleil blanc brille sur les terres glacées du nord-est.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison_Karstark.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison_Karstark.webp",
   },
   {
     id: 'umber',
@@ -187,7 +187,7 @@ const MAISONS = [
     sigil: 'Géant Brisant ses Chaînes',
     accent: '#8a7048',
     description: 'Géants de carrure et de caractère, gardiens de la frontière glacée — leurs chaînes brisées rappellent qu\'aucun joug ne les retient longtemps.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Umber.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Umber.webp",
   },
   {
     id: 'mormont',
@@ -199,7 +199,7 @@ const MAISONS = [
     sigil: 'Ours Noir Dressé',
     accent: '#5a6e4a',
     description: 'Maison de guerrières et de marins endurcis par une île hostile — l\'ours noir des Mormont ne recule jamais.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Mormont.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Mormont.webp",
   },
   {
     id: 'manderly',
@@ -232,7 +232,7 @@ const MAISONS = [
     sigil: 'Élan',
     accent: '#7a6a4a',
     description: 'Petite maison forestière du Nord, dont l\'élan rappelle les vastes étendues sauvages qu\'elle veille.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/maison hornwood.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/maison hornwood.webp",
   },
   {
     id: 'cerwyn',
@@ -243,7 +243,7 @@ const MAISONS = [
     sigil: 'Hache de Bataille Noire',
     accent: '#5a5a5a',
     description: 'Vassaux fidèles et discrets des Stark, reconnaissables à leur hache de guerre sombre sur fond clair.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Cerwyn.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Cerwyn.webp",
   },
   {
     id: 'reed',
@@ -254,7 +254,7 @@ const MAISONS = [
     sigil: 'Lézard-Lion',
     accent: '#5a7a5a',
     description: 'Peuple discret et mystique des marécages du Neck, héritiers du sang des Premiers Hommes et gardiens d\'anciens secrets.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison reed.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison reed.webp",
   },
   {
     id: 'flint',
@@ -276,7 +276,7 @@ const MAISONS = [
     sigil: 'Cheval Bai Cabré',
     accent: '#7a6a5a',
     description: 'Maison de cavaliers et d\'éleveurs liée par le sang aux Bolton — leurs montures sont aussi réputées que leurs ambitions.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Ryswell.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison Ryswell.webp",
   },
   {
     id: 'dustin',
@@ -287,7 +287,7 @@ const MAISONS = [
     sigil: 'Couronne et Hache',
     accent: '#6a5a6a',
     description: 'Gardiens des tertres funéraires des Premiers Rois — une maison hantée par un passé plus ancien que celui des Stark eux-mêmes.',
-    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison_Dustin.png",
+    sigil_url: "/images/Westeros/Maison du nord Westeros/Maison_Dustin.webp",
   },
   {
     id: 'tallhart',
@@ -380,7 +380,7 @@ const MAISONS = [
     sigil: 'Deux Tours Reliées par un Pont',
     accent: '#5a6a8a',
     description: 'Maîtres incontestés du seul pont sur le Trident — une fortune bâtie sur les péages, et une trahison qui a scellé leur nom dans l\'infamie pour toujours.',
-    sigil_url: "/images/Westeros/Conflans/Maison_Frey.png",
+    sigil_url: "/images/Westeros/Conflans/Maison_Frey.webp",
   },
   {
     id: 'blackwood',
@@ -402,7 +402,7 @@ const MAISONS = [
     sigil: 'Étalon Rouge Cabré',
     accent: '#b23a3a',
     description: 'Maison fougueuse et orgueilleuse, opposée aux Blackwood depuis des siècles dans l\'une des plus anciennes rivalités de Westeros.',
-    sigil_url: "/images/Westeros/Conflans/Maison_Bracken.png",
+    sigil_url: "/images/Westeros/Conflans/Maison_Bracken.webp",
   },
   {
     id: 'mallister',
@@ -414,7 +414,7 @@ const MAISONS = [
     sigil: 'Aigle Argenté',
     accent: '#8a9aab',
     description: 'Gardiens de la côte occidentale des Conflans, dont l\'aigle d\'argent veille sur les ruines de l\'ancien royaume de la Vase.',
-    sigil_url: "/images/Westeros/Conflans/Maison_Mallister.png",
+    sigil_url: "/images/Westeros/Conflans/Maison_Mallister.webp",
   },
   {
     id: 'vance',
@@ -471,7 +471,7 @@ const MAISONS = [
     sigil: 'Trois Chiens Noirs sur Champ Jaune',
     accent: '#6a5a4a',
     description: 'Maison de petite noblesse élevée par l\'épée — le Limier et la Montagne ont fait de leur nom une terreur murmurée dans tout Westeros.',
-    sigil_url: "/images/Westeros/Terre de l'Ouest/Maison_Clegane.jpg",
+    sigil_url: "/images/Westeros/Terre de l'Ouest/Maison_Clegane.webp",
   },
   {
     id: 'reyne',
@@ -493,7 +493,7 @@ const MAISONS = [
     sigil: 'Vipère Cornue',
     accent: '#9a8a6a',
     description: 'Alliés des Reyne dans leur révolte avortée contre les Lannister — leur destin fut tout aussi brutal et définitif.',
-    sigil_url: "/images/Westeros/Terre de l'Ouest/Maison_Tarbeck.jpg",
+    sigil_url: "/images/Westeros/Terre de l'Ouest/Maison_Tarbeck.webp",
   },
   {
     id: 'crakehall',
@@ -537,7 +537,7 @@ const MAISONS = [
     sigil: 'Bourse Pourpre et Argentée',
     accent: '#8a7a6a',
     description: 'Petite maison vassale connue surtout par l\'un de ses fils, écuyer maladroit mais loyal au service d\'un Lannister tristement célèbre.',
-    sigil_url: "/images/Westeros/Terre de l'Ouest/Maison_Payne.jpg",
+    sigil_url: "/images/Westeros/Terre de l'Ouest/Maison_Payne.webp",
   },
   {
     id: 'brax',
@@ -562,7 +562,7 @@ const MAISONS = [
     sigil: 'Chasseur Ambulant Doré sur Champ Vert Sombre',
     accent: '#7a6a4a',
     description: 'Maison de soldats par excellence — leurs armées sont parmi les mieux entraînées du royaume, et leur discipline n\'a d\'égal que leur intransigeance.',
-    sigil_url: "/images/Westeros/Bief/Maison_Tarly.png",
+    sigil_url: "/images/Westeros/Bief/Maison_Tarly.webp",
   },
   {
     id: 'hightower',
@@ -585,7 +585,7 @@ const MAISONS = [
     sigil: 'Tête de Renard Encerclée de Fleurs',
     accent: '#e08030',
     description: 'Maison ambitieuse du Bief, prompte à changer d\'allégeance lorsque le vent tourne — la ruse du renard incarnée dans un blason.',
-    sigil_url: "/images/Westeros/Bief/Maison_Florent.png",
+    sigil_url: "/images/Westeros/Bief/Maison_Florent.webp",
   },
   {
     id: 'redwyne',
@@ -651,7 +651,7 @@ const MAISONS = [
     sigil: 'Trois Papillons de Nuit Argentés',
     accent: '#9a8a6a',
     description: 'Maison du Bief surtout connue pour avoir accueilli un tournoi resté légendaire dans les récits du règne des dragons.',
-    sigil_url: "/images/Westeros/Bief/Maison_Ashford.png",
+    sigil_url: "/images/Westeros/Bief/Maison_Ashford.webp",
   },
 
   // ── Les Terres de l'Orage ───────────────────────────────────────────────
@@ -765,7 +765,7 @@ const MAISONS = [
     sigil: 'Aigle Doré tenant un Serpent Rouge',
     accent: '#c9763a',
     description: 'Maison dornienne du désert, dont l\'aigle saisissant un serpent illustre la vigilance face aux dangers du sable et de la trahison.',
-    sigil_url: "/images/Westeros/Dorne/Maison_Allyrion.png",
+    sigil_url: "/images/Westeros/Dorne/Maison_Allyrion.webp",
   },
   {
     id: 'toland',
@@ -812,7 +812,7 @@ const MAISONS = [
     sigil: 'Hippocampe d\'Argent sur Champ Marine',
     accent: '#7faecf',
     description: 'Maison d\'origine valyrienne aussi ancienne que les Targaryen, maîtres incontestés des mers et de la flotte royale pendant des siècles.',
-    sigil_url: "/images/Westeros/Terre de la couronne/Maison_Velaryon.jpg",
+    sigil_url: "/images/Westeros/Terre de la couronne/Maison_Velaryon.webp",
   },
   {
     id: 'celtigar',
@@ -838,7 +838,7 @@ const MAISONS = [
     sigil: 'Le Titan — Colosse-Forteresse Casqué',
     accent: '#5a6a7a',
     description: 'Cité-refuge fondée par des esclaves en fuite, Braavos se dresse derrière son Titan de pierre — un colosse-forteresse qui garde l\'entrée du port et le secret de ses origines.',
-    sigil_url: "/images/Cite libre/Braavos/Titan-of-Braavos-statue.png",
+    sigil_url: "/images/Cite libre/Braavos/Titan-of-Braavos-statue.webp",
   },
   {
     id: 'braavos-banque',
@@ -871,7 +871,7 @@ const MAISONS = [
     sigil: 'Portes et Manoirs de Marchands-Princes',
     accent: '#9a8a6a',
     description: 'Cité marchande gouvernée par un prince plus en représentation qu\'en pouvoir réel — ses magisters tissent les fils du commerce et des intrigues exilées.',
-    sigil_url: "/images/Cite libre/Pentos/Pentos-city-gate-Pentoshi-manor.png",
+    sigil_url: "/images/Cite libre/Pentos/Pentos-city-gate-Pentoshi-manor.webp",
   },
   {
     id: 'norvos',
@@ -893,7 +893,7 @@ const MAISONS = [
     sigil: 'Le Dieu-Bouc Noir de la Forêt Sacrée',
     accent: '#4a3a2a',
     description: 'Cité-frontière nichée contre une forêt sacrée et sombre, réputée pour ses forgerons hors pair et le culte sinistre de son dieu noir.',
-    sigil_url: "/images/Cite libre/Qohor/Qohor-black-goat-god.png",
+    sigil_url: "/images/Cite libre/Qohor/Qohor-black-goat-god.webp",
   },
   {
     id: 'lorath',
@@ -948,7 +948,7 @@ const MAISONS = [
     sigil: 'Bannière des Triarches au Tigre Flamboyant',
     accent: '#b23a3a',
     description: 'La plus ancienne et la plus fière des filles de la Vieille Valyria — gouvernée par des Triarches élus, déchirée entre Éléphants et Tigres.',
-    sigil_url: "/images/Cite libre/Volantis/Volantis flag triarch tiger banner.png",
+    sigil_url: "/images/Cite libre/Volantis/Volantis flag triarch tiger banner.webp",
   },
   {
     id: 'volantis-tatouage',
@@ -1040,7 +1040,7 @@ const MAISONS = [
     sigil: 'Cercle des Veuves de Sang et Étoiles de Prophétie',
     accent: '#6a5a7a',
     description: 'Confrérie sacrée des veuves de khals défunts, gardiennes des prophéties et des rites — leur parole peut faire ou défaire un nouveau khal.',
-    sigil_url: "/images/Mer dothrak/khals et khalasars dothraks/symbole général 4.png",
+    sigil_url: "/images/Mer dothrak/khals et khalasars dothraks/symbole général 4.webp",
   },
   {
     id: 'lhazar',
@@ -1099,7 +1099,7 @@ const MAISONS = [
     sigil: 'Dragon-Phénix Doré de l\'Empereur Émeraude',
     accent: '#d4af37',
     description: 'Lointain empire d\'orient aux dynasties mythiques — son dragon-phénix doré incarne un pouvoir impérial aussi ancien que mystérieux pour l\'Occident.',
-    sigil_url: "/images/Reste du monde/Yiti/symbole du dragon-phenix.png",
+    sigil_url: "/images/Reste du monde/Yiti/symbole du dragon-phenix.webp",
   },
   {
     id: 'asshai',

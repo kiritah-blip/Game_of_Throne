@@ -1,9 +1,9 @@
-// ─── Carte 3 : Westeros + Essos ────────────────────────────────────────────────
+﻿// ─── Carte 3 : Westeros + Essos ────────────────────────────────────────────────
 export const MAP3_W = 2000
 export const MAP3_H = 1500
 
 export const MASK_DIR3 = '/map/Westeros%20+%20Essos'
-// Image principale : MASK_DIR3 + '/Carte%20Westeros%20+%20Essos.png'
+// Image principale : MASK_DIR3 + '/Carte%20Westeros%20+%20Essos.webp'
 
 // Offset coordonnées carte 3 :
 // data_x = mesure_x + 0 (sauf Vaes Khadokh : +60)

@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
+﻿import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { REGIONS4 as REGIONS, LIEUX4 as LIEUX, LEGEND_GROUPS4, MAP4_W as MAP_W, MAP4_H as MAP_H, MASK_DIR4 } from '../data/mapData4'
 import './WorldMap.css'
 import './WorldMap4.css'
 
 const MASK_DIR  = MASK_DIR4
-const MAP_IMG   = `${MASK_DIR4}/carte%20entiere.png`
+const MAP_IMG   = `${MASK_DIR4}/carte%20entiere.webp`
 const PT_SCALE  = 0.1
 const PT_W      = Math.round(MAP_W * PT_SCALE)
 const PT_H      = Math.round(MAP_H * PT_SCALE)

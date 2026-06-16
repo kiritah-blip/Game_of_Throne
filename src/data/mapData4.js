@@ -1,9 +1,9 @@
-// ─── Carte 4 : Le Monde Connu (Known World) ──────────────────────────────────
+﻿// ─── Carte 4 : Le Monde Connu (Known World) ──────────────────────────────────
 export const MAP4_W = 7240
 export const MAP4_H = 4800
 
 export const MASK_DIR4 = '/map/The%20Know%20World'
-// Image principale : MASK_DIR4 + '/carte%20entiere.png'
+// Image principale : MASK_DIR4 + '/carte%20entiere.webp'
 
 // Offset coordonnées carte 4 :
 // data_x = mesure_x + 0

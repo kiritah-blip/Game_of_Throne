@@ -77,9 +77,9 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Jon Snow.gif', pos: 'center center' },
-      { src: '/characters/Game of throne/Maison stark/John snow.jpg', pos: 'center 15%' },
-      { src: '/characters/Game of throne/Maison stark/John snow 1.jpg', pos: 'center 15%' },
+      { src: '/gif/Jon Snow.webp', pos: 'center center' },
+      { src: '/characters/Game of throne/Maison stark/John snow.webp', pos: 'center 15%' },
+      { src: '/characters/Game of throne/Maison stark/John snow 1.webp', pos: 'center 15%' },
       { src: '/characters/Game of throne/Maison stark/Jon_snow livre.jpg', pos: 'center 15%' },
     ],
     description:
@@ -95,11 +95,11 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'got',
     photos: [
-      { src: '/gif/Daenerys Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Daenerys Targaryen.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Targaryen/Daenerys.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Targaryen/Daenerys 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Targaryen/daenerys-targaryen.jpg', pos: 'center 18%' },
-      { src: '/characters/Game of throne/Targaryen/Daenerys_Targaryen livre.jpg', pos: 'center 18%' },
+      { src: '/characters/Game of throne/Targaryen/Daenerys_Targaryen livre.webp', pos: 'center 18%' },
     ],
     description:
       'Dernière héritière des Targaryen, Daenerys a survécu à l\'exil et à la trahison pour devenir la Mère des Dragons. Libératrice des opprimés, elle porte en elle le feu et le sang de ses ancêtres — et la folie qui les accompagne parfois.',
@@ -114,7 +114,7 @@ const PERSONNAGES = [
     border: '#7a6130',
     univers: 'got',
     photos: [
-      { src: '/gif/Tyrion Lannister.gif', pos: 'center center' },
+      { src: '/gif/Tyrion Lannister.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison lannister/Tyrion_lannister.jpg', pos: 'center 25%' },
       { src: '/characters/Game of throne/Maison lannister/Tyrion lannister.jpg', pos: 'center 25%' },
       { src: '/characters/Game of throne/Maison lannister/Tyrion lannister livre.jpg', pos: 'center 25%' },
@@ -132,8 +132,8 @@ const PERSONNAGES = [
     border: '#7a6130',
     univers: 'got',
     photos: [
-      { src: '/gif/Cersei Lannister.gif', pos: 'center center' },
-      { src: '/characters/Game of throne/Maison lannister/cersei_lannister.jpg', pos: 'center 10%' },
+      { src: '/gif/Cersei Lannister.webp', pos: 'center center' },
+      { src: '/characters/Game of throne/Maison lannister/cersei_lannister.webp', pos: 'center 10%' },
       { src: '/characters/Game of throne/Maison lannister/Cercei livre.jpg', pos: '88% 50%' },
     ],
     description:
@@ -149,9 +149,9 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Arya Stark.gif', pos: 'center center' },
-      { src: '/characters/Game of throne/Maison stark/arya.jpg', pos: 'center 20%' },
-      { src: '/characters/Game of throne/Maison stark/arya 1.jpg', pos: 'center 20%' },
+      { src: '/gif/Arya Stark.webp', pos: 'center center' },
+      { src: '/characters/Game of throne/Maison stark/arya.webp', pos: 'center 20%' },
+      { src: '/characters/Game of throne/Maison stark/arya 1.webp', pos: 'center 20%' },
       { src: '/characters/Game of throne/Maison stark/Arya livre.jpg', pos: 'center 20%' },
     ],
     description:
@@ -167,7 +167,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Eddard Stark.gif', pos: 'center center' },
+      { src: '/gif/Eddard Stark.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison stark/Ned-stark.jpg', pos: 'center 12%' },
       { src: '/characters/Game of throne/Maison stark/Eddard_stark.jpg', pos: '62% 50%' },
       { src: '/characters/Game of throne/Maison stark/ned livre.jpg', pos: 'center 12%' },
@@ -186,7 +186,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Sansa Stark.gif', pos: 'center center' },
+      { src: '/gif/Sansa Stark.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison stark/sansa-stark.jpg', pos: 'center 10%' },
       { src: '/characters/Game of throne/Maison stark/sansa.jpg', pos: 'center 10%' },
       { src: '/characters/Game of throne/Maison stark/sansa livre.jpg', pos: 'center 10%' },
@@ -205,10 +205,10 @@ const PERSONNAGES = [
     border: '#7a6130',
     univers: 'got',
     photos: [
-      { src: '/gif/Jaime Lannister.gif', pos: 'center center' },
-      { src: '/characters/Game of throne/Maison lannister/jaime-lannisters.jpg', pos: 'center 18%' },
-      { src: '/characters/Game of throne/Maison lannister/jamie-lannister.jpg', pos: 'center 18%' },
-      { src: '/characters/Game of throne/Maison lannister/Jaime livre.jpg', pos: 'center 18%' },
+      { src: '/gif/Jaime Lannister.webp', pos: 'center center' },
+      { src: '/characters/Game of throne/Maison lannister/jaime-lannisters.webp', pos: 'center 18%' },
+      { src: '/characters/Game of throne/Maison lannister/jamie-lannister.webp', pos: 'center 18%' },
+      { src: '/characters/Game of throne/Maison lannister/Jaime livre.webp', pos: 'center 18%' },
     ],
     description:
       'Surnommé le Régicide pour avoir tué le roi qu\'il jurait de protéger, Jaime est l\'homme le plus méprisé de Westeros — et peut-être l\'un des plus incompris. Sous l\'armure dorée se cache une âme qui a choisi le moindre mal.',
@@ -223,10 +223,10 @@ const PERSONNAGES = [
     border: '#5a5020',
     univers: 'got',
     photos: [
-      { src: '/gif/Joffrey Baratheon.gif', pos: 'center center' },
+      { src: '/gif/Joffrey Baratheon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Baratheon/Joffrey-Baratheon.jpg', pos: 'center 15%' },
-      { src: '/characters/Game of throne/Baratheon/joffrey.png', pos: 'center 15%' },
-      { src: '/characters/Game of throne/Baratheon/Joffrey_Baratheon livre.jpg', pos: 'center 15%' },
+      { src: '/characters/Game of throne/Baratheon/joffrey.webp', pos: 'center 15%' },
+      { src: '/characters/Game of throne/Baratheon/Joffrey_Baratheon livre.webp', pos: 'center 15%' },
     ],
     description:
       'Cruel, capricieux et lâche, Joffrey est l\'un des rois les plus redoutés et les plus détestés de Westeros. Protégé par le pouvoir de sa mère, il transforme le Trône de Fer en instrument de tyrannie pure.',
@@ -241,10 +241,10 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Bran Stark.gif', pos: 'center center' },
+      { src: '/gif/Bran Stark.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison stark/bran.jpg', pos: 'center 20%' },
       { src: '/characters/Game of throne/Maison stark/bran 1.jpg', pos: 'center 20%' },
-      { src: '/characters/Game of throne/Maison stark/bran-stark livre.jpg', pos: 'center 20%' },
+      { src: '/characters/Game of throne/Maison stark/bran-stark livre.webp', pos: 'center 20%' },
     ],
     description:
       'Après sa chute de la tour de Winterfell, Bran n\'est plus tout à fait humain. Guidé au-delà du Mur par ses visions, il devient le Corbeau à Trois Yeux — gardien de la mémoire du monde, voyant le passé, le présent et l\'avenir.',
@@ -259,7 +259,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Robb Stark.gif', pos: '83% center' },
+      { src: '/gif/Robb Stark.webp', pos: '83% center' },
       { src: '/characters/Game of throne/Maison stark/Robb Stark.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Maison stark/Robb Stark 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Maison stark/Robb Stark 2.jpg', pos: 'center 15%' },
@@ -278,7 +278,7 @@ const PERSONNAGES = [
     border: '#3a4a5a',
     univers: 'got',
     photos: [
-      { src: '/gif/Theon Greyjoy.gif', pos: 'center center' },
+      { src: '/gif/Theon Greyjoy.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Greyjoy/Theon_Greyjoy.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Greyjoy/theon.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Greyjoy/Theon_Greyjoy livre.jpg', pos: 'center 15%' },
@@ -296,7 +296,7 @@ const PERSONNAGES = [
     border: '#262018',
     univers: 'got',
     photos: [
-      { src: '/gif/Sandor Clegane.gif', pos: 'center center' },
+      { src: '/gif/Sandor Clegane.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Sandor Clegane.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Personnage annexe/Sandor Clegane Le Limier.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Personnage annexe/Sandor Clegane 2.jpg', pos: 'center 15%' },
@@ -315,7 +315,7 @@ const PERSONNAGES = [
     border: '#7a6130',
     univers: 'got',
     photos: [
-      { src: '/gif/Tywin Lannister.gif', pos: 'center center' },
+      { src: '/gif/Tywin Lannister.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison lannister/Tywin Lannister 4.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Maison lannister/Tywin Lannister.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Maison lannister/Tywin Lannister 1.jpg', pos: 'center 15%' },
@@ -335,7 +335,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Catelyn Stark.gif', pos: 'center center' },
+      { src: '/gif/Catelyn Stark.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison stark/catelyn.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison stark/catelyn 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison stark/catelyn 2.jpg', pos: 'center 18%' },
@@ -354,7 +354,7 @@ const PERSONNAGES = [
     border: '#3a4a3a',
     univers: 'got',
     photos: [
-      { src: '/gif/Brienne de Torth.gif', pos: 'center center' },
+      { src: '/gif/Brienne de Torth.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Brienne de Torth.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Brienne de Torth 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Brienne de Torth 2.jpg', pos: 'center 18%' },
@@ -373,7 +373,7 @@ const PERSONNAGES = [
     border: '#262018',
     univers: 'got',
     photos: [
-      { src: '/gif/Petyr Baelish.gif', pos: 'center center' },
+      { src: '/gif/Petyr Baelish.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Petyr Baelish.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Petyr Baelish 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Petyr Baelish 2.jpg', pos: '20% 50%' },
@@ -409,7 +409,7 @@ const PERSONNAGES = [
     border: '#5a5020',
     univers: 'got',
     photos: [
-      { src: '/gif/Stannis Baratheon.gif', pos: 'center center' },
+      { src: '/gif/Stannis Baratheon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Baratheon/Stannis Baratheon.jpg', pos: 'center 12%' },
       { src: '/characters/Game of throne/Baratheon/Stannis Baratheon 1.jpg', pos: 'center 12%' },
       { src: '/characters/Game of throne/Baratheon/Stannis Baratheon 2.jpg', pos: 'center 12%' },
@@ -429,7 +429,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'got',
     photos: [
-      { src: '/gif/Mélisandre.gif', pos: 'center center' },
+      { src: '/gif/Mélisandre.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Melisandre.jpg', pos: 'center 12%' },
       { src: '/characters/Game of throne/Personnage annexe/Melisandre livre.jpg', pos: 'center 12%' },
     ],
@@ -446,7 +446,7 @@ const PERSONNAGES = [
     border: '#5a3a1a',
     univers: 'got',
     photos: [
-      { src: '/gif/Khal Drogo.gif', pos: 'center center' },
+      { src: '/gif/Khal Drogo.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Essos (storyline Daenerys)/Khal Drogo.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Essos (storyline Daenerys)/Khal Drogo 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Essos (storyline Daenerys)/Khal Drogo 2.jpg', pos: 'center 18%' },
@@ -465,7 +465,7 @@ const PERSONNAGES = [
     border: '#5a5020',
     univers: 'got',
     photos: [
-      { src: '/gif/Robert Baratheon.gif', pos: 'center center' },
+      { src: '/gif/Robert Baratheon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Baratheon/Robert Baratheon.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Baratheon/Robert Baratheon 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Baratheon/Robert Baratheon 2.jpg', pos: 'center 15%' },
@@ -484,7 +484,7 @@ const PERSONNAGES = [
     border: '#262e2e',
     univers: 'got',
     photos: [
-      { src: '/gif/Samwell Tarly.gif', pos: 'center center' },
+      { src: '/gif/Samwell Tarly.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Samwell Tarly.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Samwell Tarly 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Samwell Tarly 2.jpg', pos: 'center 18%' },
@@ -504,7 +504,7 @@ const PERSONNAGES = [
     border: '#33402a',
     univers: 'got',
     photos: [
-      { src: '/gif/Davos Seaworth.gif', pos: 'center center' },
+      { src: '/gif/Davos Seaworth.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Davos Seaworth.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Davos Seaworth 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Davos Seaworth 2.jpg', pos: 'center 18%' },
@@ -523,7 +523,7 @@ const PERSONNAGES = [
     border: '#33402a',
     univers: 'got',
     photos: [
-      { src: '/gif/Tormund Giantsbane.gif', pos: 'center center' },
+      { src: '/gif/Tormund Giantsbane.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Tormund Giantsbane.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Tormund Giantsbane 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Tormund Giantsbane 2.jpg', pos: 'center 18%' },
@@ -543,7 +543,7 @@ const PERSONNAGES = [
     border: '#33402a',
     univers: 'got',
     photos: [
-      { src: '/gif/Ygritte.gif', pos: 'center center' },
+      { src: '/gif/Ygritte.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Ygritte.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Ygritte 1.jpg', pos: 'center 26%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Ygritte 2.jpg', pos: 'center 18%' },
@@ -563,7 +563,7 @@ const PERSONNAGES = [
     border: '#3a5a28',
     univers: 'got',
     photos: [
-      { src: '/gif/Margaery Tyrell.gif', pos: 'center center' },
+      { src: '/gif/Margaery Tyrell.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Margaery Tyrell.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Personnage annexe/Margaery Tyrell 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Personnage annexe/Margaery Tyrell 2.jpg', pos: '20% 50%' },
@@ -582,11 +582,11 @@ const PERSONNAGES = [
     border: '#6a3010',
     univers: 'got',
     photos: [
-      { src: '/gif/Oberyn Martell.gif', pos: 'center center' },
+      { src: '/gif/Oberyn Martell.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Oberyn Martell.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Oberyn Martell  1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Oberyn Martell  2.jpg', pos: '28% 30%' },
-      { src: '/characters/Game of throne/Personnage annexe/Oberyn Martell  3.jpg', pos: 'center 18%' },
+      { src: '/characters/Game of throne/Personnage annexe/Oberyn Martell  3.webp', pos: 'center 18%' },
     ],
     description:
       'Charismatique, libre et redoutable à la lance, le prince Oberyn vient à Port-Réal pour venger sa sœur Elia, assassinée durant le sac de la ville. Son combat en champion contre la Montagne restera l\'un des duels les plus mémorables — et les plus horrifiants — de toute la série.',
@@ -601,7 +601,7 @@ const PERSONNAGES = [
     border: '#3a5a28',
     univers: 'got',
     photos: [
-      { src: '/gif/Olenna Tyrell.gif', pos: 'center center' },
+      { src: '/gif/Olenna Tyrell.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Olenna Tyrell.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Personnage annexe/Olenna Tyrell 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Personnage annexe/Olenna Tyrell 2.jpg', pos: 'center 15%' },
@@ -620,7 +620,7 @@ const PERSONNAGES = [
     border: '#5a3a1a',
     univers: 'got',
     photos: [
-      { src: '/gif/Bronn.gif', pos: 'center center' },
+      { src: '/gif/Bronn.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Bronn.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Bronn 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Bronn 2.jpg', pos: 'center 18%' },
@@ -641,7 +641,7 @@ const PERSONNAGES = [
     border: '#2a1818',
     univers: 'got',
     photos: [
-      { src: '/gif/Ramsay Bolton.gif', pos: 'center center' },
+      { src: '/gif/Ramsay Bolton.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Ramsay Bolton.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Ramsay Bolton 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Ramsay Bolton 2.jpg', pos: 'center 18%' },
@@ -679,7 +679,7 @@ const PERSONNAGES = [
     border: '#1c3a4a',
     univers: 'got',
     photos: [
-      { src: '/gif/Missandei.gif', pos: 'center center' },
+      { src: '/gif/Missandei.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Missandei.png', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Missandei 2.webp', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Missandei 3.jpg', pos: 'center 18%' },
@@ -698,7 +698,7 @@ const PERSONNAGES = [
     border: '#1c3a4a',
     univers: 'got',
     photos: [
-      { src: '/gif/Grey Worm.gif', pos: 'center center' },
+      { src: '/gif/Grey Worm.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Grey Worm.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Grey Worm 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Grey Worm 2.jpg', pos: 'center 18%' },
@@ -735,7 +735,7 @@ const PERSONNAGES = [
     border: '#2a1818',
     univers: 'got',
     photos: [
-      { src: '/gif/Roose Bolton.gif', pos: 'center center' },
+      { src: '/gif/Roose Bolton.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Roose Bolton.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Roose Bolton 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Roose Bolton 2.jpg', pos: 'center 18%' },
@@ -754,7 +754,7 @@ const PERSONNAGES = [
     border: '#7a6130',
     univers: 'got',
     photos: [
-      { src: '/gif/Tommen Baratheon.gif', pos: 'center center' },
+      { src: '/gif/Tommen Baratheon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison lannister/Tommen Baratheon.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Maison lannister/Tommen Baratheon 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Maison lannister/Tommen Baratheon 2.jpg', pos: 'center 15%' },
@@ -774,7 +774,7 @@ const PERSONNAGES = [
     border: '#7a6130',
     univers: 'got',
     photos: [
-      { src: '/gif/Myrcella Baratheon.gif', pos: 'center center' },
+      { src: '/gif/Myrcella Baratheon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison lannister/Myrcella Baratheon.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison lannister/Myrcella Baratheon 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison lannister/Myrcella Baratheon 2.jpg', pos: 'center 18%' },
@@ -793,7 +793,7 @@ const PERSONNAGES = [
     border: '#5a5020',
     univers: 'got',
     photos: [
-      { src: '/gif/Renly Baratheon.gif', pos: 'center center' },
+      { src: '/gif/Renly Baratheon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Baratheon/Renly Baratheon.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Baratheon/Renly Baratheon 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Baratheon/Renly Baratheon 2.jpg', pos: 'center 15%' },
@@ -812,7 +812,7 @@ const PERSONNAGES = [
     border: '#3a5a28',
     univers: 'got',
     photos: [
-      { src: '/gif/Loras Tyrell.gif', pos: 'center center' },
+      { src: '/gif/Loras Tyrell.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Port-Réal & politique/Loras Tyrell.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Port-Réal & politique/Loras Tyrell 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Port-Réal & politique/Loras Tyrell 2.jpg', pos: 'center 15%' },
@@ -831,7 +831,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Ser Jorah Mormont.gif', pos: 'center center' },
+      { src: '/gif/Ser Jorah Mormont.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Ser Jorah Mormont.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Ser Jorah Mormont 1.webp', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Ser Jorah Mormont 2.jpg', pos: 'center 18%' },
@@ -849,7 +849,7 @@ const PERSONNAGES = [
     border: '#2a3340',
     univers: 'got',
     photos: [
-      { src: '/gif/Walder Frey.gif', pos: 'center center' },
+      { src: '/gif/Walder Frey.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Walder Frey.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Walder Frey 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison Bolton et Frey/Walder Frey 2.jpg', pos: 'center 18%' },
@@ -885,7 +885,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Lyanna Mormont.gif', pos: 'center center' },
+      { src: '/gif/Lyanna Mormont.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison stark/Lyanna Mormont.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison stark/Lyanna Mormont 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Maison stark/Lyanna Mormont 2.jpg', pos: 'center 18%' },
@@ -904,7 +904,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Rickon Stark.gif', pos: 'center center' },
+      { src: '/gif/Rickon Stark.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison stark/Rickon Stark.jpg', pos: 'center 22%' },
       { src: '/characters/Game of throne/Maison stark/Rickon Stark 1.jpg', pos: 'center 22%' },
       { src: '/characters/Game of throne/Maison stark/Rickon Stark 2.jpg', pos: 'center 22%' },
@@ -922,7 +922,7 @@ const PERSONNAGES = [
     border: '#3a4a5a',
     univers: 'got',
     photos: [
-      { src: '/gif/Yara Greyjoy.gif', pos: 'center center' },
+      { src: '/gif/Yara Greyjoy.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Yara Greyjoy.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Yara Greyjoy 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Yara Greyjoy 2.jpg', pos: 'center 24%' },
@@ -958,7 +958,7 @@ const PERSONNAGES = [
     border: '#3a4a5a',
     univers: 'got',
     photos: [
-      { src: '/gif/Euron Greyjoy.gif', pos: 'center center' },
+      { src: '/gif/Euron Greyjoy.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Greyjoy/Euron Greyjoy.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Greyjoy/Euron Greyjoy 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Greyjoy/Euron Greyjoy 2.jpg', pos: 'center 15%' },
@@ -977,7 +977,7 @@ const PERSONNAGES = [
     border: '#5a3a1a',
     univers: 'got',
     photos: [
-      { src: '/gif/Daario Naharis.gif', pos: 'center center' },
+      { src: '/gif/Daario Naharis.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Essos (storyline Daenerys)/Daario Naharis.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Essos (storyline Daenerys)/Daario Naharis 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Essos (storyline Daenerys)/Daario Naharis 2.jpg', pos: 'center 18%' },
@@ -995,7 +995,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'got',
     photos: [
-      { src: '/gif/Viserys Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Viserys Targaryen.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Targaryen/Viserys Targaryen.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Targaryen/Viserys Targaryen 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Targaryen/Viserys Targaryen 2.jpg', pos: 'center 15%' },
@@ -1014,7 +1014,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Talisa Stark.gif', pos: 'center center' },
+      { src: '/gif/Talisa Stark.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Talisa Stark.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Talisa Stark 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Talisa Stark 2.jpg', pos: 'center 18%' },
@@ -1033,7 +1033,7 @@ const PERSONNAGES = [
     border: '#5a5020',
     univers: 'got',
     photos: [
-      { src: '/gif/Shireen Baratheon.gif', pos: 'center center' },
+      { src: '/gif/Shireen Baratheon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Baratheon/Shireen Baratheon.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Baratheon/Shireen Baratheon 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Baratheon/Shireen Baratheon 2.jpg', pos: 'center 18%' },
@@ -1071,7 +1071,7 @@ const PERSONNAGES = [
     border: '#2a4a5a',
     univers: 'got',
     photos: [
-      { src: '/gif/Robin Arryn.gif', pos: 'center center' },
+      { src: '/gif/Robin Arryn.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Maison Tully & Arryn/Robin Arryn.jpg', pos: 'center 20%' },
       { src: '/characters/Game of throne/Maison Tully & Arryn/Robin Arryn 1.jpg', pos: 'center 20%' },
       { src: '/characters/Game of throne/Maison Tully & Arryn/Robin Arryn 2.jpg', pos: 'center 20%' },
@@ -1109,7 +1109,7 @@ const PERSONNAGES = [
     border: '#3a5070',
     univers: 'got',
     photos: [
-      { src: '/gif/Benjen Stark.gif', pos: 'center center' },
+      { src: '/gif/Benjen Stark.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Benjen Stark.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Benjen Stark 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Benjen Stark 2.jpg', pos: 'center 18%' },
@@ -1128,7 +1128,7 @@ const PERSONNAGES = [
     border: '#33402a',
     univers: 'got',
     photos: [
-      { src: '/gif/Beric Dondarrion.gif', pos: 'center center' },
+      { src: '/gif/Beric Dondarrion.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Frères de la Confrérie sans Bannière/Beric Dondarrion.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Frères de la Confrérie sans Bannière/Beric Dondarrion 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Frères de la Confrérie sans Bannière/Beric Dondarrion 2.jpg', pos: 'center 18%' },
@@ -1148,7 +1148,7 @@ const PERSONNAGES = [
     border: '#33402a',
     univers: 'got',
     photos: [
-      { src: '/gif/Thoros de Myr.gif', pos: 'center center' },
+      { src: '/gif/Thoros de Myr.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Frères de la Confrérie sans Bannière/Thoros de Myr.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Frères de la Confrérie sans Bannière/Thoros de Myr 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Frères de la Confrérie sans Bannière/Thoros de Myr 2.jpg', pos: 'center 18%' },
@@ -1166,7 +1166,7 @@ const PERSONNAGES = [
     border: '#262e2e',
     univers: 'got',
     photos: [
-      { src: '/gif/Jeor Mormont.gif', pos: 'center center' },
+      { src: '/gif/Jeor Mormont.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Jeor Mormont.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Jeor Mormont 1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Jeor Mormont 2.jpg', pos: 'center 15%' },
@@ -1222,7 +1222,7 @@ const PERSONNAGES = [
     border: '#262018',
     univers: 'got',
     photos: [
-      { src: '/gif/Jaqen H\'ghar.gif', pos: 'center center' },
+      { src: '/gif/Jaqen H\'ghar.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Jaqen H\'ghar.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Jaqen H\'ghar 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Jaqen H\'ghar 2.jpg', pos: 'center 18%' },
@@ -1241,7 +1241,7 @@ const PERSONNAGES = [
     border: '#262018',
     univers: 'got',
     photos: [
-      { src: '/gif/Syrio Forel.gif', pos: 'center center' },
+      { src: '/gif/Syrio Forel.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Personnage annexe/Syrio Forel.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Syrio Forel 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Personnage annexe/Syrio Forel 2.jpg', pos: 'center 18%' },
@@ -1294,7 +1294,7 @@ const PERSONNAGES = [
     border: '#33402a',
     univers: 'got',
     photos: [
-      { src: '/gif/Mance Rayder 1.gif', pos: 'center center' },
+      { src: '/gif/Mance Rayder 1.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Mance Rayder.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Mance Rayder 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/Mance Rayder 2.jpg', pos: 'center 18%' },
@@ -1366,7 +1366,7 @@ const PERSONNAGES = [
     border: '#1a3050',
     univers: 'got',
     photos: [
-      { src: '/gif/Le Roi de la Nuit.gif', pos: '88% center' },
+      { src: '/gif/Le Roi de la Nuit.webp', pos: '88% center' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/le Roi de la Nuit.jpg', pos: '38% 50%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/le Roi de la Nuit 1.jpg', pos: 'center 20%' },
       { src: '/characters/Game of throne/Garde de la nuit et apres mur/le Roi de la Nuit 2.jpg', pos: 'center 20%' },
@@ -1405,7 +1405,7 @@ const PERSONNAGES = [
     border: '#6a3010',
     univers: 'got',
     photos: [
-      { src: '/gif/Ellaria Sand.gif', pos: 'center center' },
+      { src: '/gif/Ellaria Sand.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Ellaria Sand.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Ellaria Sand  1.jpg', pos: 'center 15%' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Ellaria Sand  2.jpg', pos: 'center 15%' },
@@ -1440,7 +1440,7 @@ const PERSONNAGES = [
     border: '#6a3010',
     univers: 'got',
     photos: [
-      { src: '/gif/Doran Martell.gif', pos: 'center center' },
+      { src: '/gif/Doran Martell.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Doran Martell.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Doran Martell 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Doran Martell 2.jpg', pos: 'center 18%' },
@@ -1459,7 +1459,7 @@ const PERSONNAGES = [
     border: '#6a3010',
     univers: 'got',
     photos: [
-      { src: '/gif/Trystane Martell.gif', pos: 'center center' },
+      { src: '/gif/Trystane Martell.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Trystane Martell.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Trystane Martell 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Dorne (Maison Martell)/Trystane Martell 2.jpg', pos: 'center 18%' },
@@ -1477,7 +1477,7 @@ const PERSONNAGES = [
     border: '#5a5248',
     univers: 'got',
     photos: [
-      { src: '/gif/Le Grand Septon.gif', pos: 'center center' },
+      { src: '/gif/Le Grand Septon.webp', pos: 'center center' },
       { src: '/characters/Game of throne/Port-Réal & politique/Le Grand Septon High Sparrow.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Port-Réal & politique/Le Grand Septon High Sparrow 1.jpg', pos: 'center 18%' },
       { src: '/characters/Game of throne/Port-Réal & politique/Le Grand Septon High Sparrow 2.jpg', pos: 'center 18%' },
@@ -1531,7 +1531,7 @@ const PERSONNAGES = [
     border: '#2a0c0c',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Rhaenyra Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Rhaenyra Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaenyra Targaryen.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaenyra Targaryen 1.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaenyra Targaryen 2.jpg', pos: 'center 15%' },
@@ -1550,7 +1550,7 @@ const PERSONNAGES = [
     border: '#2a0c0c',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Daemon Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Daemon Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Daemon Targaryen.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Daemon Targaryen 1.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Daemon Targaryen 2.webp', pos: 'center 15%' },
@@ -1570,7 +1570,7 @@ const PERSONNAGES = [
     border: '#1c3322',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Alicent Hightower.gif', pos: 'center center' },
+      { src: '/gif/Alicent Hightower.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Vert/Alicent Hightower.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Alicent Hightower 1.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Alicent Hightower 2.jpg', pos: 'center 15%' },
@@ -1589,7 +1589,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Viserys I Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Viserys I Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Viserys I Targaryen.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Viserys I Targaryen 1.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Viserys I Targaryen 2.jpg', pos: 'center 15%' },
@@ -1609,7 +1609,7 @@ const PERSONNAGES = [
     border: '#1c3322',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Aemond Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Aemond Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Vert/Aemond Targaryen.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Aemond Targaryen 1.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Aemond Targaryen 2.jpg', pos: 'center 15%' },
@@ -1629,7 +1629,7 @@ const PERSONNAGES = [
     border: '#1c3322',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Aegon II Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Aegon II Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Vert/Aegon II Targaryen.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Aegon II Targaryen 1.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Aegon II Targaryen 2.jpg', pos: 'center 15%' },
@@ -1648,7 +1648,7 @@ const PERSONNAGES = [
     border: '#2a0c0c',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Rhaenys Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Rhaenys Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaenys Targaryen.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaenys Targaryen 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaenys Targaryen 2.jpg', pos: 'center 18%' },
@@ -1667,7 +1667,7 @@ const PERSONNAGES = [
     border: '#1c3a4a',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Corlys Velaryon.gif', pos: 'center center' },
+      { src: '/gif/Corlys Velaryon.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Corlys Velaryon.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Corlys Velaryon 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Corlys Velaryon 2.jpg', pos: 'center 18%' },
@@ -1685,7 +1685,7 @@ const PERSONNAGES = [
     border: '#1c3322',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Ser Criston Cole.gif', pos: 'center center' },
+      { src: '/gif/Ser Criston Cole.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Vert/Ser Criston Cole.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Ser Criston Cole 1.jpg', pos: 'center 15%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Ser Criston Cole 2.jpg', pos: 'center 15%' },
@@ -1704,7 +1704,7 @@ const PERSONNAGES = [
     border: '#2a4434',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Otto Hightower.gif', pos: 'center center' },
+      { src: '/gif/Otto Hightower.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Vert/Otto Hightower.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Otto Hightower 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Otto Hightower 2.jpg', pos: 'center 18%' },
@@ -1722,7 +1722,7 @@ const PERSONNAGES = [
     border: '#1c3a4a',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Laena Velaryon.gif', pos: 'center center' },
+      { src: '/gif/Laena Velaryon.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Laena Velaryon.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Laena Velaryon 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Laena Velaryon 2.jpg', pos: 'center 18%' },
@@ -1740,7 +1740,7 @@ const PERSONNAGES = [
     border: '#1c3a4a',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Laenor Velaryon.gif', pos: 'center center' },
+      { src: '/gif/Laenor Velaryon.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Laenor Velaryon.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Laenor Velaryon 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Laenor Velaryon 2.jpg', pos: 'center 18%' },
@@ -1759,7 +1759,7 @@ const PERSONNAGES = [
     border: '#2a0c0c',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Jacaerys Velaryon.gif', pos: 'center center' },
+      { src: '/gif/Jacaerys Velaryon.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Jacaerys Jace Velaryon.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Jacaerys Jace Velaryon  1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Jacaerys Jace Velaryon  2.jpg', pos: 'center 18%' },
@@ -1778,7 +1778,7 @@ const PERSONNAGES = [
     border: '#2a0c0c',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Lucerys Velaryon.gif', pos: 'center center' },
+      { src: '/gif/Lucerys Velaryon.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Lucerys Luke Velaryon.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Lucerys Luke Velaryon 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Lucerys Luke Velaryon 2.jpg', pos: 'center 18%' },
@@ -1797,7 +1797,7 @@ const PERSONNAGES = [
     border: '#2a0c0c',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Baela Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Baela Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Baela Targaryen.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Baela Targaryen 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Baela Targaryen 2.jpg', pos: 'center 18%' },
@@ -1815,7 +1815,7 @@ const PERSONNAGES = [
     border: '#2a0c0c',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Rhaena Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Rhaena Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaena Targaryen.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaena Targaryen 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Rhaena Targaryen 2.jpg', pos: 'center 18%' },
@@ -1834,7 +1834,7 @@ const PERSONNAGES = [
     border: '#1c3322',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Helaena Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Helaena Targaryen.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Vert/Helaena Targaryen.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Helaena Targaryen 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Helaena Targaryen 2.jpg', pos: 'center 18%' },
@@ -1853,7 +1853,7 @@ const PERSONNAGES = [
     border: '#332a20',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Larys Strong.gif', pos: 'center center' },
+      { src: '/gif/Larys Strong.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Vert/Larys Strong.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Larys Strong 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Vert/Larys Strong 2.jpg', pos: 'center 18%' },
@@ -1872,7 +1872,7 @@ const PERSONNAGES = [
     border: '#332a20',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Harwin Strong.gif', pos: 'center center' },
+      { src: '/gif/Harwin Strong.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Harwin Strong.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Harwin Strong 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/La famille royale & figures historiques/Harwin Strong 2.jpg', pos: 'center 18%' },
@@ -1907,7 +1907,7 @@ const PERSONNAGES = [
     border: '#262018',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Mysaria.gif', pos: 'center center' },
+      { src: '/gif/Mysaria.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Le Camp Noir/Mysaria le Ver Blanc.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Mysaria le Ver Blanc 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Le Camp Noir/Mysaria le Ver Blanc 2.jpg', pos: 'center 32%' },
@@ -2225,7 +2225,7 @@ const PERSONNAGES = [
     border: '#4a3a26',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Ser Duncan le Grand.gif', pos: 'center center' },
+      { src: '/gif/Ser Duncan le Grand.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Ser Duncan le Grand.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Ser Duncan le Grand 1.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Ser Duncan le Grand 2.jpg', pos: 'center 18%' },
@@ -2245,7 +2245,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Aegon Targaryen Œuf.gif', pos: 'center center' },
+      { src: '/gif/Aegon Targaryen Œuf.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Prince Aegon Targaryen Œuf.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Prince Aegon Targaryen Œuf 1.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Prince Aegon Targaryen Œuf 2.jpg', pos: 'center 15%' },
@@ -2265,8 +2265,8 @@ const PERSONNAGES = [
     border: '#4a3a26',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Ser Arlan de Pennytree 1.gif', pos: 'center center' },
-      { src: '/gif/Ser Arlan de Pennytree.gif', pos: 'center center' },
+      { src: '/gif/Ser Arlan de Pennytree 1.webp', pos: 'center center' },
+      { src: '/gif/Ser Arlan de Pennytree.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Ser Arlan de Pennytree.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Ser Arlan de Pennytree 1.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Les héros de l\'histoire/Ser Arlan de Pennytree 2.jpg', pos: 'center 18%' },
@@ -2285,7 +2285,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Baelor Breakspear.gif', pos: 'center center' },
+      { src: '/gif/Baelor Breakspear.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Baelor Breakspear.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Baelor Breakspear 1.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Baelor Breakspear 2.jpg', pos: 'center 15%' },
@@ -2305,7 +2305,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Maekar Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Maekar Targaryen.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Maekar Targaryen.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Maekar Targaryen 1.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Maekar Targaryen 2.jpg', pos: 'center 15%' },
@@ -2324,7 +2324,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Daeron Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Daeron Targaryen.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Daeron.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Daeron 1.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Daeron 2.jpg', pos: 'center 18%' },
@@ -2343,7 +2343,7 @@ const PERSONNAGES = [
     border: '#7a1a1a',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Aerion Targaryen.gif', pos: 'center center' },
+      { src: '/gif/Aerion Targaryen.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Aerion Targarye.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Aerion Targarye 1.jpg', pos: 'center 15%' },
       { src: '/characters/A Knight of the Seven Kingdoms/La famille royale Targaryen de l\'époque/Prince Aerion Targarye 2.jpg', pos: 'center 15%' },
@@ -2466,7 +2466,7 @@ const PERSONNAGES = [
     border: '#4a3a26',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Raymun Fossoway.gif', pos: 'center center' },
+      { src: '/gif/Raymun Fossoway.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/raymun fossoway.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/raymun fossoway 1.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/raymun fossoway 2.webp', pos: 'center 18%' },
@@ -2517,7 +2517,7 @@ const PERSONNAGES = [
     border: '#4a3a26',
     univers: 'aksk',
     photos: [
-      { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Gwin Ashford 2.gif', pos: 'center 18%' },
+      { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Gwin Ashford 2.webp', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Gwin Ashford.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Gwin Ashford 1.webp', pos: 'center 18%' },
     ],
@@ -2534,7 +2534,7 @@ const PERSONNAGES = [
     border: '#4a3a26',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Tanselle.gif', pos: 'center center' },
+      { src: '/gif/Tanselle.webp', pos: 'center center' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Tanselle.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Tanselle 1.jpg', pos: 'center 18%' },
       { src: '/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Tanselle 2.jpg', pos: 'center 18%' },
@@ -2553,7 +2553,7 @@ const PERSONNAGES = [
     border: '#3a2412',
     univers: 'hotd',
     photos: [
-      { src: '/gif/Hugh le Marteau.gif', pos: 'center center' },
+      { src: '/gif/Hugh le Marteau.webp', pos: 'center center' },
       { src: '/characters/House of the dragon/Les Dragonseeds/Hugh le Marteau.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Les Dragonseeds/Hugh le Marteau 1.jpg', pos: 'center 18%' },
       { src: '/characters/House of the dragon/Les Dragonseeds/Hugh le Marteau 2.jpg', pos: 'center 18%' },
@@ -2605,7 +2605,7 @@ const PERSONNAGES = [
     border: '#5a5020',
     univers: 'aksk',
     photos: [
-      { src: '/gif/Lyonel baratheon.gif', pos: 'center center' },
+      { src: '/gif/Lyonel baratheon.webp', pos: 'center center' },
       { src: "/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Lyonel baratheon's.png", pos: 'center 18%' },
       { src: "/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Lyonel baratheon's 1.webp", pos: 'center 18%' },
       { src: "/characters/A Knight of the Seven Kingdoms/Chevaliers, dames et seigneurs rencontrés en chemin/Lyonel baratheon's 2.jpg", pos: 'center 18%' },
