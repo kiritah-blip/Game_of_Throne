@@ -1,0 +1,85 @@
+/* ── Overlay fixe plein écran ───────────────────────────────────────────── */
+.pct-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ── Définitions SVG cachées (filtre de froissement) ─────────────────────── */
+.pct-svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* ── Backdrop opaque (couvre la page pendant le buffering vidéo) ─────────── */
+.pct-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #050403;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── "Toile" derrière le corbeau ─────────────────────────────────────────── */
+/* Fond parchemin qui fait ressortir le corbeau, à la place du flou de fond.
+   Le dégradé + le grain (textures ci-dessous) donnent à la toile un relief
+   visible : sans eux, feDisplacementMap/feDiffuseLighting n'auraient rien à
+   déformer (une couleur 100% uniforme reste uniforme même déplacée/éclairée).
+   Quand le corbeau bat des ailes pour s'envoler (RAVEN_EXIT_START_S, cf. JS),
+   cette toile se froisse en plis qui rayonnent depuis le point de pince
+   (transform-origin, cf. <filter id="pct-crumple">, JSX), puis part dans la
+   même direction — vers le haut, avec une légère rotation et dérive vers la
+   droite — comme si elle était accrochée à sa patte, révélant PersonnagesPage
+   en dessous. Le bord inférieur est légèrement déchiqueté (clip-path) pour
+   évoquer une toile arrachée plutôt qu'un rectangle qui glisse. */
+.pct-canvas-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 70% 65% at 50% 58%, #f3ead4 0%, #e8dcc0 55%, #d8c9a4 100%),
+    repeating-linear-gradient(115deg, rgba(120, 95, 50, 0.05) 0px, rgba(120, 95, 50, 0.05) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(25deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 4px);
+  opacity: 1;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+  transform-origin: 50% 58%;
+  /* <filter id="pct-crumple"> (JSX) : plis radiaux centrés sur le point de
+     pince (transform-origin ci-dessus), avec relief éclairé (feDiffuseLighting)
+     et déformation géométrique (feDisplacementMap) — intensité animée par GSAP. */
+  filter: url(#pct-crumple);
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 100%,
+    95% 96%, 90% 99%, 85% 95%, 80% 100%, 75% 96%,
+    70% 99%, 65% 95%, 60% 100%, 55% 96%, 50% 99%,
+    45% 95%, 40% 100%, 35% 96%, 30% 99%, 25% 95%,
+    20% 100%, 15% 96%, 10% 99%, 5% 95%, 0% 100%
+  );
+}
+
+/* ── Vidéo cachée (dans le DOM mais invisible) ───────────────────────────── */
+.pct-video {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ── Canvas WebGL plein écran (le corbeau) ───────────────────────────────── */
+.pct-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+  z-index: 3;
+  pointer-events: none;
+}

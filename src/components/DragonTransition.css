@@ -1,0 +1,21 @@
+/* ── Overlay plein écran fixe ────────────────────────────────────────────── */
+/* z-index 99 : en dessous de la Navbar (z-100) → le menu reste visible.
+   pointer-events: none : la page en dessous reste intacte pendant le chargement. */
+.dgt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: #000;          /* fallback pendant le buffering */
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* ── Vidéo en mode "cover" ───────────────────────────────────────────────── */
+/* object-fit: cover assure que la vidéo remplit l'écran quelle que soit
+   la résolution, sans bandes noires ni déformation. */
+.dgt-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

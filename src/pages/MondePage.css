@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap');
+
+.monde-tabs {
+  display: flex;
+  gap: 0;
+  padding: 72px 48px 0;
+  background: #050403;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  /* Reste visible même après un défilement vers le bas de la carte */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.monde-tab {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #6a6050;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+  position: relative;
+  bottom: -1px;
+}
+
+.monde-tab:hover {
+  color: #c8bfb0;
+}
+
+.monde-tab-active {
+  color: #c9a84c;
+  border-bottom: 2px solid #c9a84c;
+}
+
+/* ─── Cartes pré-montées en arrière-plan (toujours dans le DOM) ──────────── */
+/* display:none masque le rendu visuel ET retire l'élément du flux —
+   le composant React reste monté, ses hooks et son pixel-data sont prêts. */
+.monde-map-hidden {
+  display: none;
+}
+
+/* ─── Transition zoom/pan entre les cartes du Monde ──────────────────────── */
+/* On évite de faire passer l'opacité par 0 : le fond du <body> est noir pur
+   (#000) alors que les sections de cartes sont en #050403 — un fondu complet
+   exposerait donc un "flash noir" entre les deux cartes. On ne joue ainsi que
+   sur le zoom/pan (transform), avec un très léger voile (filter) pour
+   adoucir la coupure du contenu sans jamais montrer le fond du body. */
+.monde-map-stage {
+  transform: scale(1);
+  transform-origin: 50% 45%;
+  filter: brightness(1) blur(0px);
+  transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, filter;
+}
+
+/* La carte active s'éloigne légèrement et s'assombrit (effet "zoom arrière") */
+.monde-map-stage--out {
+  transform: scale(1.06);
+  filter: brightness(0.55) blur(2px);
+}
+
+/* La nouvelle carte est positionnée en amont (légèrement rapprochée et
+   assombrie), sans transition le temps d'être en place avant son entrée. */
+.monde-map-stage--in {
+  transform: scale(0.94);
+  filter: brightness(0.55) blur(2px);
+  transition: none;
+}

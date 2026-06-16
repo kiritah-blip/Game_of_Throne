@@ -1,0 +1,67 @@
+/* ── Overlay fixe plein écran ───────────────────────────────────────────── */
+/* pointer-events: none → tous les éléments en dessous restent cliquables
+   (navbar, onglets, carte interactive) dès le premier instant.            */
+.ckt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+}
+
+/* ── Backdrop opaque (couvre la page pendant le buffering vidéo) ─────────── */
+/* S'affiche immédiatement au montage → aucun flash de la carte.
+   Le canvas WebGL se dessine par-dessus ; ses zones transparentes (fond vert
+   keyé) montrent ce backdrop sombre plutôt que la carte en dessous —
+   ce qui est correct : la carte ne doit apparaître qu'à la fin de l'animation.
+   Le backdrop disparaît avec le reste de l'overlay via le fondu parent.       */
+.ckt-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #050403; /* identique au fond de la page */
+  z-index: 0;
+  pointer-events: none; /* ne pas bloquer les clics — doit être explicite, pas hérité */
+}
+
+/* ── Vidéo cachée (dans le DOM mais invisible) ───────────────────────────── */
+/* On n'utilise PAS display:none car certains navigateurs (surtout mobiles)
+   bloquent la lecture vidéo des éléments cachés via display:none.
+   On la positionne à 1×1 px hors de la zone visible.                      */
+.ckt-video {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none; /* explicite */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ── Flou de fond optionnel (prop blurBackground=true) ──────────────────── */
+/* Positionné entre le backdrop (z 0) et le canvas (z 2).
+   backdrop-filter floute TOUT ce qui est rendu derrière l'overlay (la page).
+   Le fond semi-transparent assombrit légèrement → l'animation ressort mieux.
+   Disparaît automatiquement avec l'overlay parent au fondu de sortie.        */
+.ckt-blur {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+/* ── Canvas WebGL plein écran ───────────────────────────────────────────── */
+/* Résolution interne = window.innerWidth × window.innerHeight (native).
+   Rendu GPU → fluidité maximale, aucune pixelisation, aucune charge CPU.   */
+.ckt-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+  z-index: 2; /* au-dessus du backdrop et du flou */
+  pointer-events: none; /* explicite — CSS pointer-events ne s'hérite pas du parent */
+}

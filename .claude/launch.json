@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "GOT Vite Dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173,
+      "cwd": "C:\\Users\\User\\OneDrive\\Documents\\Site internet\\GOT-main\\GOT-main\\vite-project"
+    }
+  ]
+}

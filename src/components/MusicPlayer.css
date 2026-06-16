@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&display=swap');
+
+/* ── Conteneur principal (position contrôlée par JS) ────────────────────── */
+.music-player {
+  position: fixed;
+  /* left / bottom : définis en inline style par React (défaut : bas-droite) */
+  z-index: 999;
+  display: flex;
+  flex-direction: column-reverse; /* toggle en bas, carte au-dessus */
+  align-items: flex-end;          /* bouton + carte alignés à droite du conteneur */
+  gap: 12px;
+  touch-action: none;             /* évite le scroll natif pendant le drag */
+}
+
+/* ── Bouton toggle ───────────────────────────────────────────────────────── */
+.mp-toggle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(5,4,3,0.95);
+  border: 1px solid rgba(201,168,76,0.45);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  flex-shrink: 0;
+}
+.mp-toggle:hover {
+  border-color: rgba(201,168,76,0.8);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7), 0 0 18px rgba(201,168,76,0.25);
+  transform: scale(1.06);
+}
+.mp-toggle:active { transform: scale(0.97); cursor: grabbing; }
+
+/* Curseur grab pour indiquer la draggabilité */
+.mp-toggle { cursor: grab; }
+.mp-toggle:active { cursor: grabbing; }
+
+/* Note musicale (état pause) */
+.mp-btn-note {
+  font-size: 22px;
+  color: #c9a84c;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.5));
+}
+
+/* Mini waveform dans le bouton (état lecture) */
+.mp-btn-wave {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 22px;
+}
+.mp-btn-bar {
+  display: block;
+  width: 3px;
+  background: #c9a84c;
+  border-radius: 2px;
+  animation: btn-bar-anim 0.9s ease-in-out infinite alternate;
+}
+.mp-btn-bar:nth-child(1) { height: 8px; }
+.mp-btn-bar:nth-child(2) { height: 18px; }
+.mp-btn-bar:nth-child(3) { height: 12px; }
+.mp-btn-bar:nth-child(4) { height: 20px; }
+.mp-btn-bar:nth-child(5) { height: 10px; }
+
+@keyframes btn-bar-anim {
+  from { transform: scaleY(0.35); }
+  to   { transform: scaleY(1); }
+}
+
+/* Anneau pulsant quand en lecture */
+.mp-btn-pulse {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.5);
+  animation: toggle-pulse 2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes toggle-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ── Carte étendue ───────────────────────────────────────────────────────── */
+.mp-card {
+  width: 272px;
+  background: rgba(5,4,3,0.97);
+  border: 1px solid rgba(201,168,76,0.2);
+  position: relative;
+  overflow: hidden;
+
+  /* Caché par défaut */
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.22,1,0.36,1),
+              transform 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.mp-expanded .mp-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Liseré doré haut */
+.mp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9a84c, transparent);
+  box-shadow: 0 0 8px rgba(201,168,76,0.6);
+}
+
+/* Coins décoratifs */
+.mp-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(201,168,76,0.06);
+  pointer-events: none;
+}
+
+/* ── En-tête de la carte ─────────────────────────────────────────────────── */
+.mp-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 16px 14px;
+  gap: 8px;
+}
+
+.mp-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mp-track-label {
+  font-family: 'Cinzel', serif;
+  font-size: 7px;
+  letter-spacing: 0.5em;
+  color: #c9a84c;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.mp-track-name {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #f5e6c8;
+}
+
+.mp-track-sub {
+  font-family: 'IM Fell English', serif;
+  font-size: 11px;
+  font-style: italic;
+  color: #5a5040;
+}
+
+/* Bouton fermer */
+.mp-close {
+  background: none;
+  border: 1px solid rgba(201,168,76,0.15);
+  color: #5a5040;
+  font-size: 11px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+.mp-close:hover {
+  border-color: rgba(201,168,76,0.4);
+  color: #c9a84c;
+}
+
+/* ── Séparateur ──────────────────────────────────────────────────────────── */
+.mp-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.15), transparent);
+  margin: 0 16px;
+}
+
+/* ── Waveform décorative ─────────────────────────────────────────────────── */
+.mp-wave-deco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 44px;
+  padding: 8px 20px;
+}
+.mp-wave-bar {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: rgba(201,168,76,0.25);
+  transition: background 0.4s;
+}
+
+/* Hauteurs des barres (pattern non-uniforme) */
+.mp-wave-bar:nth-child(1)  { height: 8px; }
+.mp-wave-bar:nth-child(2)  { height: 18px; }
+.mp-wave-bar:nth-child(3)  { height: 12px; }
+.mp-wave-bar:nth-child(4)  { height: 28px; }
+.mp-wave-bar:nth-child(5)  { height: 16px; }
+.mp-wave-bar:nth-child(6)  { height: 32px; }
+.mp-wave-bar:nth-child(7)  { height: 20px; }
+.mp-wave-bar:nth-child(8)  { height: 28px; }
+.mp-wave-bar:nth-child(9)  { height: 14px; }
+.mp-wave-bar:nth-child(10) { height: 22px; }
+.mp-wave-bar:nth-child(11) { height: 10px; }
+.mp-wave-bar:nth-child(12) { height: 16px; }
+
+/* Animation quand en lecture */
+.mp-wave-deco.wave-active .mp-wave-bar {
+  background: rgba(201,168,76,0.7);
+  animation: wave-deco-anim 1s ease-in-out infinite alternate;
+}
+@keyframes wave-deco-anim {
+  from { transform: scaleY(0.3); opacity: 0.5; }
+  to   { transform: scaleY(1);   opacity: 1; }
+}
+
+/* ── Bouton play/pause central ───────────────────────────────────────────── */
+.mp-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 16px 14px;
+}
+
+.mp-play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #c9a84c;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #0a0705;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 20px rgba(201,168,76,0.2);
+  position: relative;
+}
+.mp-play-btn:hover {
+  background: #e8c97a;
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6), 0 0 30px rgba(201,168,76,0.4);
+}
+.mp-play-btn:active { transform: scale(0.95); }
+
+.mp-play-icon { margin-left: 3px; line-height: 1; }
+.mp-pause-icon { line-height: 1; }
+
+/* ── Contrôle du volume ──────────────────────────────────────────────────── */
+.mp-volume-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px 18px;
+}
+
+.mp-vol-icon {
+  font-size: 13px;
+  color: rgba(201,168,76,0.45);
+  flex-shrink: 0;
+  line-height: 1;
+  width: 18px;
+  text-align: center;
+}
+
+/* Slider volume custom */
+.mp-vol-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: rgba(201,168,76,0.15);
+  border-radius: 1px;
+  cursor: pointer;
+  outline: none;
+}
+.mp-vol-slider::-webkit-slider-track {
+  background: rgba(201,168,76,0.15);
+  height: 2px;
+  border-radius: 1px;
+}
+.mp-vol-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #c9a84c;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(201,168,76,0.6);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.mp-vol-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 12px rgba(201,168,76,0.8);
+}
+.mp-vol-slider::-moz-range-track {
+  background: rgba(201,168,76,0.15);
+  height: 2px;
+  border-radius: 1px;
+}
+.mp-vol-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #c9a84c;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 6px rgba(201,168,76,0.6);
+}
+
+/* ── Barre de progression (en bas de la carte) ───────────────────────────── */
+.mp-progress-wrap {
+  height: 2px;
+  background: rgba(201,168,76,0.1);
+  position: relative;
+  margin: 2px 0 0;
+}
+.mp-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, rgba(201,168,76,0.5), #c9a84c);
+  transition: width 0.5s linear;
+  box-shadow: 0 0 4px rgba(201,168,76,0.5);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .mp-card { width: 240px; }
+}

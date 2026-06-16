@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+/* ── Overlay fixe plein écran ───────────────────────────────────────────── */
+/* pointer-events: none → tous les éléments en dessous restent cliquables
+   (navbar, etc.) dès le premier instant.                                   */
+.hst-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  /* Le zoom final (cf. finish() en JS) déplace la "caméra" en profondeur
+     (perspective + translateZ) plutôt que d'agrandir le canvas/la carte à
+     plat : sans ce overflow, le contenu projeté hors de l'écran pendant ce
+     déplacement pourrait élargir la page et faire apparaître des barres de
+     défilement. */
+  overflow: hidden;
+}
+
+/* ── Backdrop opaque (couvre la page pendant le buffering vidéo) ─────────── */
+/* Disparaît dès que la vidéo peut jouer → les zones transparentes (chroma
+   key) montrent alors HistoirePage en dessous.                             */
+.hst-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: #050403;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Vidéo cachée (dans le DOM mais invisible) ───────────────────────────── */
+.hst-video {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ── Canvas WebGL plein écran ───────────────────────────────────────────── */
+/* transform est appliqué en JS pour le zoom final : un translateZ (sous la
+   perspective définie sur .hst-overlay, cf. finish()) qui fait avancer la
+   "caméra" vers le rectangle vert du livre, plutôt qu'un scale().          */
+.hst-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+  z-index: 2;
+  pointer-events: none;
+  transform: translateZ(0);
+  opacity: 1;
+  will-change: transform, opacity;
+}
+
+/* ── Portail magique (aperçu de la page Histoire) ────────────────────────── */
+/* Plaqué sur le quadrilatère vert de la page de droite via une homographie
+   (matrix3d, transform-origin: 0 0), recalculée à chaque frame en JS pour
+   suivre le zoom caméra — mais reste invisible (opacity: 0) tant que la
+   vidéo joue normalement, pour ne jamais "transpercer" la page en train de
+   tourner. Le fond crème ci-dessous est IDENTIQUE à PORTAL_CREAM_COLOR (JS),
+   couleur mesurée sur le papier filmé : dès que .hst-backdrop bascule sur
+   cette même couleur (PAGE_MATCH_START_TIME_S), puis que cette carte devient
+   visible (CARD_REVEAL_TIME_S), aucune limite de rectangle n'apparaît — seul
+   .hst-card-glow (lueur dorée + texte) "s'allume" par-dessus, comme une
+   inscription qui se révèle sur la page. Au fondu final (finish()), la carte
+   zoome avec le reste.                                                    */
+.hst-title-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform-origin: 0 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  background: #e3d0b8;
+  /* Estompe les bords du fond crème en transparence : la marge créée par
+     QUAD_OVERSCALE (cf. JS) se fond ainsi progressivement dans la page du
+     livre en dessous, sans "délimitation" de rectangle visible. */
+  -webkit-mask-image: radial-gradient(ellipse 86% 86% at center, #000 80%, transparent 100%);
+          mask-image: radial-gradient(ellipse 86% 86% at center, #000 80%, transparent 100%);
+}
+
+.hst-card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse 65% 65% at center,
+    rgba(255, 240, 205, 0.65) 0%,
+    rgba(238, 214, 165, 0.38) 40%,
+    rgba(201, 168, 76, 0.14) 70%,
+    rgba(201, 168, 76, 0) 90%);
+  box-shadow: inset 0 0 18vmin rgba(255, 226, 160, 0.35);
+  animation: hst-portal-pulse 4s ease-in-out infinite;
+}
+
+@keyframes hst-portal-pulse {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.12); }
+}
+
+.hst-title-card-inner {
+  text-align: center;
+  padding: 0 6%;
+}
+
+.hst-card-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(8px, 1vw, 13px);
+  letter-spacing: 0.5em;
+  color: #8a6a35;
+  text-transform: uppercase;
+  margin: 0 0 1.4em;
+  text-shadow: 0 0 14px rgba(255, 230, 180, 0.8);
+}
+
+.hst-card-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 1.4em;
+}
+
+.hst-card-line {
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(138,90,30,0.55));
+}
+.hst-card-line:last-child {
+  background: linear-gradient(to left, transparent, rgba(138,90,30,0.55));
+}
+
+.hst-card-rune {
+  font-size: clamp(10px, 1.4vw, 18px);
+  color: #b8862f;
+  filter: drop-shadow(0 0 14px rgba(255, 230, 180, 0.9));
+}
+
+.hst-card-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 6vw, 76px);
+  font-weight: 700;
+  color: #3a2a16;
+  line-height: 1.15;
+  margin: 0 0 0.3em;
+  text-shadow: 0 0 30px rgba(255, 230, 180, 0.9), 0 0 70px rgba(201,168,76,0.4);
+}
+
+.hst-card-title em {
+  font-style: italic;
+  color: #9a6a1e;
+  font-family: 'IM Fell English', serif;
+}
+
+.hst-card-subtitle {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(14px, 1.8vw, 22px);
+  font-style: italic;
+  color: #6b5a3e;
+  margin: 0;
+  text-shadow: 0 0 18px rgba(255, 230, 180, 0.7);
+}
+
+/* ── Wash final (transition "hyperespace" beige → noir) ──────────────────── */
+/* Pendant le crossfade : le canvas/portail floutent, zooment et s'estompent.
+   .hst-wash (crème/doré, façon "lumière du portail") monte en opacité puis
+   redescend dès la moitié du zoom, tandis que .hst-wash-dark (couleur exacte
+   du fond de HistoirePage) monte en opacité avec un léger retard — la
+   couleur de l'écran glisse ainsi progressivement du beige vers le noir,
+   sans coupure brutale au moment où HistoirePage apparaît en dessous.       */
+.hst-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(ellipse 90% 90% at center, #fff6e4 0%, #f5e6c8 45%, #ddc090 100%);
+}
+
+.hst-wash-dark {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  background: #050403;
+}

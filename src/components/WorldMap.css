@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+/* ── Page ────────────────────────────────────────────────────────────────── */
+.worldmap-section {
+  position: relative; width: 100%; min-height: 100vh;
+  background: #050403; padding: 60px 48px 80px; overflow: clip;
+}
+.worldmap-bg-texture {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px; pointer-events: none;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.worldmap-header { position: relative; z-index: 2; text-align: center; margin-bottom: 40px; }
+.worldmap-eyebrow {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.5em;
+  color: #c9a84c; text-transform: uppercase; margin-bottom: 16px;
+  opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;
+}
+.worldmap-eyebrow.visible { opacity: 1; transform: translateY(0); }
+.worldmap-ornament { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 20px; }
+.worldmap-ornament-line { display: block; width: 60px; height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.5)); }
+.worldmap-ornament-line:last-child { background: linear-gradient(to left, transparent, rgba(201,168,76,0.5)); }
+.worldmap-ornament-rune { font-size: 13px; color: #c9a84c; filter: drop-shadow(0 0 8px rgba(201,168,76,0.7)); }
+.worldmap-title {
+  font-family: 'Cinzel Decorative', serif; font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700; color: #f5e6c8; line-height: 1.1; margin-bottom: 12px;
+  opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+.worldmap-title.visible { opacity: 1; transform: translateY(0); }
+.worldmap-title em { font-style: italic; color: #c9a84c; font-family: 'IM Fell English', serif; }
+.worldmap-subtitle { font-family: 'IM Fell English', serif; font-size: clamp(12px, 1.1vw, 14px); font-style: italic; color: #7a7060; }
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.worldmap-layout {
+  position: relative; z-index: 2; display: flex; gap: 28px;
+  align-items: flex-start; max-width: 1400px; margin: 0 auto;
+}
+
+/* ── Conteneur carte ─────────────────────────────────────────────────────── */
+.worldmap-map-wrapper { flex: 0 0 56%; max-width: 56%; }
+
+.worldmap-map-container {
+  position: relative; width: 100%;
+  border: 1px solid rgba(201,168,76,0.2); overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.06) inset, 0 20px 80px rgba(0,0,0,0.8);
+  cursor: default;
+  transition: transform 0.7s cubic-bezier(0.22,1,0.36,1), box-shadow 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+/* Effet 3D quand région active */
+.map-tilt {
+  transform: perspective(1400px) rotateX(2deg) rotateY(-1deg) scale(1.01);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 30px rgba(201,168,76,0.06);
+}
+
+/* Image */
+.worldmap-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: fill; /* Fill exact — correspond aux masques PNG */
+  filter: sepia(0.15) brightness(0.82) contrast(1.05);
+  display: block;
+}
+
+/* Overlay sombre */
+.worldmap-map-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.4) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.35) 100%);
+}
+
+/* ── Overlays région (masques PNG) ───────────────────────────────────────── */
+.region-overlay {
+  position: absolute; inset: 0; z-index: 3;
+  /* pointer-events gérés par pixel-testing au niveau du container */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+/* Région active : visible avec glow */
+.region-overlay.overlay-active {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px var(--region-accent, #c9a84c))
+          drop-shadow(0 0 20px color-mix(in srgb, var(--region-accent, #c9a84c) 40%, transparent));
+}
+/* Le hover est géré par JS (pixel-testing) — pas de :hover CSS sur les overlays */
+/* Quand une autre région est active, on assombrit légèrement les autres */
+.region-overlay.overlay-dim {
+  opacity: 0;
+}
+
+/* ── Marqueurs des lieux ─────────────────────────────────────────────────── */
+.map-lieu {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10; background: none; border: none; cursor: pointer; padding: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  transition: opacity 0.35s ease, transform 0.2s ease;
+}
+
+/* ── Visibilité ── */
+.lieu-visible { opacity: 1; pointer-events: auto; }
+.lieu-hidden  { opacity: 0; pointer-events: none; }
+
+/* ── Label au-dessus du point ── */
+.lieu-label-above { flex-direction: column-reverse; }
+
+/* ── Région active : level-1 labels discrets, level-2 sur hover normal ── */
+.has-active-region .lieu-major:not(.lieu-active) .lieu-label {
+  font-size: 6px;
+  letter-spacing: 0.08em;
+  opacity: 0.45;
+}
+.has-active-region .lieu-major:not(.lieu-active):hover .lieu-label {
+  font-size: 8.5px;
+  letter-spacing: 0.15em;
+  opacity: 1;
+}
+
+/* ── Dot central ── */
+.lieu-dot {
+  display: block; border-radius: 50%;
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+/* Level 1 (majeur) : grand point doré avec contour sombre pour visibilité */
+.lieu-major .lieu-dot {
+  width: 10px; height: 10px;
+  background: #e8c96a;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.75), 0 0 8px rgba(201,168,76,0.8), 0 0 16px rgba(201,168,76,0.35);
+}
+.lieu-major:hover .lieu-dot,
+.lieu-major.lieu-active .lieu-dot {
+  transform: scale(1.5);
+  background: #f5e080;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.75), 0 0 12px rgba(201,168,76,1), 0 0 24px rgba(201,168,76,0.6);
+}
+
+/* Level 2 (secondaire) : point blanc contrasté, visible sur tous les overlays de région */
+.lieu-minor .lieu-dot {
+  width: 5px; height: 5px;
+  background: #fff;
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.55), 0 0 5px rgba(0,0,0,0.4);
+  opacity: 0.9;
+}
+.lieu-minor:hover .lieu-dot,
+.lieu-minor.lieu-active .lieu-dot {
+  transform: scale(1.8);
+  opacity: 1;
+  background: var(--accent, #c9a84c);
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.4), 0 0 8px var(--accent, #c9a84c);
+}
+
+/* ── Anneau pulsant (level 1 seulement) ── */
+.lieu-pulse-ring {
+  position: absolute; top: 50%; left: 50%;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(201,168,76,0.5);
+  transform: translate(-50%, -50%);
+  animation: lieu-pulse 2.5s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes lieu-pulse {
+  0%   { transform: translate(-50%,-50%) scale(1);   opacity: 0.6; }
+  100% { transform: translate(-50%,-50%) scale(3.5); opacity: 0; }
+}
+/* Ne pas pulser quand marqueur actif */
+.lieu-active .lieu-pulse-ring { animation: none; }
+
+/* ── Anneau actif ── */
+.lieu-active-ring {
+  position: absolute; top: 50%; left: 50%;
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 1px solid var(--accent, #c9a84c);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px var(--accent, #c9a84c);
+  pointer-events: none;
+  animation: active-ring-spin 3s linear infinite;
+}
+@keyframes active-ring-spin {
+  from { transform: translate(-50%,-50%) rotate(0deg) scale(1); }
+  50%  { transform: translate(-50%,-50%) rotate(180deg) scale(1.1); }
+  to   { transform: translate(-50%,-50%) rotate(360deg) scale(1); }
+}
+
+/* ── Label ── */
+.lieu-label {
+  display: block; font-family: 'Cinzel', serif;
+  font-size: 8.5px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #f5e8c8; white-space: nowrap;
+  background: rgba(4,3,2,0.95); padding: 3px 7px;
+  border: 1px solid rgba(201,168,76,0.35);
+  backdrop-filter: blur(4px);
+  opacity: 0; transform: translateY(3px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none; max-width: 130px;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.map-lieu:hover .lieu-label,
+.lieu-active .lieu-label {
+  opacity: 1; transform: translateY(0);
+}
+/* Les marqueurs level-1 affichent leur label en permanence */
+.lieu-major .lieu-label {
+  opacity: 0.9;
+  transform: translateY(0);
+  background: rgba(4,3,2,0.95);
+  border-color: rgba(201,168,76,0.4);
+}
+.lieu-major:hover .lieu-label,
+.lieu-major.lieu-active .lieu-label {
+  opacity: 1;
+  color: var(--accent, #c9a84c);
+  border-color: var(--accent, #c9a84c);
+}
+
+/* ── Coins décoratifs ────────────────────────────────────────────────────── */
+.map-corner {
+  position: absolute; width: 22px; height: 22px; z-index: 12; pointer-events: none;
+}
+.map-corner::before, .map-corner::after {
+  content: ''; position: absolute; background: rgba(201,168,76,0.55);
+}
+.map-corner::before { width: 100%; height: 1px; top: 0; left: 0; }
+.map-corner::after  { width: 1px; height: 100%; top: 0; left: 0; }
+.map-corner-tl { top: 10px; left: 10px; }
+.map-corner-tr { top: 10px; right: 10px; transform: scaleX(-1); }
+.map-corner-bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
+.map-corner-br { bottom: 10px; right: 10px; transform: scale(-1); }
+
+/* ── Panneau d'information ───────────────────────────────────────────────── */
+.worldmap-panel { flex: 1; position: sticky; top: 100px; min-height: 480px; }
+
+.panel-default {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%; min-height: 480px; border: 1px solid rgba(201,168,76,0.1);
+  padding: 40px 28px; text-align: center; background: rgba(10,8,6,0.6);
+}
+.panel-default-sigil {
+  font-size: 48px; color: rgba(201,168,76,0.2); display: block; margin-bottom: 20px;
+  animation: default-pulse 4s ease-in-out infinite alternate;
+}
+@keyframes default-pulse { from { opacity: 0.15; } to { opacity: 0.4; } }
+.panel-default-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.4em; color: #4a4030; text-transform: uppercase; margin-bottom: 12px; }
+.panel-default-text { font-family: 'IM Fell English', serif; font-size: 13px; font-style: italic; color: #3a3025; line-height: 1.8; }
+
+/* Panneau région / lieu */
+.region-panel {
+  border: 1px solid rgba(201,168,76,0.18);
+  background: rgba(10,8,6,0.9); padding: 28px 26px 32px;
+  animation: panel-enter 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
+  position: relative; overflow: hidden;
+}
+@keyframes panel-enter { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
+.region-panel::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent, #c9a84c); box-shadow: 0 0 10px var(--accent, #c9a84c);
+}
+
+.region-panel-eyebrow { font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.5em; color: var(--accent, #c9a84c); text-transform: uppercase; margin-bottom: 10px; opacity: 0.75; }
+.region-panel-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(17px, 2vw, 26px); font-weight: 700; color: #f5e6c8; line-height: 1.15; margin-bottom: 18px; }
+.region-panel-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.rpd-line { flex: 1; height: 1px; background: linear-gradient(to right, color-mix(in srgb, var(--accent, #c9a84c) 35%, transparent), transparent); }
+.rpd-line:last-child { background: linear-gradient(to left, color-mix(in srgb, var(--accent, #c9a84c) 35%, transparent), transparent); }
+.rpd-diamond { width: 5px; height: 5px; background: var(--accent, #c9a84c); transform: rotate(45deg); flex-shrink: 0; }
+.region-panel-infos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+.region-info-item { display: flex; flex-direction: column; gap: 3px; }
+.region-info-label { font-family: 'Cinzel', serif; font-size: 7.5px; letter-spacing: 0.4em; color: #5a5040; text-transform: uppercase; }
+.region-info-value { font-family: 'Cinzel', serif; font-size: clamp(10px, 0.9vw, 12px); color: #d4c8a8; }
+.region-panel-desc { font-family: 'IM Fell English', serif; font-size: clamp(12px, 1vw, 14px); font-style: italic; color: #9a9080; line-height: 1.9; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(201,168,76,0.1); }
+.region-panel-facts-title { font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.4em; color: var(--accent, #c9a84c); text-transform: uppercase; margin-bottom: 10px; opacity: 0.65; }
+.region-panel-facts { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; gap: 7px; }
+.region-fact { display: flex; align-items: flex-start; gap: 10px; font-family: 'IM Fell English', serif; font-size: clamp(11px, 0.95vw, 13px); color: #8a8070; line-height: 1.5; }
+.region-fact::before { content: '✦'; color: var(--accent, #c9a84c); font-size: 7px; margin-top: 3px; flex-shrink: 0; opacity: 0.65; }
+.region-panel-devise { font-family: 'Cinzel Decorative', serif; font-size: clamp(11px, 1vw, 13px); color: var(--accent, #c9a84c); text-align: center; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.1); }
+
+/* Panneau lieu */
+.lieu-panel { }
+.lieu-region-link { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 16px; opacity: 0.7; }
+
+/* ── Légende ─────────────────────────────────────────────────────────────── */
+.worldmap-legend {
+  position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center; margin-top: 24px; max-width: 1400px; margin-left: auto; margin-right: auto;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 8px; font-family: 'Cinzel', serif;
+  font-size: 10px; letter-spacing: 0.15em; color: #c0b49a; text-transform: uppercase;
+  cursor: pointer; padding: 8px 16px; border: 1px solid rgba(201,168,76,0.25);
+  transition: border-color 0.3s, color 0.3s, background 0.3s; background: rgba(20,16,10,0.8);
+}
+.legend-item:hover { border-color: rgba(201,168,76,0.6); color: #f0e4c4; background: rgba(35,28,16,0.9); }
+.legend-item.legend-active { border-color: var(--accent, #c9a84c); color: var(--accent, #c9a84c); }
+.legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+
+/* ── Flèches de navigation entre cartes ──────────────────────────────────── */
+.map-nav-left, .map-nav-right {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 15; display: flex; flex-direction: column; gap: 8px;
+  pointer-events: none;
+}
+.map-nav-left  { left: 12px;  align-items: flex-start; }
+.map-nav-right { right: 12px; align-items: flex-end; }
+
+.map-nav-arrow {
+  pointer-events: auto;
+  display: flex; align-items: center; gap: 7px;
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(201,168,76,0.65);
+  background: rgba(5,4,3,0.65);
+  border: 1px solid rgba(201,168,76,0.22);
+  padding: 9px 13px; cursor: pointer;
+  backdrop-filter: blur(4px);
+  opacity: 0.5;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s, opacity 0.2s;
+}
+.map-nav-arrow:hover {
+  opacity: 1;
+  background: rgba(25,20,10,0.92);
+  border-color: rgba(201,168,76,0.6);
+  color: #f5e6c8;
+  transform: scale(1.05);
+}
+.map-nav-arrow-icon { font-size: 14px; line-height: 1; }
+
+@media (max-width: 640px) {
+  .map-nav-arrow-label { display: none; }
+  .map-nav-arrow { padding: 8px 10px; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .worldmap-layout { flex-direction: column; }
+  .worldmap-map-wrapper {
+    flex: none; max-width: 100%; width: 100%;
+    display: flex; justify-content: center;
+  }
+  /* max-width calculé depuis 70vh × ratio 540/820 ≈ 0.659
+     → la hauteur naturelle (width × 820/540) ne dépassera jamais 70vh */
+  .worldmap-map-container {
+    max-width: min(100%, calc(70vh * 0.659));
+  }
+  .worldmap-panel {
+    position: static;
+    width: 100%;
+    background: rgba(5,4,3,0.95);
+  }
+  .map-tilt { transform: none; }
+}
+@media (max-width: 640px) {
+  .worldmap-section { padding: 40px 20px 60px; }
+  .region-panel-infos { grid-template-columns: 1fr; }
+  .lieu-label { font-size: 6px; max-width: 80px; }
+}

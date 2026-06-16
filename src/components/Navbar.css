@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+/* ── Barre de navigation autonome (pages internes) ── */
+.standalone-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 48px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.85) 100%);
+  border-bottom: 1px solid rgba(201,168,76,0.18);
+  backdrop-filter: blur(10px);
+  transition: padding 0.3s ease;
+}
+
+/* Ornement bas de la nav */
+.standalone-nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 48px;
+  right: 48px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.4), transparent);
+}
+
+/* Logo */
+.standalone-nav-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  color: #c9a84c;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.standalone-nav-logo:hover {
+  color: #e8c97a;
+  text-shadow: 0 0 20px rgba(201,168,76,0.5);
+}
+
+/* Liens */
+.standalone-nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.standalone-nav-links li a {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #c8bfb0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Soulignement doré au survol */
+.standalone-nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #c9a84c;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.standalone-nav-links li a:hover,
+.standalone-nav-links li a.nav-active {
+  color: #e8c97a;
+}
+.standalone-nav-links li a:hover::after,
+.standalone-nav-links li a.nav-active::after {
+  transform: scaleX(1);
+}
+
+/* ── Bouton de lien spécial (ex: Dragons avec transition vidéo) ──────────── */
+/* Identique visuellement aux <Link> de la nav, mais rendu en <button>
+   pour intercepter le clic sans déclencher React Router directement.       */
+.standalone-nav-links li .nav-link-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #c8bfb0;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.standalone-nav-links li .nav-link-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #c9a84c;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.standalone-nav-links li .nav-link-btn:hover,
+.standalone-nav-links li .nav-link-btn.nav-active {
+  color: #e8c97a;
+}
+
+.standalone-nav-links li .nav-link-btn:hover::after,
+.standalone-nav-links li .nav-link-btn.nav-active::after {
+  transform: scaleX(1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .standalone-nav {
+    padding: 16px 24px;
+  }
+  .standalone-nav-links {
+    display: none;
+  }
+}

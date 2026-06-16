@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&display=swap');
+
+/* ── Overlay fixe plein écran ──────────────────────────────────────────────── */
+/* pointer-events: none par défaut → seule la zone de clic (mst-waiting-layer)
+   ou le backdrop de la navbar (z-index 100) interceptent les événements.       */
+.mst-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+}
+
+/* ── Vidéo : mode prévisualisation (phase 'waiting') ─────────────────────── */
+/* Visible full-screen, premier frame affiché, la vidéo est en pause.         */
+.mst-video-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* ── Vidéo : mode WebGL (phase 'playing') ─────────────────────────────────── */
+/* Cachée hors-écran — alimente la texture WebGL sans être visible.
+   NE PAS utiliser display:none → bloque la lecture sur certains navigateurs. */
+.mst-video-hidden {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Backdrop (phase 'playing') ───────────────────────────────────────────── */
+/* Masque le flash de la page pendant le premier rendu WebGL (~150 ms).
+   Disparaît dès que canplay se déclenche (vidéo déjà chargée → quasi-immédiat). */
+.mst-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #080604;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Canvas WebGL (phase 'playing') ─────────────────────────────────────────  */
+.mst-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Zone de clic (phase 'waiting') ──────────────────────────────────────── */
+/* Couvre tout l'écran sauf la navbar (qui est z-index 100, au-dessus).
+   pointer-events: all → capture les clics sur la zone de la page.             */
+.mst-waiting-layer {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  pointer-events: all;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* Laisser de la place pour la navbar en haut */
+  padding-bottom: 8vh;
+}
+
+/* ── Texte d'invite ────────────────────────────────────────────────────────── */
+.mst-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  /* Vignette légère pour lisibilité */
+  background: radial-gradient(
+    ellipse 420px 180px at center,
+    rgba(0,0,0,0.65) 0%,
+    transparent 100%
+  );
+  padding: 28px 56px 24px;
+  border-radius: 4px;
+  animation: mst-fade-in 0.6s ease both;
+}
+
+@keyframes mst-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.mst-prompt-ornament {
+  font-size: 14px;
+  color: rgba(201,168,76,0.6);
+  letter-spacing: 0.4em;
+  margin-bottom: 4px;
+}
+
+.mst-prompt-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(13px, 1.8vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #c9a84c;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 0 24px rgba(201,168,76,0.55);
+  animation: mst-glow-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes mst-glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 14px rgba(201,168,76,0.4);
+    opacity: 0.85;
+  }
+  50% {
+    text-shadow: 0 0 28px rgba(201,168,76,0.85), 0 0 48px rgba(201,168,76,0.3);
+    opacity: 1;
+  }
+}
+
+.mst-prompt-sub {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(9px, 1.1vw, 12px);
+  letter-spacing: 0.25em;
+  color: rgba(200,191,176,0.75);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Icône clé ─────────────────────────────────────────────────────────────── */
+.mst-prompt-key {
+  font-size: clamp(22px, 3vw, 32px);
+  margin-top: 6px;
+  filter: sepia(1) saturate(1.5) hue-rotate(5deg) brightness(1.1);
+  animation: mst-key-float 3s ease-in-out infinite;
+  line-height: 1;
+}
+
+@keyframes mst-key-float {
+  0%, 100% { transform: translateY(0)   rotate(-10deg); }
+  50%       { transform: translateY(-5px) rotate(-10deg); }
+}
